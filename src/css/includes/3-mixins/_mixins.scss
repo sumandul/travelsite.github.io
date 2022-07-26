@@ -1,0 +1,49 @@
+@mixin tsn(
+  $property: all,
+  $time: 0.5s,
+  $easing: cubic-bezier(0.215, 0.61, 0.355, 1)
+) {
+  transition: $property $time $easing;
+}
+@mixin btn-css {
+  background-color: $yellow;
+  color: $text-color;
+  // border: 1px solid $text-color;
+  font-weight: 500;
+  font-size: 16px;
+}
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin bordernone {
+  outline: 0;
+  border: 0;
+}
+@mixin btn($td, $background, $radius, $size) {
+  padding: $td;
+  background-color: $background;
+  border-radius: $radius;
+  font-size: $size;
+}
+@mixin potrait {
+  @media (max-width: 576px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+@mixin mini {
+  @media (max-width: 996px) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: 996px) {
+    @content;
+  }
+}

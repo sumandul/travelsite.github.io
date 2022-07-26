@@ -1,0 +1,20 @@
+.shipping-container {
+  background-color: #fff;
+
+  input {
+    color: red !important;
+    background-color: bisque !important;
+  }
+}
+.order-page {
+  display: flex;
+  justify-content: space-between;
+
+  .shipping-info {
+    border-right: 2px solid red;
+
+    flex-basis: 60%;
+  }
+  .order-summery {
+  }
+}

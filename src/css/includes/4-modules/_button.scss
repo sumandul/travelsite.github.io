@@ -1,0 +1,208 @@
+button {
+  outline: 0;
+  border: none;
+}
+
+.search-trip {
+  background-color: $text-color;
+  padding: 18px 10px;
+  border-radius: 6px;
+  width: 100%;
+  @include center;
+  p {
+    color: #ffff !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    letter-spacing: 3px;
+  }
+}
+.rd-btn {
+  background-color: #efefefcc;
+  padding: 13px 22px;
+  border-radius: 5px;
+  span {
+    color: $yellow;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+  .arrow {
+    color: $yellow;
+  }
+}
+.top-btn {
+  background-color: $yellow;
+  position: absolute;
+  top: 6%;
+  right: 3%;
+  @include potrait {
+    right: 2% !important;
+    padding: 7px 10px !important;
+  }
+  color: #ffff;
+  padding: 7px 9px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.private {
+  background-color: #a38059 !important;
+}
+.feature-btn {
+  background-color: $yellow;
+  position: absolute;
+  top: 9%;
+  left: 4%;
+  color: #ffff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 300;
+}
+.btn {
+  background-color: #fb8500;
+  border: 1px solid #ffff;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 30px;
+}
+.c-btn {
+  background-color: $yellow;
+  padding: 13px 30px;
+  border-radius: 10px;
+  font-size: 18;
+  font-weight: 600;
+  color: #fff;
+}
+.btn-sus {
+  background-color: #023047;
+  padding: 16px 10px;
+  color: #ffff;
+  font-size: 15px;
+  font-weight: 500;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.btn-send {
+  background-color: $yellow;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #ffff;
+  font-weight: 400;
+  border-radius: 10px;
+  margin-top: 6px;
+}
+.accordion-button {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  background-color: transparent;
+  padding: 0px 0px !important;
+  @include potrait {
+    font-size: 20px !important;
+  }
+  .down {
+    font-size: 30px;
+  }
+  &::after {
+    width: 0 !important;
+  }
+}
+.accordion {
+  margin-top: 20px;
+}
+.accordion-item {
+  background-color: transparent !important;
+  border: 0 !important;
+  margin-bottom: 0px;
+}
+.accordion-button:not(.collapsed) {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  background-color: transparent;
+  box-shadow: none;
+}
+.rotate {
+  transform: rotate(180deg);
+  font-size: 20px;
+}
+.accordion-button:focus {
+  z-index: 3;
+  border-color: none;
+  outline: 0;
+  box-shadow: none;
+}
+.accordion-body {
+  padding: 0 !important;
+}
+.view-btn {
+  border: 2px solid $yellow;
+  padding: 8px 14px;
+  background-color: #fff;
+  border-radius: 4px;
+  width: 100%;
+  a {
+    color: #4c4c4c;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+.breadcrump {
+  border-bottom: 1px solid #c5c5c5;
+}
+.pagination {
+  a {
+    border: 2px solid $yellow;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #313131;
+    &:hover {
+      background-color: $yellow;
+      color: #ffff;
+    }
+
+    margin: 5px;
+  }
+}
+.filter-by {
+  border: 1px solid #c5c5c5;
+  padding: 10px 8px;
+  border-radius: 4px;
+  position: relative;
+}
+select::-ms-expand {
+  display: none;
+}
+.selectcss {
+  position: S;
+  width: 200px;
+  border: 2px solid #c5c5c5;
+  padding: 10px 9px;
+}
+option {
+  font-size: 15px;
+  font-weight: 400;
+  color: $text-color;
+}
+.book-trip {
+  background-color: #fb8500;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 9px 53px;
+  border-radius: 80px;
+  color: #ffff;
+}
+.ask-btn {
+  margin-top: 20px;
+  border: 2px solid $yellow;
+  padding: 9px 68px;
+  background-color: #ffff !important;
+  border-radius: 80px;
+  color: $yellow;
+  font-size: 16px;
+  font-weight: 600;
+}
