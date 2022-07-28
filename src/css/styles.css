@@ -142,7 +142,7 @@ header .header-top h1 span::after {
   position: absolute;
   background-color: #fb8500;
   width: 2px;
-  height: 24px;
+  height: 18px;
   -webkit-transform: rotate(19deg);
           transform: rotate(19deg);
   top: 4px;
@@ -521,6 +521,47 @@ option {
   font-weight: 600;
 }
 
+.enquery {
+  border: 1px solid #fb8500;
+  border-radius: 4px;
+  padding: 0px 8px;
+  background-color: #ffff;
+  padding: 4px 11px;
+  color: #023047;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.nook-btn {
+  border-radius: 4px;
+  margin-left: 10px;
+  padding: 0px 8px;
+  background-color: #fb8500;
+  padding: 4px 11px;
+  color: #ffff;
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.grp-btn {
+  background-color: #26abe2;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  position: absolute;
+  top: -4px;
+  left: 41%;
+  padding: 3px 16px;
+}
+
+.dis {
+  background-color: #fb8500;
+  font-size: 7px;
+  font-weight: 500;
+  padding: 4px 6px;
+  border-radius: 7px;
+}
+
 input {
   outline: 0;
   border: 0;
@@ -627,7 +668,6 @@ select {
   -webkit-appearance: none;
   font-size: 16px;
   font-weight: 500;
-  border-radius: 6px;
 }
 
 select:focus {
@@ -1643,174 +1683,6 @@ select:focus {
   color: #023047;
 }
 
-.product-card {
-  color: #023047;
-  border: 1px solid #eaeaea;
-  -webkit-transition: all 0.2s linear;
-  transition: all 0.2s linear;
-}
-
-.product-card p {
-  text-transform: capitalize;
-}
-
-.product-card:hover {
-  -webkit-transform: translateY(10px);
-          transform: translateY(10px);
-}
-
-.product-card .la-tag {
-  color: #ffff;
-}
-
-.title {
-  color: #ffff;
-  font-size: 23px;
-  letter-spacing: 1.2px;
-}
-
-.page-item {
-  background-color: red;
-}
-
-.pagination {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.pagination .PageLinkActive {
-  background-color: red;
-}
-
-.page-link {
-  padding: 14px 17px;
-  position: relative;
-  display: block;
-  color: #b5c1d2;
-  text-decoration: none;
-  background-color: #444;
-  border: 1px solid #2b2c2e;
-}
-
-.filter {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
-  padding: 0px 10px;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  border: 1px solid #eaeaea;
-}
-
-.filter p {
-  color: #023047;
-}
-
-.filter h5 {
-  color: #023047;
-}
-
-.list {
-  -ms-flex-preferred-size: 75%;
-      flex-basis: 75%;
-}
-
-.catopgory-box li {
-  color: #023047;
-  text-transform: capitalize;
-}
-
-.catopgory-box li:hover {
-  color: #fba00c;
-}
-
-.product-details-card p {
-  color: #023047;
-}
-
-.product-details-card h1 {
-  color: #0000;
-}
-
-.product-details-card .product-content {
-  width: 50%;
-}
-
-.product-details-card .product-content .action-btn > span {
-  font-size: 24px;
-}
-
-.product-details-card .review > span {
-  color: #023047;
-  margin-left: 20px;
-}
-
-.review-container h5 {
-  color: #0000;
-}
-
-.review-card {
-  -webkit-box-flex: 0;
-      -ms-flex: none;
-          flex: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  color: #0000;
-  -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.review-card img {
-  width: 40%;
-}
-
-.noreview > p {
-  color: #0000;
-  text-align: center;
-}
-
-.pageActive {
-  color: red;
-}
-
-.shipping-container {
-  background-color: #fff;
-}
-
-.shipping-container input {
-  color: red !important;
-  background-color: bisque !important;
-}
-
-.order-page {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.order-page .shipping-info {
-  border-right: 2px solid red;
-  -ms-flex-preferred-size: 60%;
-      flex-basis: 60%;
-}
-
 .expedition {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2131,10 +2003,11 @@ select:focus {
   color: #023047 !important;
   font-size: 16px;
   font-weight: 600;
+  margin-bottom: 8px;
 }
 
 .everest-container .everest-right .acodian-icon {
-  margin-left: 369px;
+  margin-left: 342px;
 }
 
 .everest-container .everest-right .accordion-item {
@@ -2145,7 +2018,6 @@ select:focus {
   border-bottom: 1px dashed #666666;
   font-size: 16px;
   font-weight: 400;
-  padding: 8px 7px;
 }
 
 .everest-container .everest-right .tab-pane {
@@ -2210,10 +2082,143 @@ select:focus {
   color: #023047;
 }
 
+.everest-container .everest-right .join-trip .month {
+  color: #fb8500;
+  position: absolute;
+  right: 9px;
+  top: 8px;
+}
+
+.everest-container .everest-right .join-trip .select-date {
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+  padding: 8px 6px;
+}
+
+.everest-container .everest-right .join-trip .select-date::-webkit-input-placeholder {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.everest-container .everest-right .join-trip .select-date:-ms-input-placeholder {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.everest-container .everest-right .join-trip .select-date::-ms-input-placeholder {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.everest-container .everest-right .join-trip .select-date::placeholder {
+  color: #000000;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.everest-container .everest-right .join-trip h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #023047;
+}
+
+.everest-container .everest-right .join-trip .table {
+  border-collapse: separate;
+}
+
+.everest-container .everest-right .join-trip .table td {
+  padding: 15px 0px;
+}
+
+.everest-container .everest-right .join-trip .table td:last-child {
+  width: 20%;
+}
+
 .everest-container .everest-right .join-trip .table th {
   color: #aaaaaa;
   font-size: 16px;
   font-weight: 600;
+}
+
+.everest-container .everest-right .join-trip .table h6 {
+  color: #023047;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.everest-container .everest-right .join-trip .table p {
+  color: #023047;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.everest-container .everest-right .join-trip .table span {
+  color: #023047;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.everest-container .everest-right .join-trip .table .cut {
+  font-weight: 400 !important;
+  position: relative;
+}
+
+.everest-container .everest-right .join-trip .table .cut::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 21px;
+  background-color: #023047;
+  width: 1px;
+  height: 30px;
+  -webkit-transform: rotate(85deg);
+          transform: rotate(85deg);
+}
+
+.everest-container .everest-right .join-trip .table .status p {
+  color: #023047;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.everest-container .everest-right .review h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #023047;
+}
+
+.everest-container .everest-right .review h6 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #023047;
+  margin-bottom: 0 !important;
+}
+
+.everest-container .everest-right .review span {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.everest-container .everest-right .review p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #023047;
+}
+
+.everest-container .everest-right .review .review-content {
+  padding: 10px 0px;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.everest-container .everest-right .gallery h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #023047;
+  margin-bottom: 10px !important;
 }
 
 .everest-container .everest-left {
@@ -2298,12 +2303,13 @@ select:focus {
 }
 
 .everest-container .everest-left .left-top {
+  position: relative;
   background-color: #f5f5f5;
   border: 2px solid #a8a8a8;
   border-bottom: transparent !important;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  padding: 28px 18px;
+  padding: 41px 18px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2342,5 +2348,361 @@ select:focus {
   color: #fb8500;
   font-size: 28px;
   font-weight: 700;
+}
+
+.trek-booking-container .book-trek-title {
+  margin-top: 45px;
+  border-bottom: 1px solid #c5c5c5;
+}
+
+.trek-booking-container .book-trek-title span {
+  color: #fb8500;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.trek-booking-container .book-trek-title h1 {
+  color: #023047;
+  font-size: 34px;
+  font-weight: 700;
+  color: #023047;
+  margin-bottom: 23px !important;
+}
+
+.trek-booking-container .book-terk {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.trek-booking-container .book-terk .incre {
+  position: relative;
+}
+
+.trek-booking-container .book-terk .incre span {
+  border: 1px solid #e4e4e4;
+  color: #fb8500;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.trek-booking-container .book-terk .incre .value-input {
+  width: 75%;
+  border: 1px solid #e4e4e4 !important;
+  text-align: center;
+  padding: 4px 0px;
+  border-radius: 16px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.trek-booking-container .book-terk .incre .plus {
+  position: absolute;
+  left: 0;
+  top: 1px;
+}
+
+.trek-booking-container .book-terk .incre .minus {
+  position: absolute;
+  right: 30px;
+  top: 1px;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left {
+  -ms-flex-preferred-size: 70%;
+      flex-basis: 70%;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .trek-right-top {
+  background-color: #f5f5f5;
+  padding: 10px 10px;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .trek-right-top p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .circle-box {
+  background-color: #fb8500;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left h6 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .traveler {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #f5f5f5;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .traveler .inner-travel .circle-box {
+  background-color: #fb8500;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .traveler .inner-travel h6 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .traveler .inner-travel .no-tarveler {
+  background-color: #fff;
+  border: 1px solid #e4e4e4;
+  padding: 20px 12px;
+  border-radius: 4px;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .traveler .inner-travel .no-tarveler h2 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .traveler .inner-travel .no-tarveler .price-dis span {
+  color: #a4a4a4;
+  font-size: 8px;
+  font-weight: 500;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .traveler .inner-travel .no-tarveler .price-dis .dis-box {
+  position: relative;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .traveler .inner-travel .no-tarveler .price-dis .dis-box h2 {
+  color: #fb8500;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .traveler .inner-travel .no-tarveler .price-dis .dis-box h2::after {
+  content: '';
+  width: 1px;
+  height: 57px;
+  background-color: #fb8500;
+  position: absolute;
+  top: -20px;
+  left: 30px;
+  -webkit-transform: rotate(89deg);
+          transform: rotate(89deg);
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .tour-add {
+  background-color: #f5f5f5;
+  padding: 20px 30px;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .tour-add h2 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .tour-add .tour-add-box {
+  border: 1px solid #e4e4e4;
+  background-color: #ffff;
+  padding: 10px 0px;
+  border-radius: 4px;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .tour-add .tour-add-box .tour-add-row {
+  border-bottom: 1px solid #e4e4e4;
+  padding: 10px 16px;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .tour-add .tour-add-box .tour-add-row:last-child {
+  border-bottom: 0 !important;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .tour-add .price {
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .tour-add .facilites {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .tour-add .tour-inc-box {
+  -ms-flex-preferred-size: 15%;
+      flex-basis: 15%;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .person-detail {
+  background-color: #f5f5f5;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .person-detail h2 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info {
+  padding: 10px 20px;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .select-title {
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+  padding: 10px 8px;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .style-input {
+  border: 1px solid #e4e4e4;
+  width: 100%;
+  padding: 10px 7px;
+  border-radius: 4px;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .style-input::-webkit-input-placeholder {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .style-input:-ms-input-placeholder {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .style-input::-ms-input-placeholder {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .style-input::placeholder {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .down-icon {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.trek-booking-container .book-terk .trek-book-right {
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 35px;
+}
+
+.trek-booking-container .book-terk .trek-book-right .trek-book-right-title {
+  padding: 7px 14px;
+  border: 1px solid #e4e4e4;
+}
+
+.trek-booking-container .book-terk .trek-book-right .trek-book-right-title .help-box {
+  margin-top: 40px;
+  margin-bottom: 12px;
+  border: 1px solid #e4e4e4;
+  padding: 20px 20px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.trek-booking-container .book-terk .trek-book-right .trek-book-right-title .help-box p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.trek-booking-container .book-terk .trek-book-right .trek-book-right-title ul li {
+  margin-bottom: 10px;
+}
+
+.trek-booking-container .book-terk .trek-book-right .trek-book-right-title .right-sub {
+  -ms-flex-preferred-size: 48%;
+      flex-basis: 48%;
+}
+
+.trek-booking-container .book-terk .trek-book-right .trek-book-right-title .right-sub h3 {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.trek-booking-container .book-terk .trek-book-right .trek-book-right-title .left-sub {
+  -ms-flex-preferred-size: 52%;
+      flex-basis: 52%;
+}
+
+.trek-booking-container .book-terk .trek-book-right .trek-book-right-title .left-sub h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+}
+
+.trek-booking-container .book-terk .trek-book-right .trek-book-right-title h2 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.trek-booking-container .book-terk .trek-book-right .trek-book-right-title .review {
+  background-color: #26abe2;
+  color: #ffff;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 2px 10px;
+  margin-left: 6px;
+}
+
+.trek-booking-container .book-terk .trek-book-right .trek-img {
+  max-height: 244px;
+}
+
+.trek-booking-container .book-terk .trek-book-right .trek-img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 /*# sourceMappingURL=styles.css.map */

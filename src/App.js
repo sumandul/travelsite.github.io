@@ -6,6 +6,7 @@ import Footer from './Components/Footer'
 import HomePage from './pages/HomePage'
 import TripListPage from './pages/TripListPage'
 import EverestTrek from './Components/everestTrek/EverestTrek'
+import TrekBooking from './Components/everestTrek/TrekBooking'
 function App() {
   return (
     <>
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/trip" element={<TripListPage />} />
           <Route path="/everest" element={<EverestTrek />} />
+          <Route path="/everest/booking" element={<TrekBooking />} />
         </Routes>
         <Footer />
       </BrowserRouter>

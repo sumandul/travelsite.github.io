@@ -33,12 +33,11 @@ const Feature = () => {
                   <div className="feature-content">
                     <div className="star d-flex align-item-center justify-content-between">
                       <div className="star-box d-flex align-item-center justiy-content-center">
-                        <ReactStar {...options} />{' '}
+                        <ReactStar {...options} />
                         <span className="mt-2 ms-1">4.5</span>
                       </div>
                       <div className="feature-icon d-flex">
                         <div className="box-cover">
-                          {' '}
                           <FilterOutlinedIcon className="icon-top " />
                           <div className="box">1</div>
                         </div>
@@ -56,7 +55,7 @@ const Feature = () => {
 
                     <div className="tour-explor d-flex align-items-center justify-content-between">
                       <div className="icon-text">
-                        <AccessTimeOutlinedIcon className="icon" /> 10days{' '}
+                        <AccessTimeOutlinedIcon className="icon" /> 10days
                         <PeopleAltOutlinedIcon className="icon" /> 10
                       </div>
                       <span>

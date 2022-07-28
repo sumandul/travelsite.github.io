@@ -25,6 +25,9 @@ import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import CancelIcon from '@mui/icons-material/Cancel'
 import Select from '../reuableComponent/Select'
+import DatePickerComponent from '../utilities/DatePicker'
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
+
 const arrayOfData = [
   {
     id: '1 - Jerry',
@@ -44,7 +47,10 @@ const arrayOfData = [
   },
 ]
 const EverestTrek = () => {
+  const [openclose, setOpenClose] = useState(false)
+  const [opencloseDiv, setOpenCloseDiv] = useState('')
   const [close, setOpen] = useState(false)
+  const [closeS, setOpens] = useState(false)
   const [key, setKey] = useState('trip Overview ')
   const handleSelectChange = () => {}
   const options = {
@@ -55,28 +61,15 @@ const EverestTrek = () => {
     isHalf: true,
     size: window.innerWidth < 600 ? 20 : 35,
   }
-  // const accodianDATA = [
-  //   {
-  //     title: '   Day 01: Arrive at Tribhuwan International Airport Kathmandu',
-  //     descrption:
-  //       'locveahcjaehbjcvhabjhbcjahsbdcjabcjabchjbashjdbjhasdcjhsdcjhsdcjscdh',
-  //   },
-  //   {
-  //     title: '   Day 01: Arrive at Tribhuwan International Airport Kathmandu',
-  //     descrption:
-  //       'locveahcjaehbjcvhabjhbcjahsbdcjabcjabchjbashjdbjhasdcjhsdcjhsdcjscdh',
-  //   },
-  //   {
-  //     title: '   Day 01: Arrive at Tribhuwan International Airport Kathmandu',
-  //     descrption:
-  //       'locveahcjaehbjcvhabjhbcjahsbdcjabcjabchjbashjdbjhasdcjhsdcjhsdcjscdh',
-  //   },
-  //   {
-  //     title: '   Day 01: Arrive at Tribhuwan International Airport Kathmandu',
-  //     descrption:
-  //       'locveahcjaehbjcvhabjhbcjahsbdcjabcjabchjbashjdbjhasdcjhsdcjhsdcjscdh',
-  //   },
-  // ]
+  const option = {
+    edit: false,
+    color: '#DEDDDC',
+    activeColor: '#fb8500',
+    value: 5,
+    isHalf: true,
+    size: window.innerWidth < 600 ? 20 : 25,
+  }
+
   return (
     <>
       <div className="breadcrump">
@@ -248,129 +241,78 @@ const EverestTrek = () => {
                 <Tab eventKey="Itinerary " title="Itinerary ">
                   <Accordion>
                     <Accordion.Item eventKey="1">
-                      <Accordion.Header onClick={() => setOpen(!close)}>
+                      <Accordion.Header
+                        onClick={() => {
+                          setOpenCloseDiv('first')
+                          setOpenClose(!openclose)
+                        }}
+                      >
                         Day 01: Arrive at Tribhuwan International Airport
                         Kathmandu
-                        {close ? (
+                        {opencloseDiv === 'first' && openclose === true ? (
                           <RemoveCircleOutlineIcon className="acodian-icon" />
                         ) : (
                           <AddCircleOutlineIcon className="acodian-icon" />
                         )}
                       </Accordion.Header>
                       <Accordion.Body>
-                        After your arrival at Tribhuvan International Airport, a
-                        representative from Nepal Hiking Team will greet you
-                        with a warm welcome. They will escort you to your
-                        respective hotel and help you check-in and ensure you
-                        are comfortable.
+                        <p className="py-2">
+                          After your arrival at Tribhuvan International Airport,
+                          a representative from Nepal Hiking Team will greet you
+                          with a warm welcome. They will escort you to your
+                          respective hotel and help you check-in and ensure you
+                          are comfortable.
+                        </p>
                       </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="2">
-                      <Accordion.Header onClick={() => setOpen(!close)}>
+                      <Accordion.Header
+                        onClick={() => {
+                          setOpenCloseDiv('second')
+                          setOpenClose(!openclose)
+                        }}
+                      >
                         Day 01: Arrive at Tribhuwan International Airport
                         Kathmandu
-                        {close ? (
+                        {opencloseDiv === 'second' && openclose === true ? (
                           <RemoveCircleOutlineIcon className="acodian-icon" />
                         ) : (
                           <AddCircleOutlineIcon className="acodian-icon" />
                         )}
                       </Accordion.Header>
                       <Accordion.Body>
-                        After your arrival at Tribhuvan International Airport, a
-                        representative from Nepal Hiking Team will greet you
-                        with a warm welcome. They will escort you to your
-                        respective hotel and help you check-in and ensure you
-                        are comfortable.
+                        <p className="py-2">
+                          After your arrival at Tribhuvan International Airport,
+                          a representative from Nepal Hiking Team will greet you
+                          with a warm welcome. They will escort you to your
+                          respective hotel and help you check-in and ensure you
+                          are comfortable.
+                        </p>
                       </Accordion.Body>
                     </Accordion.Item>
                     <Accordion.Item eventKey="3">
-                      <Accordion.Header onClick={() => setOpen(!close)}>
+                      <Accordion.Header
+                        onClick={() => {
+                          setOpenCloseDiv('third')
+                          setOpenClose(!openclose)
+                        }}
+                      >
                         Day 01: Arrive at Tribhuwan International Airport
                         Kathmandu
-                        {close ? (
+                        {opencloseDiv === 'third' && openclose === true ? (
                           <RemoveCircleOutlineIcon className="acodian-icon" />
                         ) : (
                           <AddCircleOutlineIcon className="acodian-icon" />
                         )}
                       </Accordion.Header>
                       <Accordion.Body>
-                        After your arrival at Tribhuvan International Airport, a
-                        representative from Nepal Hiking Team will greet you
-                        with a warm welcome. They will escort you to your
-                        respective hotel and help you check-in and ensure you
-                        are comfortable.
-                      </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="4">
-                      <Accordion.Header onClick={() => setOpen(!close)}>
-                        Day 01: Arrive at Tribhuwan International Airport
-                        Kathmandu
-                        {close ? (
-                          <RemoveCircleOutlineIcon className="acodian-icon" />
-                        ) : (
-                          <AddCircleOutlineIcon className="acodian-icon" />
-                        )}
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        After your arrival at Tribhuvan International Airport, a
-                        representative from Nepal Hiking Team will greet you
-                        with a warm welcome. They will escort you to your
-                        respective hotel and help you check-in and ensure you
-                        are comfortable.
-                      </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="5">
-                      <Accordion.Header onClick={() => setOpen(!close)}>
-                        Day 01: Arrive at Tribhuwan International Airport
-                        Kathmandu
-                        {close ? (
-                          <RemoveCircleOutlineIcon className="acodian-icon" />
-                        ) : (
-                          <AddCircleOutlineIcon className="acodian-icon" />
-                        )}
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        After your arrival at Tribhuvan International Airport, a
-                        representative from Nepal Hiking Team will greet you
-                        with a warm welcome. They will escort you to your
-                        respective hotel and help you check-in and ensure you
-                        are comfortable.
-                      </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="6">
-                      <Accordion.Header onClick={() => setOpen(!close)}>
-                        Day 01: Arrive at Tribhuwan International Airport
-                        Kathmandu
-                        {close ? (
-                          <RemoveCircleOutlineIcon className="acodian-icon" />
-                        ) : (
-                          <AddCircleOutlineIcon className="acodian-icon" />
-                        )}
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        After your arrival at Tribhuvan International Airport, a
-                        representative from Nepal Hiking Team will greet you
-                        with a warm welcome. They will escort you to your
-                        respective hotel and help you check-in and ensure you
-                        are comfortable.
-                      </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="7">
-                      <Accordion.Header onClick={() => setOpen(!close)}>
-                        Day 01: Arrive at Tribhuwan International Airport
-                        Kathmandu
-                        {close ? (
-                          <RemoveCircleOutlineIcon className="acodian-icon" />
-                        ) : (
-                          <AddCircleOutlineIcon className="acodian-icon" />
-                        )}
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        After your arrival at Tribhuvan International Airport, a
-                        representative from Nepal Hiking Team will greet you
-                        with a warm welcome. They will escort you to your
-                        respective hotel and help you check-in and ensure you
-                        are comfortable.
+                        <p className="py-2">
+                          After your arrival at Tribhuvan International Airport,
+                          a representative from Nepal Hiking Team will greet you
+                          with a warm welcome. They will escort you to your
+                          respective hotel and help you check-in and ensure you
+                          are comfortable.
+                        </p>
                       </Accordion.Body>
                     </Accordion.Item>
                   </Accordion>
@@ -489,7 +431,7 @@ const EverestTrek = () => {
                 <Tab eventKey="Gallery" title="Gallery">
                   <div className="gallery">
                     <h3>Gallery</h3>
-                    <Row className="gy-4">
+                    <Row className="gy-3 gx-2">
                       <Col md={4}>
                         <img
                           src="https://res.cloudinary.com/thrillophilia/image/upload/c_fill,f_auto,fl_progressive.strip_profile,g_auto,q_auto/v1/filestore/ypr3zj7yqvwabm574vmxku0chiwm_everest-base-camp-trek-independently-main-image-900.png"
@@ -538,7 +480,7 @@ const EverestTrek = () => {
                 <Tab eventKey="Cost & Date" title="Cost & Date">
                   <div className="join-trip">
                     <h3>Join Upcoming Trips</h3>
-                    <Row>
+                    <Row className="mt-3">
                       <Col md={9}>
                         <div className="join-content">
                           <p>
@@ -550,9 +492,10 @@ const EverestTrek = () => {
                         </div>
                       </Col>
                       <Col md={3}>
-                        <Select
-                          data={arrayOfData}
-                          onChange={handleSelectChange}
+                        <DatePickerComponent
+                          style="select-date"
+                          placeholderText="Select Date"
+                          Icon={<CalendarMonthIcon className="month" />}
                         />
                       </Col>
                     </Row>
@@ -573,7 +516,7 @@ const EverestTrek = () => {
                               <p>30 Jun, 2022 - 13 Jul, 2022</p>
                             </td>
                             <td>
-                              <span>$1800</span>
+                              <span className="cut">$1800</span>
                               <div>
                                 <span>$1800</span>
                               </div>
@@ -584,12 +527,12 @@ const EverestTrek = () => {
                               </div>
                             </td>
                             <td>
-                              <button className="enquery">
-                                <Link to={''}>Enquery Now</Link>
-                              </button>
-                              <button className="nook-btn">
-                                <Link to={''}>Book Now</Link>
-                              </button>
+                              <Link to={''}>
+                                <button className="enquery">Enquery Now</button>
+                              </Link>
+                              <Link to={''}>
+                                <button className="nook-btn">Book Now</button>
+                              </Link>
                             </td>
                           </tr>
                           <tr>
@@ -598,7 +541,7 @@ const EverestTrek = () => {
                               <p>30 Jun, 2022 - 13 Jul, 2022</p>
                             </td>
                             <td>
-                              <span>$1800</span>
+                              <span className="cut">$1800</span>
                               <div>
                                 <span>$1800</span>
                               </div>
@@ -610,12 +553,12 @@ const EverestTrek = () => {
                               </div>
                             </td>
                             <td>
-                              <button className="enquery">
-                                <Link to={''}>Enquery Now</Link>
-                              </button>
-                              <button className="nook-btn">
-                                <Link to={''}>Book Now</Link>
-                              </button>
+                              <Link to={''}>
+                                <button className="enquery">Enquery Now</button>
+                              </Link>
+                              <Link to={''}>
+                                <button className="nook-btn">Book Now</button>
+                              </Link>
                             </td>
                           </tr>
                           <tr>
@@ -624,7 +567,7 @@ const EverestTrek = () => {
                               <p>30 Jun, 2022 - 13 Jul, 2022</p>
                             </td>
                             <td>
-                              <span>$1800</span>
+                              <span className="cut">$1800</span>
                               <div>
                                 <span>$1800</span>
                               </div>
@@ -635,12 +578,12 @@ const EverestTrek = () => {
                               </div>
                             </td>
                             <td>
-                              <button className="enquery">
-                                <Link to={''}>Enquery Now</Link>
-                              </button>
-                              <button className="nook-btn">
-                                <Link to={''}>Book Now</Link>
-                              </button>
+                              <Link to={''}>
+                                <button className="enquery">Enquery Now</button>
+                              </Link>
+                              <Link to={''}>
+                                <button className="nook-btn">Book Now</button>
+                              </Link>
                             </td>
                           </tr>
                         </tbody>
@@ -649,14 +592,43 @@ const EverestTrek = () => {
                   </div>
                 </Tab>
                 <Tab eventKey="Reviews " title="Reviews ">
-                  <p>
-                    People have been fascinated by Mount Everest for centuries,
-                    with Sir Edmund Hilary and Tenzing Norgay Sherpa
-                    successfully being the first to summit the mountain in 1953
-                    successfully. Since then, hundreds of travelers have flocked
-                    to Nepal every year to see the mountains that have captured
-                    the hearts and minds of so many people throughout history.
-                  </p>
+                  <div className="review">
+                    <h3>Review</h3>
+                    <div className="mt-3">
+                      <div className="d-flex">
+                        {' '}
+                        <h6>Nicky N Prasad,</h6>{' '}
+                        <span className="ms-1">Australia</span>
+                      </div>
+                      <ReactStar {...option} />
+                      <div className="review-content">
+                        <p>
+                          I had always wanted to do the Everest Trek, and when I
+                          finally had the opportunity, I was delighted with
+                          enthusiasm! I think I am also fortunate to have been
+                          in the company of Nepal Hiking Team because they gave
+                          me no reason whatsoever to companion about anything at
+                          all.
+                        </p>
+                        <p>
+                          <p className="mt-4">
+                            Every service I received was top-notch, and I was
+                            always provided the best available services, from
+                            the food and guesthouses to the porter and guiding
+                            services.
+                          </p>
+                        </p>
+                      </div>
+                    </div>
+                    <div className="text-end mt-2">
+                      <Link to={''}>
+                        <button className="enquery">Write Revie</button>
+                      </Link>
+                      <Link to={''}>
+                        <button className="nook-btn">View More</button>
+                      </Link>
+                    </div>
+                  </div>
                 </Tab>
               </Tabs>
             </div>
@@ -664,12 +636,13 @@ const EverestTrek = () => {
           <div className="everest-left">
             <div className="left-container">
               <div className="left-top">
-                <div>
+                <div className="mt-3">
                   <h6>
                     14 Days <span>from US$ 1800</span>
                   </h6>
                   <h3>US$ 1150.00</h3>
                 </div>
+                <div className="grp-btn">Group</div>
               </div>
               <div className="mid-container">
                 <div className="mid-title d-flex align-items-center justify-content-between">
@@ -769,7 +742,7 @@ const EverestTrek = () => {
 
                   <div>
                     {' '}
-                    <Link to={''}>
+                    <Link to={'/everest/booking'}>
                       {' '}
                       <button className="book-trip">Book your trip</button>
                     </Link>

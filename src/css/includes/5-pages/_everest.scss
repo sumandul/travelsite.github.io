@@ -31,8 +31,6 @@
       }
     }
     .activity {
-      tr {
-      }
       tr:first-child {
         border-bottom: 1px solid #cfc5c5;
       }
@@ -94,9 +92,10 @@
       color: $text-color !important;
       font-size: 16px;
       font-weight: 600;
+      margin-bottom: 8px;
     }
     .acodian-icon {
-      margin-left: 369px;
+      margin-left: 342px;
     }
     .accordion-item {
       margin-bottom: 29px;
@@ -105,7 +104,6 @@
       border-bottom: 1px dashed #666666;
       font-size: 16px;
       font-weight: 400;
-      padding: 8px 7px;
     }
     .tab-pane {
       //   border: 1px solid #dbd3d3;
@@ -162,12 +160,112 @@
       }
     }
     .join-trip {
+      .month {
+        color: $yellow;
+        position: absolute;
+        right: 9px;
+        top: 8px;
+      }
+      .select-date {
+        border: 1px solid $b-color;
+        border-radius: 4px;
+        padding: 8px 6px;
+        &::placeholder {
+          color: #000000;
+          font-size: 12px;
+          font-weight: 500;
+          // padding: 0px 10px;
+        }
+      }
+      h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: $text-color;
+      }
       .table {
+        border-collapse: separate;
+        td {
+          padding: 15px 0px;
+          &:last-child {
+            width: 20%;
+          }
+        }
         th {
           color: #aaaaaa;
           font-size: 16px;
           font-weight: 600;
         }
+        h6 {
+          color: $text-color;
+          font-size: 16px;
+          font-weight: 600;
+        }
+        p {
+          color: $text-color;
+          font-size: 16px;
+          font-weight: 300;
+        }
+        span {
+          color: $text-color;
+          font-size: 14px;
+          font-weight: 600;
+        }
+        .cut {
+          font-weight: 400 !important;
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 21px;
+            background-color: #023047;
+            width: 1px;
+            height: 30px;
+            transform: rotate(85deg);
+          }
+        }
+        .status {
+          p {
+            color: $text-color;
+            font-size: 16px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    .review {
+      h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: $text-color;
+      }
+      h6 {
+        font-size: 16px;
+        font-weight: 600;
+        color: $text-color;
+        margin-bottom: 0 !important;
+      }
+      span {
+        font-size: 12px;
+        font-weight: 300;
+      }
+      p {
+        font-size: 14px;
+        font-weight: 400;
+        color: $text-color;
+      }
+      .review-content {
+        padding: 10px 0px;
+        border-top: 1px solid #e1e1e1;
+        border-bottom: 1px solid #e1e1e1;
+      }
+    }
+    .gallery {
+      h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: $text-color;
+        margin-bottom: 10px !important;
       }
     }
   }
@@ -232,13 +330,14 @@
       }
     }
     .left-top {
+      position: relative;
       background-color: #f5f5f5;
       border: 2px solid #a8a8a8;
       border-bottom: transparent !important;
 
       border-top-left-radius: 4px;
       border-top-right-radius: 4px;
-      padding: 28px 18px;
+      padding: 41px 18px;
       @include center;
       h6 {
         font-size: 18px;
