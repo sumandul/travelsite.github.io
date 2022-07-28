@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import BreadCrump from '../utilities/BreadCrump'
 import ReactStar from 'react-rating-stars-component'
 import { Link } from 'react-router-dom'
@@ -11,6 +11,7 @@ import {
   Tab,
   Tabs,
   Table,
+  Modal,
 } from 'react-bootstrap'
 import TaskAltIcon from '@mui/icons-material/TaskAlt'
 import DirectionsBikeIcon from '@mui/icons-material/DirectionsBike'
@@ -19,14 +20,17 @@ import HikingIcon from '@mui/icons-material/Hiking'
 import LocalHotelIcon from '@mui/icons-material/LocalHotel'
 import EscalatorWarningIcon from '@mui/icons-material/EscalatorWarning'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
-import { Accordion } from 'react-bootstrap'
+import { Accordion, Carousel } from 'react-bootstrap'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline'
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import CancelIcon from '@mui/icons-material/Cancel'
 import Select from '../reuableComponent/Select'
 import DatePickerComponent from '../utilities/DatePicker'
+import PopUpModel from '../reuableComponent/PopUpModel'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
+import ModelComponent from '../utilities/ModelComponent'
+import ReactImageMagnify from 'react-image-magnify'
 
 const arrayOfData = [
   {
@@ -52,6 +56,7 @@ const EverestTrek = () => {
   const [close, setOpen] = useState(false)
   const [closeS, setOpens] = useState(false)
   const [key, setKey] = useState('trip Overview ')
+  const [isOpen, setIsOpen] = useState(false)
   const handleSelectChange = () => {}
   const options = {
     edit: false,
@@ -59,7 +64,7 @@ const EverestTrek = () => {
     activeColor: '#fb8500',
     value: 5,
     isHalf: true,
-    size: window.innerWidth < 600 ? 20 : 35,
+    size: window.innerWidth < 600 ? 20 : 28,
   }
   const option = {
     edit: false,
@@ -67,11 +72,42 @@ const EverestTrek = () => {
     activeColor: '#fb8500',
     value: 5,
     isHalf: true,
-    size: window.innerWidth < 600 ? 20 : 25,
+    size: window.innerWidth < 600 ? 20 : 12,
   }
+  function openModal() {
+    setIsOpen(!isOpen)
+  }
+  const [show, setShow] = useState(false)
+
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
   return (
     <>
+      <PopUpModel
+        show={show}
+        handleclose={handleClose}
+        header="Everest Base Camp Trek Map"
+        body={
+          <ReactImageMagnify
+            {...{
+              smallImage: {
+                alt: 'Wristwatch by Ted Baker London',
+                isFluidWidth: true,
+                src:
+                  'https://www.thirdrockadventures.com/assets-back/images/map/everest-base-camp-trek-map.jpg7ka.jpg',
+              },
+              largeImage: {
+                src:
+                  'https://www.thirdrockadventures.com/assets-back/images/map/everest-base-camp-trek-map.jpg7ka.jpg',
+                width: 1200,
+                height: 1200,
+              },
+            }}
+          />
+        }
+      />
+
       <div className="breadcrump">
         <BreadCrump />
       </div>
@@ -79,23 +115,22 @@ const EverestTrek = () => {
         <div className="everest-container">
           <div className="everest-right">
             <div>
-              {' '}
               <div className="d-flex align-items-center justify-content-between ">
-                {' '}
                 <div className="my-3">
                   <h1>Everest Base Camp Trek</h1>
                   <div className="mt-2">
                     <span className="ps-0">
-                      <TaskAltIcon className="me-1" /> Best price guaranteed{' '}
+                      <TaskAltIcon className="me-1 task-icon" /> Best price
+                      guaranteed{' '}
                     </span>{' '}
                     <span className="px-3">
                       {' '}
-                      <TaskAltIcon className="me-1" />
+                      <TaskAltIcon className="me-1 task-icon" />
                       No booking fees{' '}
                     </span>
                     <span>
                       {' '}
-                      <TaskAltIcon className="me-1" />
+                      <TaskAltIcon className="me-1 task-icon" />
                       E-ticket/Mobile voucher
                     </span>
                   </div>
@@ -110,13 +145,35 @@ const EverestTrek = () => {
                 </div>
               </div>
             </div>
-            <div className="everest-img">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/0/03/Everest_from_Khala_Phthar.JPG"
-                alt=""
-                className="img-fluid"
-              />
-            </div>
+            <Carousel controls={false}>
+              <Carousel.Item>
+                <div className="everest-img">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/0/03/Everest_from_Khala_Phthar.JPG"
+                    alt=""
+                    className="img-fluid"
+                  />
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="everest-img">
+                  <img
+                    src="http://www.basecamptreknepal.com/wp-content/uploads/2016/06/Everest-base-camp-trek-best-time-of-year.jpg"
+                    alt=""
+                    className="img-fluid"
+                  />
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className="everest-img">
+                  <img
+                    src="https://nepaltrekkingroutes.com/wp-content/uploads/2020/08/Everest-base-camp-1.jpg"
+                    alt=""
+                    className="img-fluid"
+                  />
+                </div>
+              </Carousel.Item>
+            </Carousel>
 
             <div className="activity mt-5">
               <Row>
@@ -187,12 +244,14 @@ const EverestTrek = () => {
                   </table>
                 </Col>
                 <Col md={4}>
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Everest_Base_Trek_Route_Map.svg/350px-Everest_Base_Trek_Route_Map.svg.png"
-                    alt=""
-                    className="img-fluid"
-                    height="300px"
-                  />
+                  <div onClick={handleShow}>
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Everest_Base_Trek_Route_Map.svg/350px-Everest_Base_Trek_Route_Map.svg.png"
+                      alt=""
+                      className="img-fluid"
+                      height="300px"
+                    />
+                  </div>
                 </Col>
               </Row>
             </div>
@@ -717,7 +776,7 @@ const EverestTrek = () => {
                     <p>- US$ 1450 </p>
                   </div>
                 </div>
-                <div className="offer">
+                <div className="offer mt-4">
                   <div className="mt-2">
                     <span>Best Price Guarantee </span>
                   </div>
@@ -731,7 +790,7 @@ const EverestTrek = () => {
               </div>
               <div className="bottom-container">
                 <div>
-                  <div className="excelent d-flex align-items-center  justify-content-center">
+                  <div className="excelent d-flex align-items-center  justify-content-center mb-2">
                     <ReactStar {...options} />{' '}
                     <span>
                       <div className="ex ms-1">

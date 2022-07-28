@@ -7,7 +7,7 @@ import EastOutlinedIcon from '@mui/icons-material/EastOutlined'
 import FilterOutlinedIcon from '@mui/icons-material/FilterOutlined'
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined'
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
-import StarBorderPurple500OutlinedIcon from '@mui/icons-material/StarBorderPurple500Outlined'
+import { Link } from '@mui/material'
 import StarIcon from '@mui/icons-material/Star'
 const SliderComponent = () => {
   var settings = {
@@ -70,10 +70,12 @@ const SliderComponent = () => {
                 <h3 className="text-center ">Gosikunda Lake</h3>
                 <Row className="mt-4">
                   <Col md={6}>
-                    <button className="rd-btn ms-2">
-                      <span>Read Details</span>
-                      <EastOutlinedIcon className="arrow ms-3" />
-                    </button>
+                    <Link to={'/everest'}>
+                      <button className="rd-btn ms-2">
+                        <span>Read Details</span>
+                        <EastOutlinedIcon className="arrow ms-3" />
+                      </button>
+                    </Link>
                   </Col>
                   <Col md={6}>
                     <div className="top-palce-icon d-flex align-items-center justify-content-end mt-3 me-3 ">

@@ -190,7 +190,7 @@ header .mid-header .email .icon {
 
 header .bg-light {
   background-color: #023047 !important;
-  padding: 22px 0px !important;
+  padding: 17px 0px !important;
 }
 
 header .bg-light .nav-item .nav-link {
@@ -528,7 +528,7 @@ option {
   background-color: #ffff;
   padding: 4px 11px;
   color: #023047;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 400;
 }
 
@@ -537,9 +537,9 @@ option {
   margin-left: 10px;
   padding: 0px 8px;
   background-color: #fb8500;
-  padding: 4px 11px;
+  padding: 4px 14px;
   color: #ffff;
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 400;
 }
 
@@ -562,14 +562,24 @@ option {
   border-radius: 7px;
 }
 
+.confirm-book-btn {
+  background-color: #fb8500;
+  color: #ffff;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 13px 0px;
+  border-radius: 4px;
+}
+
 input {
   outline: 0;
   border: 0;
 }
 
 .suc-input {
-  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
   padding: 16px 20px !important;
   width: 100%;
   color: #707070;
@@ -681,6 +691,117 @@ select:focus {
   right: 0;
   top: -2px;
   color: #023047;
+}
+
+.select-date {
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+  padding: 10px 8px !important;
+  width: 100%;
+}
+
+.select-date::-webkit-input-placeholder {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.select-date:-ms-input-placeholder {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.select-date::-ms-input-placeholder {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.select-date::placeholder {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.textareax-box {
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  padding: 10px 8px !important;
+  border-radius: 4px;
+}
+
+.textareax-box ::-webkit-input-placeholder {
+  color: red !important;
+}
+
+.textareax-box :-ms-input-placeholder {
+  color: red !important;
+}
+
+.textareax-box ::-ms-input-placeholder {
+  color: red !important;
+}
+
+.textareax-box ::placeholder {
+  color: red !important;
+}
+
+.style-input {
+  border: 1px solid #e4e4e4;
+  width: 100%;
+  padding: 10px 7px !important;
+  border-radius: 4px;
+}
+
+.style-input::-webkit-input-placeholder {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.style-input:-ms-input-placeholder {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.style-input::-ms-input-placeholder {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.style-input::placeholder {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.month {
+  color: #fb8500;
+  position: absolute;
+  right: 9px;
+  top: 8px;
+}
+
+.select-title {
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+  padding: 10px 8px;
+}
+
+.select-title .select-title {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.down-icon {
+  position: absolute;
+  top: 11px;
+  right: 10px;
 }
 
 .footer {
@@ -889,7 +1010,7 @@ select:focus {
 }
 
 .breadcrump {
-  border-bottom: 0.5px solid #c5c5c5;
+  border-bottom: 0.5px solid #e4e4e4;
 }
 
 .banner {
@@ -1275,9 +1396,9 @@ select:focus {
 
 .feature .feature-content .cross::after {
   content: '';
-  background-color: #fb8500;
+  background-color: #6e6e6e;
   height: 33px;
-  width: 2px;
+  width: 1px;
   position: absolute;
   top: -3px;
   -webkit-transform: rotate(88deg);
@@ -1668,13 +1789,14 @@ select:focus {
 .suscribe {
   margin-top: 30px;
   background-color: #f5f5f5;
-  padding: 20px 0px;
+  padding: 33px 0px;
 }
 
 .suscribe h3 {
   font-size: 24px;
   font-weight: bold;
   color: #023047;
+  line-height: 37px;
 }
 
 .suscribe p {
@@ -1690,7 +1812,7 @@ select:focus {
 }
 
 .expedition .trip-box {
-  border-bottom: 2px solid #cecece;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .expedition .trip-box h6 {
@@ -1701,7 +1823,7 @@ select:focus {
 .expedition .filter-box {
   -ms-flex-preferred-size: 20%;
       flex-basis: 20%;
-  margin-right: 16px;
+  margin-right: 28px;
 }
 
 .expedition .filter-box .view-more a {
@@ -1743,7 +1865,7 @@ select:focus {
 }
 
 .expedition .triplist .title-trip {
-  border-bottom: 1px solid #c5c5c5;
+  border-bottom: 1px solid #e4e4e4;
 }
 
 .expedition .triplist p {
@@ -1761,6 +1883,7 @@ select:focus {
 .expedition .triplist h5 {
   font-size: 22px;
   font-weight: 500;
+  line-height: 7px;
 }
 
 .expedition .triplist .img-content .tick {
@@ -1792,7 +1915,8 @@ select:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 20px 8px;
+  padding: 29px 7px;
+  margin-left: 21px;
 }
 
 .expedition .expedition-box .price span {
@@ -1816,10 +1940,12 @@ select:focus {
 
 .select-box {
   position: relative;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
 }
 
 .filter-box .filter-container {
-  border: 2px solid #c5c5c5;
+  border: 2px solid #e4e4e4;
   border-radius: 6px;
 }
 
@@ -1829,7 +1955,7 @@ select:focus {
 }
 
 .filter-box .spesifice-date {
-  border: 1px solid #cccccc;
+  border: 1px solid #e4e4e4;
   border-radius: 6px;
   padding: 7px 7px;
 }
@@ -1850,7 +1976,7 @@ select:focus {
 
 .filter-box .check-box {
   padding: 17px 10px;
-  border-bottom: 1.5px solid #c5c5c5;
+  border-bottom: 1.5px solid #e4e4e4;
 }
 
 .filter-box .check-box .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
@@ -1877,6 +2003,12 @@ select:focus {
   display: flex;
 }
 
+.everest-container .carousel-indicators [data-bs-target] {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+
 .everest-container .everest-right {
   -ms-flex-preferred-size: 70%;
       flex-basis: 70%;
@@ -1889,8 +2021,12 @@ select:focus {
 
 .everest-container .everest-right span {
   color: #26abe2;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
+}
+
+.everest-container .everest-right .task-icon {
+  font-size: 20px;
 }
 
 .everest-container .everest-right .star-box .num-box {
@@ -2024,6 +2160,7 @@ select:focus {
   -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
   padding: 20px 18px;
+  border-radius: 4px;
 }
 
 .everest-container .everest-right .tab-pane p {
@@ -2082,43 +2219,6 @@ select:focus {
   color: #023047;
 }
 
-.everest-container .everest-right .join-trip .month {
-  color: #fb8500;
-  position: absolute;
-  right: 9px;
-  top: 8px;
-}
-
-.everest-container .everest-right .join-trip .select-date {
-  border: 1px solid #e4e4e4;
-  border-radius: 4px;
-  padding: 8px 6px;
-}
-
-.everest-container .everest-right .join-trip .select-date::-webkit-input-placeholder {
-  color: #000000;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.everest-container .everest-right .join-trip .select-date:-ms-input-placeholder {
-  color: #000000;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.everest-container .everest-right .join-trip .select-date::-ms-input-placeholder {
-  color: #000000;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.everest-container .everest-right .join-trip .select-date::placeholder {
-  color: #000000;
-  font-size: 12px;
-  font-weight: 500;
-}
-
 .everest-container .everest-right .join-trip h3 {
   font-size: 18px;
   font-weight: 600;
@@ -2134,7 +2234,7 @@ select:focus {
 }
 
 .everest-container .everest-right .join-trip .table td:last-child {
-  width: 20%;
+  width: 27%;
 }
 
 .everest-container .everest-right .join-trip .table th {
@@ -2229,7 +2329,7 @@ select:focus {
 
 .everest-container .everest-left .mid-container {
   padding: 10px 20px;
-  border: 1px solid #707070;
+  border: 0.25px solid #e4e4e4;
   border-top: transparent;
   border-bottom: transparent;
 }
@@ -2257,7 +2357,7 @@ select:focus {
   top: 12px;
   left: 48px;
   width: 61%;
-  border-top: 3px dotted #023047;
+  border-top: 1px dashed #023047;
 }
 
 .everest-container .everest-left .mid-container h5 {
@@ -2267,8 +2367,10 @@ select:focus {
 
 .everest-container .everest-left .bottom-container {
   background-color: #f5f5f5;
-  border: 2px solid #a8a8a8;
+  border: 2px solid #e4e4e4;
   border-top: transparent !important;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   padding: 28px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2305,11 +2407,11 @@ select:focus {
 .everest-container .everest-left .left-top {
   position: relative;
   background-color: #f5f5f5;
-  border: 2px solid #a8a8a8;
+  border: 2px solid #e4e4e4;
   border-bottom: transparent !important;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  padding: 41px 18px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 30px 18px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2462,7 +2564,7 @@ select:focus {
 }
 
 .trek-booking-container .book-terk .trek-bookk-left .traveler {
-  padding: 10px 20px;
+  padding: 19px 20px;
   margin-top: 20px;
   background-color: #f5f5f5;
 }
@@ -2570,6 +2672,7 @@ select:focus {
 }
 
 .trek-booking-container .book-terk .trek-bookk-left .person-detail {
+  padding: 19px 20px;
   background-color: #f5f5f5;
 }
 
@@ -2589,32 +2692,7 @@ select:focus {
   padding: 10px 8px;
 }
 
-.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .style-input {
-  border: 1px solid #e4e4e4;
-  width: 100%;
-  padding: 10px 7px;
-  border-radius: 4px;
-}
-
-.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .style-input::-webkit-input-placeholder {
-  color: #4b4b4b;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .style-input:-ms-input-placeholder {
-  color: #4b4b4b;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .style-input::-ms-input-placeholder {
-  color: #4b4b4b;
-  font-size: 16px;
-  font-weight: 400;
-}
-
-.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .style-input::placeholder {
+.trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .select-title .select-title {
   color: #4b4b4b;
   font-size: 16px;
   font-weight: 400;
@@ -2622,8 +2700,69 @@ select:focus {
 
 .trek-booking-container .book-terk .trek-bookk-left .person-detail .user-info .down-icon {
   position: absolute;
-  top: 5px;
+  top: 11px;
   right: 10px;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .payment-box {
+  padding: 19px 20px;
+  background-color: #f5f5f5;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .payment-box p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .payment-box h3 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 0px;
+  margin-top: 30px;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .payment-box .payment-card-inner {
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  background-color: #ffff;
+  border-radius: 4px;
+  margin-top: 35px;
+  padding: 0px 14px;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .payment-box .check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .payment-box .deposit-amount {
+  padding: 26px 10px !important;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .payment-box .deposit-amount h1 {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 19px;
+  text-align: center;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .payment-box .deposit-amount p {
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.trek-booking-container .book-terk .trek-bookk-left .payment-box .deposit-amount p span {
+  font-size: 14px;
+  font-weight: 600 !important;
 }
 
 .trek-booking-container .book-terk .trek-book-right {
@@ -2704,5 +2843,24 @@ select:focus {
   height: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.select-title {
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+  padding: 10px 8px;
+}
+
+.select-title .select-title {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.down-icon {
+  position: absolute;
+  top: 11px;
+  right: 10px;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -2,7 +2,7 @@
   display: flex;
 
   .trip-box {
-    border-bottom: 2px solid #cecece;
+    border-bottom: 1px solid $b-color;
     h6 {
       font-size: 17px;
       font-weight: 500;
@@ -18,7 +18,7 @@
       }
     }
     flex-basis: 20%;
-    margin-right: 16px;
+    margin-right: 28px;
 
     h1 {
       font-size: 18px;
@@ -52,7 +52,7 @@
       }
     }
     .title-trip {
-      border-bottom: 1px solid #c5c5c5;
+      border-bottom: 1px solid $b-color;
     }
     p {
       font-size: 16px;
@@ -69,6 +69,7 @@
     h5 {
       font-size: 22px;
       font-weight: 500;
+      line-height: 7px;
     }
     .img-content {
       .tick {
@@ -92,7 +93,8 @@
       margin-top: 10px;
       border: 1px dashed $yellow;
       @include center;
-      padding: 20px 8px;
+      padding: 29px 7px;
+      margin-left: 21px;
       span {
         font-size: 20px;
         margin-top: 10px;
@@ -115,6 +117,7 @@
 }
 .select-box {
   position: relative;
+  flex-basis: 20%;
 }
 .filter-box {
   .filter-container {
@@ -123,11 +126,11 @@
       font-weight: 600;
     }
 
-    border: 2px solid #c5c5c5;
+    border: 2px solid $b-color;
     border-radius: 6px;
   }
   .spesifice-date {
-    border: 1px solid #cccccc;
+    border: 1px solid $b-color;
     border-radius: 6px;
     padding: 7px 7px;
     .date {
@@ -147,7 +150,7 @@
     .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root {
       padding: 4px 0px !important;
     }
-    border-bottom: 1.5px solid #c5c5c5;
+    border-bottom: 1.5px solid $b-color;
     span {
       font-size: 14px;
       font-weight: 500;

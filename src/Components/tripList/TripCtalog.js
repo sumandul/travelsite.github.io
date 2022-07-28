@@ -6,9 +6,9 @@ import ReactStar from 'react-rating-stars-component'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import StarBorderPurple500OutlinedIcon from '@mui/icons-material/StarBorderPurple500Outlined'
 import StarIcon from '@mui/icons-material/Star'
-import SelecteComponent from '../utilities/Selecte'
 import ReactPaginate from 'react-paginate'
 import Select from '../reuableComponent/Select'
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 const arrayOfData = [
   {
     id: '1 - Jerry',
@@ -43,10 +43,10 @@ const TripCtalog = () => {
   const options = {
     edit: false,
     color: '#DEDDDC',
-    activeColor: '#FFBA00',
+    activeColor: '#fb8500',
     value: 4.5,
     isHalf: true,
-    size: window.innerWidth < 600 ? 20 : 26,
+    size: window.innerWidth < 600 ? 20 : 20,
   }
   const option = [
     { value: 'SortBy:popularity', label: 'SortBy:popularity' },
@@ -59,23 +59,14 @@ const TripCtalog = () => {
       <div className="d-flex align-items-center justify-content-between title-trip py-3">
         <h1>Nepal Tours and Trips 2022/2023</h1>{' '}
         <div className="select-box">
-          <Select data={arrayOfData} onChange={handleSelectChange} />{' '}
+          <Select
+            data={arrayOfData}
+            onChange={handleSelectChange}
+            Icon={<ArrowDropDownIcon className="down-icon" />}
+            selectcss="select-title"
+            Placeholder="Sort By:"
+          />{' '}
         </div>
-        {/* <form onSubmit={handleSubmit}>
-            <select
-              defaultValue={value}
-              onChange={handleChange}
-              className="filter-by"
-            >
-              <option value="default" disabled hidden>
-                Choose your car
-              </option>
-              <option value="audi">Audi</option>
-              <option value="bmw">Bmw</option>
-              <option value="benz">Benz</option>
-            </select>
-            <ArrowDropDownIcon className="filter-icon" />
-          </form> */}
       </div>
       <div className="content">
         <p>
@@ -87,7 +78,7 @@ const TripCtalog = () => {
           Chitwan National Park.
         </p>
       </div>
-      <div className="trip-box mt-5">
+      <div className="trip-box mt-4">
         <h6>+300 trips in Nepal with 3,629 Reviews</h6>
         <div className="inner-box">
           <Row>

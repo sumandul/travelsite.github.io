@@ -5,6 +5,11 @@ import Select from '../reuableComponent/Select'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import InputField from '../reuableComponent/InputField'
 import DatePickerComponent from '../utilities/DatePicker'
+import CalendarMonth from '@mui/icons-material/CalendarMonth'
+import TextArea from '../reuableComponent/TextArea'
+import Checkbox from '@mui/material/Checkbox'
+import { Link } from 'react-router-dom'
+import Suscribe from '../Home/Suscribe'
 const TrekBooking = () => {
   const option = {
     edit: false,
@@ -14,22 +19,22 @@ const TrekBooking = () => {
     isHalf: true,
     size: window.innerWidth < 600 ? 20 : 25,
   }
-  const arrayOfData = [
+  const arrayOfNationality = [
     {
-      id: '1 - Jerry',
-      name: 'Jerry',
+      id: '1 ',
+      name: 'Amercian',
     },
     {
-      id: '2 - Elaine',
-      name: 'Elaine',
+      id: '2',
+      name: 'Chinease',
     },
     {
-      id: '3 - Kramer',
-      name: 'Kramer',
+      id: '3',
+      name: 'Freances',
     },
     {
-      id: '4 - George',
-      name: 'George',
+      id: '4',
+      name: 'Italian',
     },
   ]
 
@@ -178,10 +183,10 @@ const TrekBooking = () => {
 
                 <div className="user-info">
                   <h2 className="mb-3">Traveller 1 (Lead Traveller)</h2>
-                  <Row>
+                  <Row className="mt-4">
                     <Col md={2}>
                       <Select
-                        data={arrayOfData}
+                        data={arrayOfNationality}
                         Placeholder="Title"
                         Icon={<ArrowDropDownIcon className="down-icon" />}
                         selectcss="select-title"
@@ -220,20 +225,105 @@ const TrekBooking = () => {
                   </Row>
                   <Row className="mt-3">
                     <Col md={6}>
+                      <DatePickerComponent
+                        placeholderText="Date of Birth"
+                        style="select-date"
+                      />
+                    </Col>
+                    <Col md={6}>
+                      <Select
+                        data={arrayOfNationality}
+                        Placeholder="Select Nationality"
+                        Icon={<ArrowDropDownIcon className="down-icon" />}
+                        selectcss="select-title"
+                      />
+                    </Col>
+                  </Row>
+                  <Row className="mt-3 gy-3">
+                    <Col md={6}>
                       <InputField
                         type={'text'}
-                        Placeholder="Email Address"
+                        Placeholder="Country code"
                         inputCss="style-input"
                       />
                     </Col>
                     <Col md={6}>
                       <InputField
                         type={'text'}
-                        Placeholder="Conform Email"
+                        Placeholder="Mobile number"
                         inputCss="style-input"
                       />
                     </Col>
+                    <Col md={12}>
+                      <TextArea />
+                    </Col>
                   </Row>
+                </div>
+              </div>
+              <div className="payment-box mt-5">
+                <div className="d-flex align-items-center ">
+                  <div className="circle-box">3</div>{' '}
+                  <h6 className="ms-2">Payment</h6>
+                </div>
+                <p>
+                  This is a secure and SSL encrypted payment via Stripe. Your
+                  credit card details are safe!
+                </p>
+                <div className="payment-card">
+                  <h3>Card Details</h3>
+                  <div className="payment-card-inner">
+                    <Row className="gy-3">
+                      <Col sm={12}>
+                        <InputField
+                          type={'text'}
+                          Placeholder="Your 16 digit card number"
+                          inputCss="style-input"
+                        />
+                      </Col>
+                      <Col md={5}>
+                        <DatePickerComponent
+                          placeholderText="Select Date"
+                          style="select-date"
+                          Icon={<CalendarMonth className="month" />}
+                        />
+                      </Col>
+                      <Col md={5}>
+                        <InputField
+                          type={'text'}
+                          Placeholder="Name of Card Holder"
+                          inputCss="style-input"
+                        />
+                      </Col>
+                      <Col md={2}>
+                        <InputField
+                          type={'text'}
+                          Placeholder="Pin No."
+                          inputCss="style-input"
+                        />
+                      </Col>
+                    </Row>
+                    <InputField />
+                  </div>
+                  <div className="deposit-amount payment-card-inner ">
+                    <h1>Deposit Payable Now: US$ 197</h1>
+                    <p>
+                      The balance of <span>US$ 1,115</span> is payable online
+                      before the tour start date, or upon arrival.
+                    </p>
+                  </div>
+                  <div className="my-4">
+                    <div className="check">
+                      <div className="d-flex mb-2">
+                        <Checkbox />
+                        <p>I accept the terms of use and data policy</p>
+                      </div>
+                    </div>
+                    <Link to={''}>
+                      <button className="confirm-book-btn">
+                        Confirm Booking
+                      </button>
+                    </Link>
+                  </div>
                 </div>
               </div>
             </div>
@@ -309,6 +399,7 @@ const TrekBooking = () => {
           </div>
         </div>
       </Container>
+      <Suscribe />
     </>
   )
 }
