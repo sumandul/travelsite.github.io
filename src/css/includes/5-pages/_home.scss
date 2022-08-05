@@ -2,10 +2,10 @@
   background-image: url('https://trekkingtrailnepal.com/wp-content/uploads/2020/07/best-place-to-travel-in-Nepal.jpg');
   height: 80vh;
   @include potrait {
-    height: 63vh !important;
+    height: 60vh !important;
   }
   @include mini {
-    height: 50vh;
+    height: 100vh;
   }
 
   background-repeat: no-repeat;
@@ -44,11 +44,14 @@
       bottom: -256px !important;
       opacity: 1;
       left: 0;
+      .gy-5 {
+        --bs-gutter-y: 0.5rem !important;
+      }
     }
     @include mini {
-      bottom: 62px;
-      right: 187px;
-      width: 50%;
+      bottom: 247px;
+      right: 104px;
+      width: 68%;
     }
     bottom: -56px;
 
@@ -72,23 +75,27 @@
       p {
         color: #fff;
       }
+      @include potrait {
+        margin-right: 0;
+      }
     }
   }
 }
 .slide {
+  .top-place-carsouel {
+  }
   h1 {
-    font-size: 40px;
-    font-weight: 600;
-    word-spacing: 2px;
-    color: $text-color;
-    // margin: 30px 0px;
+    @include title;
+    @include potrait {
+      font-size: 26px !important;
+    }
   }
   .img-box {
     position: relative;
     overflow: hidden;
   }
   .over-box {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba($p, 0.4);
     height: 60px;
     @include center;
     color: #ffff;
@@ -110,7 +117,7 @@
   background-color: #efefefcc;
 }
 .service-icon {
-  color: #a38059;
+  color: $yellow;
   font-size: 40px !important;
   margin-right: 13px;
 }
@@ -157,16 +164,25 @@
     }
   }
   padding: 20px;
+  @include mini {
+    padding: 9px;
+  }
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   overflow: hidden;
   .content {
     padding-top: 20px;
+    @include mini {
+      margin-bottom: 10px;
+    }
     h3 {
       font-size: 32px;
       color: $text-color;
       @include potrait {
         font-size: 20px !important;
+      }
+      @include mini {
+        font-size: 22px;
       }
       font-weight: 600;
     }
@@ -190,8 +206,12 @@
   img {
     border-radius: 10px;
     height: 400px;
+    object-fit: cover;
     @include potrait {
       height: 287px;
+    }
+    @include mini {
+      height: 267px;
     }
     width: 100%;
     transition: all 0.5s linear;
@@ -204,32 +224,18 @@
   }
 }
 
-.slick-slide {
-  margin: 0 10px;
-  width: 625px !important;
-  @include potrait {
-    width: 337px !important;
-  }
-}
-.slick-dots li button:before {
-  font-size: 15px !important;
-  line-height: 20px;
-}
-.slick-dots li.slick-active button:before {
-  opacity: 0.75;
-  color: $yellow;
-}
-.slick-track {
-  padding: 15px;
-}
 .feature {
   border-top: 1px solid #e4e4e4;
-  margin-top: 70px;
-  padding: 34px 0px;
+  margin-top: 32px;
+  padding: 50px 0px;
+  .more-feature {
+    @include center;
+  }
   h1 {
-    font-size: 40px;
-    font-weight: 600;
-    color: $text-color;
+    @include title;
+    @include potrait {
+      font-size: 26px !important;
+    }
   }
   .gy-5 {
     --bs-gutter-y: 14rem !important;
@@ -239,8 +245,8 @@
     background-color: #ffff;
     border: 1px solid #e4e4e4;
     border-radius: 15px;
-    position: absolute;
-    bottom: -197px;
+    position: relative;
+    bottom: 46px;
     left: 0;
     width: 100%;
     .tour-explor {
@@ -307,14 +313,19 @@
     }
   }
   .feature-box {
-    height: 230px;
     position: relative;
-
-    img {
+    .feature-img {
+      overflow: hidden;
       border-top-left-radius: 15px;
       border-top-right-radius: 15px;
-      width: 100%;
-      object-fit: cover;
+    }
+    img {
+      transition: all 0.5s linear;
+      &:hover {
+        transform: scale(1.1);
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+      }
     }
   }
 }
@@ -339,15 +350,23 @@
 }
 
 .booking {
-  margin-top: 260px;
+  margin-top: 10px;
   background-image: url('https://www.summitclimb.com/images/sliders/slider1588593625_summitclimb-expedition.jpg');
-  height: 80vh;
+  height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   position: relative;
   background-attachment: fixed;
   z-index: -1;
+  .book-btn {
+    @include potrait {
+      justify-content: start !important;
+    }
+  }
+  // @include potrait {
+  //   min-height: 67vh;
+  // }
   &::after {
     content: '';
     height: 100%;
@@ -360,8 +379,18 @@
     z-index: -2;
   }
   .content {
+    z-index: 11;
     @include center;
-    z-index: 111;
+    @include potrait {
+      padding-top: 3px !important ;
+    }
+
+    .event-type {
+      margin: 0px 10px;
+      @include potrait {
+        margin-top: 10px;
+      }
+    }
     .star {
       span {
         color: #ffff;
@@ -375,6 +404,11 @@
       border-radius: 100%;
       border: 1px solid #ffff;
       @include center;
+      @include potrait {
+        margin-right: 9px !important;
+        height: 25px;
+        width: 25px;
+      }
     }
 
     h1 {
@@ -389,12 +423,19 @@
       color: #fb8500;
       font-size: 64px;
       font-weight: 600;
+      @include potrait {
+        font-size: 40px;
+      }
     }
     .circle {
       height: 100px;
       width: 100px;
       border-radius: 50%;
       border: 3px solid #fb8500;
+      @include potrait {
+        height: 80px;
+        width: 80px;
+      }
       @include center;
       .hike-icon {
         color: #ffff;
@@ -458,6 +499,10 @@
     font-weight: 600;
     text-align: center;
     color: #313041 !important;
+    @include potrait {
+      font-size: 26px !important;
+      text-align: start;
+    }
 
     span {
       font-weight: 300 !important;
@@ -471,6 +516,9 @@
     margin-top: 30px;
     line-height: 23px;
     text-align: center;
+    @include potrait {
+      text-align: start;
+    }
   }
 }
 .top-destination {
@@ -478,14 +526,24 @@
     height: 500px;
     position: relative;
     overflow: hidden;
+    border-radius: 10px;
 
+    &:hover {
+      .title-place {
+        left: 0;
+      }
+      img {
+        transform: scale(1.1);
+      }
+    }
     .title-place {
       position: absolute;
       margin-left: 10px;
       margin-bottom: 10px;
-      left: 0;
+      left: -100%;
       bottom: 0;
       color: #fff;
+      @include tsn;
       h2 {
         font-size: 36px;
         font-weight: 600;
@@ -512,6 +570,7 @@
     img {
       height: 100%;
       object-fit: cover;
+      @include tsn;
       &:hover {
         transform: scale(1.1);
       }
@@ -531,6 +590,11 @@
 }
 
 .slide-clint {
+  .clint-review-carsouel {
+    .owl-stage-outer {
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    }
+  }
   h1 {
     font-size: 36px;
     font-weight: 700;

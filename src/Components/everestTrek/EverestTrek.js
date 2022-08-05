@@ -50,7 +50,18 @@ const arrayOfData = [
     name: 'George',
   },
 ]
+
 const EverestTrek = () => {
+  const [fix, setFix] = useState(false)
+  const setFixed = () => {
+    if (window.scrollY >= 500) {
+      setFix(true)
+    } else {
+      setFix(false)
+    }
+  }
+  window.addEventListener('scroll', setFixed)
+  console.log(fix)
   const [openclose, setOpenClose] = useState(false)
   const [opencloseDiv, setOpenCloseDiv] = useState('')
   const [close, setOpen] = useState(false)
@@ -115,21 +126,19 @@ const EverestTrek = () => {
         <div className="everest-container">
           <div className="everest-right">
             <div>
-              <div className="d-flex align-items-center justify-content-between ">
+              <div className="flex-xs-column e-title  d-flex  align-items-center justify-content-between ">
                 <div className="my-3">
                   <h1>Everest Base Camp Trek</h1>
                   <div className="mt-2">
                     <span className="ps-0">
                       <TaskAltIcon className="me-1 task-icon" /> Best price
                       guaranteed{' '}
-                    </span>{' '}
-                    <span className="px-3">
-                      {' '}
-                      <TaskAltIcon className="me-1 task-icon" />
-                      No booking fees{' '}
                     </span>
-                    <span>
-                      {' '}
+                    <span className="px-3">
+                      <TaskAltIcon className="me-1 task-icon" />
+                      No booking fees
+                    </span>
+                    <span className="mt-3">
                       <TaskAltIcon className="me-1 task-icon" />
                       E-ticket/Mobile voucher
                     </span>
@@ -182,7 +191,7 @@ const EverestTrek = () => {
                     <tr>
                       <td>
                         <div className="activity-box">
-                          <div>
+                          <div className="text-center">
                             <h4>ACTIVITY</h4>
                             <DirectionsBikeIcon className="activity-icon" />
                             <h6>TREKKING</h6>
@@ -192,7 +201,7 @@ const EverestTrek = () => {
                       <td>
                         {' '}
                         <div className="activity-box">
-                          <div>
+                          <div className="text-center">
                             <h4>TRIP GRADE</h4>
                             <StarRateIcon className="activity-icon" />
                             <h6>Morderate</h6>
@@ -202,7 +211,7 @@ const EverestTrek = () => {
                       <td>
                         {' '}
                         <div className="activity-box">
-                          <div>
+                          <div className="text-center">
                             <h4>MAX ALTITUDE</h4>
                             <HikingIcon className="activity-icon" />
                             <h6>5545 Meter</h6>
@@ -213,7 +222,7 @@ const EverestTrek = () => {
                     <tr>
                       <td>
                         <div className="activity-box">
-                          <div>
+                          <div className="text-center">
                             <h4>GROUP SIZE</h4>
                             <LocalHotelIcon className="activity-icon" />
                             <h6>Min. 1 Pax. </h6>
@@ -223,7 +232,7 @@ const EverestTrek = () => {
                       <td>
                         {' '}
                         <div className="activity-box">
-                          <div>
+                          <div className="text-center">
                             <h4>ACCOMMODATION</h4>
                             <EscalatorWarningIcon className="activity-icon" />
                             <h6>TREKKING</h6>
@@ -233,7 +242,7 @@ const EverestTrek = () => {
                       <td>
                         {' '}
                         <div className="activity-box">
-                          <div>
+                          <div className="text-center">
                             <h4>BEST TIME</h4>
                             <AccessTimeIcon className="activity-icon" />
                             <h6>TREKKING</h6>
@@ -297,7 +306,7 @@ const EverestTrek = () => {
                     </p>
                   </p>
                 </Tab>
-                <Tab eventKey="Itinerary " title="Itinerary ">
+                <Tab eventKey="Itinerary" title="Itinerary ">
                   <Accordion>
                     <Accordion.Item eventKey="1">
                       <Accordion.Header
@@ -703,91 +712,93 @@ const EverestTrek = () => {
                 </div>
                 <div className="grp-btn">Group</div>
               </div>
-              <div className="mid-container">
-                <div className="mid-title d-flex align-items-center justify-content-between">
-                  <div>
-                    <h5>No. of Persons</h5>
+              {fix ? null : (
+                <div className="mid-container">
+                  <div className="mid-title d-flex align-items-center justify-content-between">
+                    <div>
+                      <h5>No. of Persons</h5>
+                    </div>
+                    <div>
+                      <h5>Price Per Person</h5>
+                    </div>
                   </div>
-                  <div>
-                    <h5>Price Per Person</h5>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>1 per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>1 per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>1 per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>2 per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>2-3per</p>
+                    </div>
+                    <div>
+                      <p> US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>2-3per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>2-3per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>2-3per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="offer mt-4">
+                    <div className="mt-2">
+                      <span>Best Price Guarantee </span>
+                    </div>
+                    <div className="mt-2">
+                      <span>Hassle-Free Booking </span>
+                    </div>
+                    <div className="mt-2">
+                      <span>No Booking or Credit Card Fees</span>
+                    </div>
                   </div>
                 </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>1 per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>1 per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>1 per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>2 per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>2-3per</p>
-                  </div>
-                  <div>
-                    <p> US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>2-3per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>2-3per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>2-3per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="offer mt-4">
-                  <div className="mt-2">
-                    <span>Best Price Guarantee </span>
-                  </div>
-                  <div className="mt-2">
-                    <span>Hassle-Free Booking </span>
-                  </div>
-                  <div className="mt-2">
-                    <span>No Booking or Credit Card Fees</span>
-                  </div>
-                </div>
-              </div>
+              )}
               <div className="bottom-container">
                 <div>
                   <div className="excelent d-flex align-items-center  justify-content-center mb-2">

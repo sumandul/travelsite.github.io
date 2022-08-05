@@ -1,0 +1,33 @@
+.modal-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: $text-color;
+}
+.modal-body {
+  // .modal-content {
+  //   border: 0 !important;
+  // }
+}
+.vedio-modal-css {
+  padding: 0 !important;
+  border: 0 !important;
+}
+.modal-img-slide {
+  .owl-nav {
+    .owl-prev,
+    .owl-next {
+      height: 30px;
+      width: 30px;
+      background-color: $yellow !important;
+      border-radius: 50%;
+      text-align: center;
+      span {
+        color: #ffff;
+        font-size: 20px;
+      }
+    }
+  }
+  .modal-img-slide {
+    padding: 0 !important;
+  }
+}

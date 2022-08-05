@@ -5,6 +5,15 @@
 ) {
   transition: $property $time $easing;
 }
+@function button($padding, $bg) {
+  @return $padding + px, $bg;
+}
+@mixin title {
+  font-size: 35px;
+  font-weight: 600;
+  word-spacing: 2px;
+  color: $text-color;
+}
 @mixin btn-css {
   background-color: $yellow;
   color: $text-color;
@@ -17,15 +26,29 @@
   align-items: center;
   justify-content: center;
 }
+@mixin btn-text {
+  color: #ffff;
+  font-weight: 600;
+  font-size: 15px;
+}
 @mixin bordernone {
   outline: 0;
   border: 0;
 }
-@mixin btn($td, $background, $radius, $size) {
+@mixin hover-btn {
+  background-color: transparent;
+  border: 1px solid $yellow;
+  color: $yellow;
+
+  padding-right: 30px;
+}
+@mixin btn($td, $background, $radius, $size, $font-weight, $color) {
   padding: $td;
   background-color: $background;
   border-radius: $radius;
   font-size: $size;
+  font-weight: $font-weight;
+  color: $color;
 }
 @mixin potrait {
   @media (max-width: 576px) {

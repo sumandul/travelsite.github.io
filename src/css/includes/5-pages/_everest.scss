@@ -5,7 +5,16 @@
     border-radius: 50%;
   }
   display: flex;
+  @include mini {
+    flex-direction: column;
+  }
   .everest-right {
+    .e-title {
+      @include potrait {
+        flex-direction: column;
+        align-items: flex-start !important;
+      }
+    }
     h1 {
       font-size: 28px;
       font-weight: 600;
@@ -14,9 +23,16 @@
       color: $p;
       font-size: 14px;
       font-weight: 400;
+      @include potrait {
+        font-size: 13px;
+      }
     }
+
     .task-icon {
       font-size: 20px;
+      @include potrait {
+        font-size: 22px;
+      }
     }
     .star-box {
       .num-box {
@@ -58,6 +74,9 @@
       @include center;
       h4 {
         font-size: 16px;
+        @include potrait {
+          font-size: 14px;
+        }
         font-weight: 600;
         color: #4c4c4c;
       }
@@ -66,11 +85,12 @@
         font-weight: 400;
         color: #4c4c4c;
         margin-top: 6px;
+        text-align: center;
       }
       .activity-icon {
         color: $yellow;
         font-size: 42px;
-        margin-left: 14px;
+        // margin-left: 14px;
       }
     }
     .trip-review {
@@ -104,6 +124,9 @@
     }
     .acodian-icon {
       margin-left: 342px;
+      @include potrait {
+        margin: 0px !important;
+      }
     }
     .accordion-item {
       margin-bottom: 29px;
@@ -176,10 +199,42 @@
       }
       .table {
         border-collapse: separate;
+        display: block;
+        thead {
+          @include potrait {
+            display: none;
+          }
+        }
         td {
           padding: 15px 0px;
+          @include potrait {
+            display: block;
+          }
+          &::before {
+            content: '';
+            color: #aaaaaa;
+            font-size: 16px;
+            font-weight: 600;
+            display: block;
+          }
+          &:first-child::before {
+            content: 'DEPARTURE DATE';
+          }
+          &:nth-child(2)::before {
+            content: 'PRICE';
+          }
+          &:nth-child(3)::before {
+            content: 'TRIP STATUS';
+          }
           &:last-child {
             width: 27%;
+            @include mini {
+              width: 33%;
+            }
+            @include potrait {
+              display: flex;
+              width: 100%;
+            }
           }
         }
         th {
@@ -259,15 +314,25 @@
         color: $text-color;
         margin-bottom: 10px !important;
       }
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
     }
   }
   .everest-left {
     margin-left: 15px;
+    background-attachment: fixed;
+
+    @include mini {
+      margin-left: 0;
+    }
 
     flex-basis: 30%;
     .left-container {
     }
     .mid-container {
+      @include tsn;
       padding: 10px 20px;
       border: 0.25px solid $b-color;
       border-top: transparent;
@@ -294,6 +359,12 @@
           left: 48px;
           width: 61%;
           border-top: 1px dashed $text-color;
+          @include mini {
+            width: 80%;
+          }
+          @include potrait {
+            width: 60% !important;
+          }
         }
       }
       h5 {

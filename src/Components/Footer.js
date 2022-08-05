@@ -8,8 +8,10 @@ import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 import InstagramIcon from '@mui/icons-material/Instagram'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import Accordion from 'react-bootstrap/Accordion'
+import { Link } from 'react-router-dom'
 const Footer = () => {
   const [down, setDown] = useState(false)
+  const [arrow, setArrow] = useState('')
   return (
     <>
       <footer>
@@ -27,24 +29,32 @@ const Footer = () => {
                 </ul>
                 <div className="icon-container ">
                   <div className="social-nedia-icon ms-0">
-                    <div className="icon-box">
-                      <WhatsAppIcon />
-                    </div>
+                    <Link to={'/everest'}>
+                      <div className="icon-box">
+                        <WhatsAppIcon />
+                      </div>
+                    </Link>
                   </div>
                   <div className="social-nedia-icon">
-                    <div className="icon-box">
-                      <YouTubeIcon />
-                    </div>
+                    <Link to={''}>
+                      <div className="icon-box">
+                        <YouTubeIcon />
+                      </div>
+                    </Link>
                   </div>
                   <div className="social-nedia-icon">
-                    <div className="icon-box">
-                      <TwitterIcon />
-                    </div>
+                    <Link to={''}>
+                      <div className="icon-box">
+                        <TwitterIcon />
+                      </div>
+                    </Link>
                   </div>
                   <div className="social-nedia-icon">
-                    <div className="icon-box">
-                      <InstagramIcon />
-                    </div>
+                    <Link to={''}>
+                      <div className="icon-box">
+                        <InstagramIcon />
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </Col>
@@ -75,19 +85,28 @@ const Footer = () => {
                       placeholder="Message"
                       className="foot-input"
                     ></textarea>
-                    <button className="btn-send">
+                    <button className="btn-send mt-1">
                       Send
-                      <EastOutlinedIcon className="ms-2" />
+                      <EastOutlinedIcon className="ms-2 right-arr" />
                     </button>
                   </form>
                 </div>
                 <div className="mb-query">
                   <Accordion defaultActiveKey="1">
                     <Accordion.Item eventKey="0">
-                      <Accordion.Header onClick={() => setDown(!down)}>
+                      <Accordion.Header
+                        onClick={() => {
+                          setDown(!down)
+                          setArrow('first')
+                        }}
+                      >
                         Inquiry Form{' '}
                         <KeyboardArrowDownIcon
-                          className={down ? 'rotate down' : 'down'}
+                          className={
+                            down === true && arrow === 'first'
+                              ? 'rotate down'
+                              : 'down'
+                          }
                         />
                       </Accordion.Header>
                       <Accordion.Body>
@@ -129,37 +148,78 @@ const Footer = () => {
                 <div className="inquery-form">
                   <h1>Info Page</h1>
                   <ul className="mt-4">
-                    <li> Home </li>
+                    <li>
+                      <Link to={'/'}> Home</Link>{' '}
+                    </li>
 
-                    <li>About Us </li>
-                    <li>Our Team </li>
-                    <li>CSR </li>
-                    <li>Terms & Conditions </li>
-                    <li>Make a Payment </li>
-                    <li>Why Us? </li>
-                    <li>Gallery</li>
+                    <li>
+                      <Link to={''}>About Us</Link>{' '}
+                    </li>
+                    <li>
+                      <Link to={''}>Our Team </Link>
+                    </li>
+                    <li>
+                      <Link to={''}>CSR</Link>{' '}
+                    </li>
+                    <li>
+                      <Link to={''}>Terms & Conditions </Link>
+                    </li>
+                    <li>
+                      <Link to={''}>Make a Payment</Link>{' '}
+                    </li>
+                    <li>
+                      <Link to={''}>Why Us?</Link>{' '}
+                    </li>
+                    <li>
+                      <Link to={''}>Gallery</Link>
+                    </li>
                   </ul>
                 </div>
                 <div className="mb-query">
                   <Accordion defaultActiveKey="1">
                     <Accordion.Item eventKey="0">
-                      <Accordion.Header onClick={() => setDown(!down)}>
+                      <Accordion.Header
+                        onClick={() => {
+                          setDown(!down)
+                          setArrow('second')
+                        }}
+                      >
                         Info Page
                         <KeyboardArrowDownIcon
-                          className={down ? 'rotate down' : 'down'}
+                          className={
+                            down === true && arrow === 'second'
+                              ? 'rotate down'
+                              : 'down'
+                          }
                         />
                       </Accordion.Header>
                       <Accordion.Body>
                         <ul className="mt-4">
-                          <li> Home </li>
+                          <li>
+                            <Link to={'/'}> Home</Link>{' '}
+                          </li>
 
-                          <li>About Us </li>
-                          <li>Our Team </li>
-                          <li>CSR </li>
-                          <li>Terms & Conditions </li>
-                          <li>Make a Payment </li>
-                          <li>Why Us? </li>
-                          <li>Gallery</li>
+                          <li>
+                            <Link to={''}>About Us</Link>{' '}
+                          </li>
+                          <li>
+                            <Link to={''}>Our Team </Link>
+                          </li>
+                          <li>
+                            <Link to={''}>CSR</Link>{' '}
+                          </li>
+                          <li>
+                            <Link to={''}>Terms & Conditions </Link>
+                          </li>
+                          <li>
+                            <Link to={''}>Make a Payment</Link>{' '}
+                          </li>
+                          <li>
+                            <Link to={''}>Why Us?</Link>{' '}
+                          </li>
+                          <li>
+                            <Link to={''}>Gallery</Link>
+                          </li>
                         </ul>
                       </Accordion.Body>
                     </Accordion.Item>
@@ -169,14 +229,26 @@ const Footer = () => {
               <Col md={6} lg={3}>
                 <div className="travel-info ">
                   <ul className="mt-5">
-                    <li>Travel Info </li>
-                    <li>Blog </li>
-                    <li>Best Deals </li>
-                    <li>Contact Us </li>
-                    <li> FAQs </li>
-                    <li>Privacy Policy</li>
+                    <li>
+                      <Link to={''}>Travel Info</Link>{' '}
+                    </li>
+                    <li>
+                      <Link to={''}>Blog </Link>
+                    </li>
+                    <li>
+                      <Link to={''}>Best Deals </Link>
+                    </li>
+                    <li>
+                      <Link to={''}>Contact Us </Link>
+                    </li>
+                    <li>
+                      {' '}
+                      <Link to={''}>FAQs </Link>
+                    </li>
+                    <li>
+                      <Link to={''}>Privacy Policy</Link>
+                    </li>
                   </ul>
-                  FAQs Privacy Policy
                 </div>
               </Col>
             </Row>
@@ -186,40 +258,48 @@ const Footer = () => {
           <Container>
             <div className="brand">
               <Row>
-                <Col md={8}>
+                <Col xs={6} md={8}>
                   <span className="mb-4">We accept</span>
-                  <Row>
+                  <Row className="gy-3">
                     <Col md={2}>
-                      <img
-                        src="https://www.travel2riga.com/images/uploaded/MasterCard_Logo.png"
-                        alt=""
-                        className="img-fluid"
-                      />
+                      <Link to={''}>
+                        <img
+                          src="https://www.travel2riga.com/images/uploaded/MasterCard_Logo.png"
+                          alt=""
+                          className="img-fluid"
+                        />
+                      </Link>
                     </Col>
                     <Col md={2}>
-                      <img
-                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png"
-                        alt=""
-                        className="img-fluid"
-                      />
+                      <Link to={''}>
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png"
+                          alt=""
+                          className="img-fluid"
+                        />
+                      </Link>
                     </Col>
                     <Col md={2}>
-                      <img
-                        src="hhttps://d28wu8o6itv89t.cloudfront.net/images/amexlogopng-1578907833580.png"
-                        alt=""
-                        className="img-fluid"
-                      />
+                      <Link to={''}>
+                        <img
+                          src="hhttps://d28wu8o6itv89t.cloudfront.net/images/amexlogopng-1578907833580.png"
+                          alt=""
+                          className="img-fluid"
+                        />
+                      </Link>
                     </Col>
                     <Col md={2}>
-                      <img
-                        src="hhttps://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png"
-                        alt=""
-                        className="img-fluid"
-                      />
+                      <Link to={''}>
+                        <img
+                          src="hhttps://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png"
+                          alt=""
+                          className="img-fluid"
+                        />
+                      </Link>
                     </Col>
                   </Row>
                 </Col>
-                <Col>
+                <Col xs={6} md={4}>
                   <span>IT PARTNEER </span>
                   <div>
                     <img

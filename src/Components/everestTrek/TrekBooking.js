@@ -10,6 +10,7 @@ import TextArea from '../reuableComponent/TextArea'
 import Checkbox from '@mui/material/Checkbox'
 import { Link } from 'react-router-dom'
 import Suscribe from '../Home/Suscribe'
+import BreadCrump from '../utilities/BreadCrump'
 const TrekBooking = () => {
   const option = {
     edit: false,
@@ -40,6 +41,9 @@ const TrekBooking = () => {
 
   return (
     <>
+      <div className="breadcrump">
+        <BreadCrump />
+      </div>
       <Container>
         <div className="trek-booking-container">
           <div className="text-center book-trek-title">
@@ -61,11 +65,11 @@ const TrekBooking = () => {
                     <h6 className="ms-2">Travelers</h6>
                   </div>
                   <div className="no-tarveler mt-3">
-                    <Row>
-                      <Col md={6}>
+                    <Row className="gy-4">
+                      <Col xs={6} md={6}>
                         <h2>Number of Travelers </h2>
                       </Col>
-                      <Col md={4}>
+                      <Col xs={6} md={4}>
                         <div className="d-flex price-dis">
                           <div>
                             <h2>US$1,181 </h2> <span>Per Traveller</span>
@@ -77,14 +81,16 @@ const TrekBooking = () => {
                         </div>
                       </Col>
                       <Col md={2}>
-                        <div className="incre d-flex">
-                          <span className="plus">+</span>
-                          <input
-                            type="text"
-                            value={'1'}
-                            className="value-input"
-                          />
-                          <span className="minus">-</span>
+                        <div className="mb-incre">
+                          <div className="incre d-flex">
+                            <span className="plus">+</span>
+                            <input
+                              type="text"
+                              value={'1'}
+                              className="value-input"
+                            />
+                            <span className="minus">-</span>
+                          </div>
                         </div>
                       </Col>
                     </Row>
@@ -105,14 +111,16 @@ const TrekBooking = () => {
                       <h2>US$50</h2>
                     </div>
                     <div className="tour-inc-box">
-                      <div className="incre d-flex">
-                        <span className="plus">+</span>
-                        <input
-                          type="text"
-                          value={'1'}
-                          className="value-input"
-                        />
-                        <span className="minus">-</span>
+                      <div className="">
+                        <div className="incre d-flex">
+                          <span className="plus">+</span>
+                          <input
+                            type="text"
+                            value={'1'}
+                            className="value-input"
+                          />
+                          <span className="minus">-</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -183,7 +191,7 @@ const TrekBooking = () => {
 
                 <div className="user-info">
                   <h2 className="mb-3">Traveller 1 (Lead Traveller)</h2>
-                  <Row className="mt-4">
+                  <Row className="mt-4 gy-4">
                     <Col md={2}>
                       <Select
                         data={arrayOfNationality}
@@ -207,7 +215,7 @@ const TrekBooking = () => {
                       />
                     </Col>
                   </Row>
-                  <Row className="mt-3">
+                  <Row className="mt-3 gy-4">
                     <Col md={6}>
                       <InputField
                         type={'text'}
@@ -223,7 +231,7 @@ const TrekBooking = () => {
                       />
                     </Col>
                   </Row>
-                  <Row className="mt-3">
+                  <Row className="mt-3 gy-4">
                     <Col md={6}>
                       <DatePickerComponent
                         placeholderText="Date of Birth"

@@ -37,6 +37,7 @@ input[type='text'] {
   font-weight: 400;
   border-bottom: 1px solid #e5e5e5;
   padding: 8px 0px;
+  width: 100%;
 }
 .css-1s2u09g-control {
   //   border: 0 !important;
@@ -114,6 +115,9 @@ select {
   border: 1px solid $b-color;
   border-radius: 4px;
   padding: 10px 8px;
+  &:focus {
+    outline: 1px solid $yellow;
+  }
   .select-title {
     color: #4b4b4b;
     font-size: 16px;

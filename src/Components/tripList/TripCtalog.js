@@ -27,7 +27,7 @@ const arrayOfData = [
     name: 'George',
   },
 ]
-let pageCount = 6
+let pageCount = 3
 const TripCtalog = () => {
   const [select, SetSelected] = useState()
   const handleSelectChange = (selectedValue) => {
@@ -77,34 +77,35 @@ const TripCtalog = () => {
           nature and see rhinos, tigers and elephants on a jungle safari in
           Chitwan National Park.
         </p>
+        <h6 className="mt-4">+300 trips in Nepal with 3,629 Reviews</h6>
       </div>
-      <div className="trip-box mt-4">
-        <h6>+300 trips in Nepal with 3,629 Reviews</h6>
+
+      <div className="trip-box mt-5 ">
         <div className="inner-box">
-          <Row>
-            <Col md={10}>
-              <Row>
-                <Col md={6}>
-                  <div className="img position-relative">
-                    <img
-                      src="https://www.adventurealternative.com/media/1309/nepal_everest-final-section-of-summit-ridge-cornice.jpg?height=788&width=1082&quality=&mode=Crop&center=0.27666666666666667,0.54&bgcolor="
-                      alt=""
-                      className="img-fluid"
-                    />
-                    <button className="feature-btn">
-                      <StarIcon className="me-2" />
-                      BEST PRICE
-                    </button>
-                  </div>
-                </Col>
-                <Col md={6}>
+          <Row className="gy-5 ">
+            <Col md={12} lg={4} className="p-0">
+              <div className="img position-relative">
+                <img
+                  src="https://www.adventurealternative.com/media/1309/nepal_everest-final-section-of-summit-ridge-cornice.jpg?height=788&width=1082&quality=&mode=Crop&center=0.27666666666666667,0.54&bgcolor="
+                  alt=""
+                  className="img-fluid"
+                />
+                <button className="feature-btn">
+                  <StarIcon className="me-2" />
+                  BEST PRICE
+                </button>
+              </div>
+            </Col>
+            <Col md={12} lg={8}>
+              <Row className="gy-4">
+                <Col xs={12} md={8}>
                   <div className="img-content  ">
                     <h5>Everest Base Camp Trek</h5>
                     <div className="d-flex align-items-center">
                       <ReactStar {...options} /> <span> of 337 reviews</span>
                     </div>
                     <Row>
-                      <Col md={5}>
+                      <Col xs={6} md={5}>
                         <div className="d-flex align-items-end ">
                           <DoneIcon className="tick" />{' '}
                           <p>Free cancellation </p>
@@ -120,7 +121,7 @@ const TripCtalog = () => {
                           </ul>
                         </div>
                       </Col>
-                      <Col md={7}>
+                      <Col xs={6} md={7}>
                         <div className="text-start">
                           <div className="d-flex align-items-end">
                             <DoneIcon className="tick" />
@@ -141,59 +142,66 @@ const TripCtalog = () => {
                     </Row>
                   </div>
                 </Col>
+                <Col xs={12} md={4} className="text-end">
+                  <div className="expedition-box ">
+                    <button className="view-btn">
+                      <Link to={'/everest'}>View Details</Link>
+                    </button>
+                    <div className="mt-2 next-p">
+                      <p> Next Departures </p>
+                      <div className="mt-2">
+                        <span>
+                          <AccessTimeIcon className="me-2" />
+                          jun7
+                        </span>
+                        <div className="mt-2">
+                          {' '}
+                          <span>
+                            <AccessTimeIcon className="me-2" />
+                            jun7
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="price">
+                      <div>
+                        <p className="me-3 mb-2">12 Days </p>
+                        <span>USD $1000</span>
+                      </div>
+                    </div>
+                  </div>
+                </Col>
               </Row>
-            </Col>
-            <Col md={2}>
-              <div className="expedition-box text-end">
-                <button className="view-btn">
-                  <Link to={'/everest'}>View Details</Link>
-                </button>
-                <div className="mt-3">
-                  <p> Next Departures </p>
-                  <div className="mt-2">
-                    <span>
-                      <AccessTimeIcon className="me-2" />
-                      jun7
-                    </span>
-                  </div>
-                </div>
-                <div className="price">
-                  <div>
-                    <p className="me-3 mb-2">12 Days </p>
-                    <span>USD $1000</span>
-                  </div>
-                </div>
-              </div>
             </Col>
           </Row>
         </div>
       </div>
-      <div className="trip-box mt-5">
+      <div className="trip-box mt-5 ">
         <div className="inner-box">
-          <Row>
-            <Col md={10}>
-              <Row>
-                <Col md={6}>
-                  <div className="img position-relative">
-                    <img
-                      src="https://www.adventurealternative.com/media/1309/nepal_everest-final-section-of-summit-ridge-cornice.jpg?height=788&width=1082&quality=&mode=Crop&center=0.27666666666666667,0.54&bgcolor="
-                      alt=""
-                      className="img-fluid"
-                    />
-                    <button className="feature-btn">
-                      <StarIcon className="me-2" />
-                      BEST PRICE
-                    </button>
-                  </div>
-                </Col>
-                <Col md={6}>
+          <Row className="gy-5 pb-3">
+            <Col md={12} lg={4} className="p-0">
+              <div className="img position-relative">
+                <img
+                  src="https://www.adventurealternative.com/media/1309/nepal_everest-final-section-of-summit-ridge-cornice.jpg?height=788&width=1082&quality=&mode=Crop&center=0.27666666666666667,0.54&bgcolor="
+                  alt=""
+                  className="img-fluid"
+                />
+                <button className="feature-btn">
+                  <StarIcon className="me-2" />
+                  BEST PRICE
+                </button>
+              </div>
+            </Col>
+            <Col md={12} lg={8}>
+              <Row className="gy-4">
+                <Col xs={12} md={8}>
                   <div className="img-content  ">
                     <h5>Everest Base Camp Trek</h5>
                     <div className="d-flex align-items-center">
                       <ReactStar {...options} /> <span> of 337 reviews</span>
                     </div>
                     <Row>
-                      <Col md={5}>
+                      <Col xs={6} md={5}>
                         <div className="d-flex align-items-end ">
                           <DoneIcon className="tick" />{' '}
                           <p>Free cancellation </p>
@@ -209,7 +217,7 @@ const TripCtalog = () => {
                           </ul>
                         </div>
                       </Col>
-                      <Col md={7}>
+                      <Col xs={6} md={7}>
                         <div className="text-start">
                           <div className="d-flex align-items-end">
                             <DoneIcon className="tick" />
@@ -230,65 +238,66 @@ const TripCtalog = () => {
                     </Row>
                   </div>
                 </Col>
+                <Col xs={12} md={4} className="text-end">
+                  <div className="expedition-box ">
+                    <button className="view-btn">
+                      <Link to={'/everest'}>View Details</Link>
+                    </button>
+                    <div className="mt-2 next-p">
+                      <p> Next Departures </p>
+                      <div className="mt-2">
+                        <span>
+                          <AccessTimeIcon className="me-2" />
+                          jun7
+                        </span>
+                        <div className="mt-2">
+                          {' '}
+                          <span>
+                            <AccessTimeIcon className="me-2" />
+                            jun7
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="price">
+                      <div>
+                        <p className="me-3 mb-2">12 Days </p>
+                        <span>USD $1000</span>
+                      </div>
+                    </div>
+                  </div>
+                </Col>
               </Row>
-            </Col>
-            <Col md={2}>
-              <div className="expedition-box text-end">
-                <button className="view-btn">
-                  <Link to={''}>View Details</Link>
-                </button>
-                <div className="mt-3">
-                  <p> Next Departures </p>
-                  <div className="mt-2">
-                    <span>
-                      <AccessTimeIcon className="me-2" />
-                      jun7
-                    </span>
-                  </div>
-                </div>
-                <div className="mt-2">
-                  <span>
-                    <AccessTimeIcon className="me-2" />
-                    jun7
-                  </span>
-                </div>
-                <div className="price">
-                  <div>
-                    <p className="me-3 mb-2">12 Days </p>
-                    <span>USD $1000</span>
-                  </div>
-                </div>
-              </div>
             </Col>
           </Row>
         </div>
       </div>
-      <div className="trip-box mt-5">
+      <div className="trip-box mt-5 ">
         <div className="inner-box">
-          <Row>
-            <Col md={10}>
-              <Row>
-                <Col md={6}>
-                  <div className="img position-relative">
-                    <img
-                      src="https://www.adventurealternative.com/media/1309/nepal_everest-final-section-of-summit-ridge-cornice.jpg?height=788&width=1082&quality=&mode=Crop&center=0.27666666666666667,0.54&bgcolor="
-                      alt=""
-                      className="img-fluid"
-                    />
-                    <button className="feature-btn">
-                      <StarIcon className="me-2" />
-                      BEST PRICE
-                    </button>
-                  </div>
-                </Col>
-                <Col md={6}>
+          <Row className="gy-5 pb-3">
+            <Col md={12} lg={4} className="p-0">
+              <div className="img position-relative">
+                <img
+                  src="https://www.adventurealternative.com/media/1309/nepal_everest-final-section-of-summit-ridge-cornice.jpg?height=788&width=1082&quality=&mode=Crop&center=0.27666666666666667,0.54&bgcolor="
+                  alt=""
+                  className="img-fluid"
+                />
+                <button className="feature-btn">
+                  <StarIcon className="me-2" />
+                  BEST PRICE
+                </button>
+              </div>
+            </Col>
+            <Col md={12} lg={8}>
+              <Row className="gy-4">
+                <Col xs={12} md={8}>
                   <div className="img-content  ">
                     <h5>Everest Base Camp Trek</h5>
                     <div className="d-flex align-items-center">
                       <ReactStar {...options} /> <span> of 337 reviews</span>
                     </div>
                     <Row>
-                      <Col md={5}>
+                      <Col xs={6} md={5}>
                         <div className="d-flex align-items-end ">
                           <DoneIcon className="tick" />{' '}
                           <p>Free cancellation </p>
@@ -304,7 +313,7 @@ const TripCtalog = () => {
                           </ul>
                         </div>
                       </Col>
-                      <Col md={7}>
+                      <Col xs={6} md={7}>
                         <div className="text-start">
                           <div className="d-flex align-items-end">
                             <DoneIcon className="tick" />
@@ -325,65 +334,66 @@ const TripCtalog = () => {
                     </Row>
                   </div>
                 </Col>
+                <Col xs={12} md={4} className="text-end">
+                  <div className="expedition-box ">
+                    <button className="view-btn">
+                      <Link to={'/everest'}>View Details</Link>
+                    </button>
+                    <div className="mt-2 next-p">
+                      <p> Next Departures </p>
+                      <div className="mt-2">
+                        <span>
+                          <AccessTimeIcon className="me-2" />
+                          jun7
+                        </span>
+                        <div className="mt-2">
+                          {' '}
+                          <span>
+                            <AccessTimeIcon className="me-2" />
+                            jun7
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="price">
+                      <div>
+                        <p className="me-3 mb-2">12 Days </p>
+                        <span>USD $1000</span>
+                      </div>
+                    </div>
+                  </div>
+                </Col>
               </Row>
-            </Col>
-            <Col md={2}>
-              <div className="expedition-box text-end">
-                <button className="view-btn">
-                  <Link to={''}>View Details</Link>
-                </button>
-                <div className="mt-3">
-                  <p> Next Departures </p>
-                  <div className="mt-2">
-                    <span>
-                      <AccessTimeIcon className="me-2" />
-                      jun7
-                    </span>
-                  </div>
-                </div>
-                <div className="mt-2">
-                  <span>
-                    <AccessTimeIcon className="me-2" />
-                    jun7
-                  </span>
-                </div>
-                <div className="price">
-                  <div>
-                    <p className="me-3 mb-2">12 Days </p>
-                    <span>USD $1000</span>
-                  </div>
-                </div>
-              </div>
             </Col>
           </Row>
         </div>
       </div>
-      <div className="trip-box mt-5">
+      <div className="trip-box mt-5 ">
         <div className="inner-box">
-          <Row>
-            <Col md={10}>
-              <Row>
-                <Col md={6}>
-                  <div className="img position-relative">
-                    <img
-                      src="https://www.adventurealternative.com/media/1309/nepal_everest-final-section-of-summit-ridge-cornice.jpg?height=788&width=1082&quality=&mode=Crop&center=0.27666666666666667,0.54&bgcolor="
-                      alt=""
-                      className="img-fluid"
-                    />
-                    <button className="feature-btn">
-                      <StarIcon className="me-2" />
-                      BEST PRICE
-                    </button>
-                  </div>
-                </Col>
-                <Col md={6}>
+          <Row className="gy-5 pb-3">
+            <Col md={12} lg={4} className="p-0">
+              <div className="img position-relative">
+                <img
+                  src="https://www.adventurealternative.com/media/1309/nepal_everest-final-section-of-summit-ridge-cornice.jpg?height=788&width=1082&quality=&mode=Crop&center=0.27666666666666667,0.54&bgcolor="
+                  alt=""
+                  className="img-fluid"
+                />
+                <button className="feature-btn">
+                  <StarIcon className="me-2" />
+                  BEST PRICE
+                </button>
+              </div>
+            </Col>
+            <Col md={12} lg={8}>
+              <Row className="gy-4">
+                <Col xs={12} md={8}>
                   <div className="img-content  ">
                     <h5>Everest Base Camp Trek</h5>
                     <div className="d-flex align-items-center">
                       <ReactStar {...options} /> <span> of 337 reviews</span>
                     </div>
                     <Row>
-                      <Col md={5}>
+                      <Col xs={6} md={5}>
                         <div className="d-flex align-items-end ">
                           <DoneIcon className="tick" />{' '}
                           <p>Free cancellation </p>
@@ -399,7 +409,7 @@ const TripCtalog = () => {
                           </ul>
                         </div>
                       </Col>
-                      <Col md={7}>
+                      <Col xs={6} md={7}>
                         <div className="text-start">
                           <div className="d-flex align-items-end">
                             <DoneIcon className="tick" />
@@ -420,53 +430,54 @@ const TripCtalog = () => {
                     </Row>
                   </div>
                 </Col>
+                <Col xs={12} md={4} className="text-end">
+                  <div className="expedition-box ">
+                    <button className="view-btn">
+                      <Link to={'/everest'}>View Details</Link>
+                    </button>
+                    <div className="mt-2 next-p">
+                      <p> Next Departures </p>
+                      <div className="mt-2">
+                        <span>
+                          <AccessTimeIcon className="me-2" />
+                          jun7
+                        </span>
+                        <div className="mt-2">
+                          {' '}
+                          <span>
+                            <AccessTimeIcon className="me-2" />
+                            jun7
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="price">
+                      <div>
+                        <p className="me-3 mb-2">12 Days </p>
+                        <span>USD $1000</span>
+                      </div>
+                    </div>
+                  </div>
+                </Col>
               </Row>
             </Col>
-            <Col md={2}>
-              <div className="expedition-box text-end">
-                <button className="view-btn">
-                  <Link to={''}>View Details</Link>
-                </button>
-                <div className="mt-3">
-                  <p> Next Departures </p>
-                  <div className="mt-2">
-                    <span>
-                      <AccessTimeIcon className="me-2" />
-                      jun7
-                    </span>
-                  </div>
-                </div>
-                <div className="mt-2">
-                  <span>
-                    <AccessTimeIcon className="me-2" />
-                    jun7
-                  </span>
-                </div>
-                <div className="price">
-                  <div>
-                    <p className="me-3 mb-2">12 Days </p>
-                    <span>USD $1000</span>
-                  </div>
-                </div>
-              </div>
-            </Col>
-            <div className="my-5">
-              <ReactPaginate
-                breakLabel="..."
-                nextLabel="next"
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={5}
-                pageCount={pageCount}
-                renderOnZeroPageCount={null}
-                containerClassName="pagination"
-                pageLinkClassName="page-num"
-                previousLinkClassName="page-num"
-                nextLinkClassName="page-num"
-                activeLinkClassName="active"
-              />
-            </div>
           </Row>
         </div>
+      </div>
+      <div className="my-5">
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel="next"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          renderOnZeroPageCount={null}
+          containerClassName="pagination"
+          pageLinkClassName="page-num"
+          previousLinkClassName="page-num"
+          nextLinkClassName="page-num"
+          activeLinkClassName="active"
+        />
       </div>
     </>
   )

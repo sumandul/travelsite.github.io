@@ -11,12 +11,9 @@ import {
 } from 'react-bootstrap'
 import ReactImageMagnify from 'react-image-magnify'
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
 export default function PopUpModel(props) {
-  //   const [show, setShow] = useState({ ...props.show })
-
-  //   const handleClose = () => setShow(false)
-  // const handleShow = () => setShow(true)
   return (
     <Modal
       show={props.show}
@@ -28,7 +25,7 @@ export default function PopUpModel(props) {
       <Modal.Header closeButton>
         <Modal.Title>{props.header}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>{props.body}</Modal.Body>
+      <Modal.Body className={props.vediomodal}>{props.body}</Modal.Body>
       {props.footer && <Modal.Footer>{props.footer}</Modal.Footer>}
     </Modal>
   )

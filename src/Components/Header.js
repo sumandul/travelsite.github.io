@@ -5,9 +5,14 @@ import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlin
 import { Container, Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu'
+import CloseIcon from '@mui/icons-material/Close'
+import KeyboardArrowDownOutlinedIcon from '@mui/icons-material/KeyboardArrowDownOutlined'
 const Header = () => {
   const [fix, setFix] = useState(false)
-
+  const [closemenu, setOpenMenu] = useState(false)
+  const [menu, setMenu] = useState('')
+  const [sideMenu, setSideMenu] = useState(false)
+  console.log(closemenu)
   const setFixed = () => {
     if (window.scrollY >= 150) {
       setFix(true)
@@ -17,6 +22,10 @@ const Header = () => {
   }
 
   window.addEventListener('scroll', setFixed)
+  const togggleMenu = () => {
+    setSideMenu(!sideMenu)
+  }
+
   return (
     <>
       <header>
@@ -49,7 +58,9 @@ const Header = () => {
                   </div>
                   <div className="contENT ms-1">
                     <span>Quick Questions? Email Us</span>
-                    <h5>(dulalsuman853@gmail.com)</h5>
+                    <Link to={'/'}>
+                      <h5>(dulalsuman853@gmail.com)</h5>
+                    </Link>
                   </div>
                 </div>
               </Col>
@@ -73,6 +84,7 @@ const Header = () => {
               <div className="logo mb-logo">
                 <img src="../Logo.png" alt="" className="img-fluid" />
               </div>
+
               <button
                 class="navbar-toggler"
                 type="button"
@@ -81,9 +93,13 @@ const Header = () => {
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
+                onClick={togggleMenu}
               >
-                <MenuIcon className=" MenuIcon" />
-                {/* <span class="navbar-toggler-icon"></span> */}
+                {sideMenu ? (
+                  <CloseIcon className=" MenuIcon" />
+                ) : (
+                  <MenuIcon className=" MenuIcon" />
+                )}
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -96,29 +112,160 @@ const Header = () => {
                       HOME
                     </Link>
                   </li>
-                  <li class="nav-item">
+                  <li
+                    class="nav-item"
+                    onMouseEnter={() => {
+                      setOpenMenu(true)
+                      setMenu('first')
+                    }}
+                    onMouseLeave={() => setOpenMenu(false)}
+                  >
                     <Link
-                      class="nav-link active"
+                      class="nav-link active d-flex "
                       aria-current="page"
                       to={'/trip'}
                     >
                       ALL PACKAGE
+                      <KeyboardArrowDownOutlinedIcon
+                        className={
+                          closemenu === true && menu === 'first' && 'rotateIcon'
+                        }
+                      />
                     </Link>
+                    {closemenu === true && menu === 'first' && (
+                      <div className="drop-menu">
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                      </div>
+                    )}
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">
+                  <li
+                    class="nav-item"
+                    onMouseOver={() => {
+                      setOpenMenu(true)
+                      setMenu('second')
+                    }}
+                    onMouseLeave={() => setOpenMenu(false)}
+                  >
+                    <Link
+                      class="nav-link active d-flex "
+                      aria-current="page"
+                      to={''}
+                    >
                       DAY TOUR
-                    </a>
+                      <KeyboardArrowDownOutlinedIcon
+                        className={
+                          closemenu === true &&
+                          menu === 'second' &&
+                          'rotateIcon'
+                        }
+                      />
+                    </Link>
+                    {closemenu === true && menu === 'second' && (
+                      <div className="drop-menu">
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                      </div>
+                    )}
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">
+                  <li
+                    class="nav-item"
+                    onMouseOver={() => {
+                      setOpenMenu(true)
+                      setMenu('fourth')
+                    }}
+                    onMouseLeave={() => setOpenMenu(false)}
+                  >
+                    <a
+                      class="nav-link active d-flex"
+                      aria-current="page"
+                      href="#"
+                    >
                       BEST DEALS
+                      <KeyboardArrowDownOutlinedIcon
+                        className={
+                          closemenu === true &&
+                          menu === 'fourth' &&
+                          'rotateIcon'
+                        }
+                      />
                     </a>
+                    {closemenu === true && menu === 'fourth' && (
+                      <div className="drop-menu">
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                      </div>
+                    )}
                   </li>
-                  <li class="nav-item">
+                  <li
+                    class="nav-item"
+                    onMouseOver={() => {
+                      setOpenMenu(true)
+                      setMenu('third')
+                    }}
+                    onMouseLeave={() => setOpenMenu(false)}
+                  >
                     <a class="nav-link active" aria-current="page" href="#">
                       TRAVEL INFO
                     </a>
+                    {closemenu === true && menu === 'third' && (
+                      <div className="drop-menu">
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                        <li>
+                          <Link to={''}>Home</Link>
+                        </li>
+                      </div>
+                    )}
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">

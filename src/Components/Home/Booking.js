@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import SkateboardingIcon from '@mui/icons-material/Skateboarding'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import HikingIcon from '@mui/icons-material/Hiking'
@@ -6,6 +7,7 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
 import ReactStar from 'react-rating-stars-component'
 import { useAnimation, motion } from 'framer-motion'
 import { InView, useInView } from 'react-intersection-observer'
+
 const Booking = () => {
   const options = {
     edit: false,
@@ -13,7 +15,7 @@ const Booking = () => {
     activeColor: '#fb8500',
     value: 5,
     isHalf: true,
-    size: window.innerWidth < 600 ? 20 : 46,
+    size: window.innerWidth < 600 ? 30 : 46,
   }
   const { ref, inView } = useInView()
   console.log(inView, 'yui')
@@ -40,42 +42,49 @@ const Booking = () => {
                 <HikingIcon className="hike-icon" />
               </div>
             </div>
-            <h1>Mount Everest base camp</h1>
-            <h2 className="text-center">Heli Tour</h2>
-            <div className="tour mt-4">
-              <div className="d-flex align-items-center">
-                <SkateboardingIcon className="icon-tour" />{' '}
-                <div>
-                  <span>Grade</span> <p>challenging</p>
+            <h1 className="mt-4">Mount Everest base camp</h1>
+            <h2 className="text-center mt-4">Heli Tour</h2>
+            <div className=" d-flex justify-content-center align-items-center mt-4">
+              <div>
+                <div className="tour">
+                  <div className="d-flex align-items-center">
+                    <SkateboardingIcon className="icon-tour" />
+                    <div>
+                      <span>Grade</span> <p>challenging</p>
+                    </div>
+                  </div>
+                  <div className="d-flex align-items-center  event-type">
+                    <AccessTimeIcon className="icon-tour" />{' '}
+                    <div>
+                      <span>Duration</span> <p>5 Hours</p>
+                    </div>
+                  </div>
+                  <div className="d-flex align-items-center event-type ">
+                    <HikingIcon className="icon-tour" />{' '}
+                    <div>
+                      <span>Activity</span> <p>Everest Heli View</p>
+                    </div>
+                  </div>
+                  <div className="d-flex align-items-center event-type">
+                    <div className="price me-3 ">
+                      <AttachMoneyIcon className="icon-tou me-0" />
+                    </div>
+                    <div>
+                      <span className="d-price">From US$ 1500</span>{' '}
+                      <p>US$1000</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="star d-flex align-items-center justify-content-center mt-4 ">
+                  <ReactStar {...options} />{' '}
+                  <span className="ms-4">of 60 review</span>
+                </div>
+                <div className="book-btn d-flex align-items-center justify-content-center  mt-4">
+                  <Link to={'/everest'}>
+                    <button className="btn">Booking Today</button>
+                  </Link>
                 </div>
               </div>
-              <div className="d-flex align-items-center ">
-                <AccessTimeIcon className="icon-tour" />{' '}
-                <div>
-                  <span>Duration</span> <p>5 Hours</p>
-                </div>
-              </div>
-              <div className="d-flex align-items-center ">
-                <HikingIcon className="icon-tour" />{' '}
-                <div>
-                  <span>Activity</span> <p>Everest Heli View</p>
-                </div>
-              </div>
-              <div className="d-flex align-items-center">
-                <div className="price me-3 ">
-                  <AttachMoneyIcon className="icon-tou me-0" />
-                </div>
-                <div>
-                  <span className="d-price">From US$ 1500</span> <p>US$1000</p>
-                </div>
-              </div>
-            </div>
-            <div className="star d-flex align-items-center justify-content-center mt-4 ">
-              <ReactStar {...options} />{' '}
-              <span className="ms-4">of 60 review</span>
-            </div>
-            <div className="book-btn d-flex align-items-center justify-content-center  mt-4">
-              <button className="btn">Booking Today</button>
             </div>
           </div>
         </div>

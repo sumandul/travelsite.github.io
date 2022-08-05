@@ -1,3 +1,5 @@
+import 'owl.carousel/dist/assets/owl.carousel.css'
+import 'owl.carousel/dist/assets/owl.theme.default.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.min.js'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'

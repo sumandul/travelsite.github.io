@@ -1,5 +1,6 @@
 header {
   .mb-logo {
+    width: 100px !important;
     @include desktop {
       display: none !important;
     }
@@ -18,7 +19,7 @@ header {
   }
   .MenuIcon {
     color: #ffff;
-    font-size: 30px;
+    font-size: 20px;
     background-color: $yellow;
     border-radius: 4px;
   }
@@ -69,6 +70,9 @@ header {
         color: $gray;
         font-weight: 500;
         font-size: 17px;
+        &:hover {
+          color: $yellow;
+        }
       }
       @include center;
       .icon {
@@ -79,19 +83,76 @@ header {
   }
   .bg-light {
     background-color: $text-color !important;
-    padding: 17px 0px !important;
+    @include mini {
+      padding: 17px 0px !important;
+    }
+    .navbar-nav {
+      z-index: 444;
+      @include mini {
+        position: absolute;
+        background-color: $text-color;
+        top: 61px;
+        left: 0;
+        width: 100%;
+        padding: 7px 37px;
+      }
+    }
+    .active {
+      color: $yellow;
+    }
     .nav-item {
+      position: relative;
+      padding: 15px 0px;
+
       .nav-link {
         color: #ffff !important;
         font-size: 16px;
         font-weight: 500;
-        padding: 0px 27px;
+        padding: 0px 25px;
+
+        &:hover {
+          color: $yellow !important;
+        }
+        @include mini {
+          padding: 0px;
+        }
+
+        @include potrait {
+          padding: 0px 10px !important;
+        }
+      }
+      .drop-menu {
+        position: absolute;
+        background-color: $text-color;
+        padding: 15px 20px;
+        width: 100px;
+        padding-top: 15px;
+        top: 35px;
+        left: 20px;
+        z-index: 333;
+        li {
+          text-transform: uppercase;
+          margin-bottom: 10px;
+
+          a {
+            font-size: 17px;
+            font-weight: 500;
+            color: #fff;
+            cursor: pointer;
+            &:hover {
+              color: $yellow !important;
+            }
+          }
+        }
       }
     }
   }
 }
+.menu {
+  @include mini {
+  }
+}
 .fix-menu {
-  // color: #ffffff;
   background-color: $text-color !important;
   // padding: 22px 0px !important;
   color: #ffff !important;
@@ -110,7 +171,7 @@ header {
   // -webkit-box-shadow: 0 4px 16px rgb(0 0 0 / 29%);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.29);
   .navbar-nav {
-    top: 109px !important;
+    top: 66px !important;
   }
 }
 @keyframes fixedAnim {
@@ -123,23 +184,27 @@ header {
 }
 .navbar-nav {
   @include potrait {
-    .ps-0 {
-      padding-left: 2rem !important;
-    }
+    padding: 14px 10px !important;
     display: flex;
     flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
     list-style: none;
-    background-color: #fb8500;
-    position: absolute;
-    top: 101px;
-    right: 0;
+    padding: 18px 0px;
     z-index: 33;
     li.nav-item {
       padding: 10px 0px;
       font-size: 15px !important;
       font-weight: 500 !important;
+      @include mini {
+        padding: 10px 0px;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+      }
     }
   }
+}
+
+.rotateIcon {
+  transform: rotate(180deg);
 }

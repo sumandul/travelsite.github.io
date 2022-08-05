@@ -5,7 +5,7 @@ const Suscribe = () => {
     <>
       <div className="suscribe">
         <Container>
-          <Row>
+          <Row className="gy-3">
             <Col md={12} lg={8}>
               <h3>Subscribe Our E-Newsletter</h3>
               <p>

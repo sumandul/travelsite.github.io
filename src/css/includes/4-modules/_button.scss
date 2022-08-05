@@ -1,25 +1,45 @@
 button {
   outline: 0;
   border: none;
+  @include tsn;
 }
 
 .search-trip {
   background-color: $text-color;
-  padding: 18px 10px;
   border-radius: 6px;
   width: 100%;
   @include center;
+  &:hover {
+    background-color: $yellow;
+  }
   p {
     color: #ffff !important;
     font-weight: 600 !important;
     font-size: 15px !important;
     letter-spacing: 3px;
+    padding: 18px 10px;
+    @include potrait {
+      padding: 18px 7px;
+    }
   }
 }
 .rd-btn {
   background-color: #efefefcc;
   padding: 13px 22px;
   border-radius: 5px;
+  @include tsn;
+  &:hover {
+    background-color: $yellow;
+    span {
+      color: #ffff !important;
+    }
+    .arrow {
+      color: #ffff;
+    }
+  }
+  @include mini {
+    padding: 11px 12px;
+  }
   span {
     color: $yellow;
     font-size: 16px;
@@ -60,20 +80,22 @@ button {
   font-weight: 300;
 }
 .btn {
-  background-color: #fb8500;
-  border: 1px solid #ffff;
-  border-radius: 10px;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 10px 30px;
+  @include btn(10px 30px, $yellow, 6px, 16px, 500, #ffff);
+  &:hover {
+    @include hover-btn;
+  }
 }
 .c-btn {
-  background-color: $yellow;
-  padding: 13px 30px;
-  border-radius: 10px;
-  font-size: 18;
-  font-weight: 600;
-  color: #fff;
+  @include btn(13px 30px, $yellow, 6px, 16px, 600, #fff);
+  .right-arr {
+    @include tsn;
+  }
+  &:hover {
+    @include hover-btn;
+    .right-arr {
+      transform: translateX(10px);
+    }
+  }
 }
 .btn-sus {
   background-color: #023047;
@@ -83,15 +105,22 @@ button {
   font-weight: 500;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
+  @include tsn;
+  &:hover {
+    background-color: $yellow;
+  }
 }
 .btn-send {
-  background-color: $yellow;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #ffff;
-  font-weight: 400;
-  border-radius: 10px;
-  margin-top: 6px;
+  @include btn(10px 20px, $yellow, 6px, 16px, 400, #fff);
+  .right-arr {
+    @include tsn;
+  }
+  &:hover {
+    @include hover-btn;
+    .right-arr {
+      transform: translateX(10px);
+    }
+  }
 }
 .accordion-button {
   color: #fff;
@@ -100,7 +129,7 @@ button {
   background-color: transparent;
   padding: 0px 0px !important;
   @include potrait {
-    font-size: 20px !important;
+    font-size: 16px !important;
   }
   .down {
     font-size: 30px;
@@ -143,6 +172,13 @@ button {
   background-color: #fff;
   border-radius: 4px;
   width: 100%;
+  transition: all 0.4s linear;
+  &:hover {
+    background-color: $yellow;
+    a {
+      color: #ffff !important;
+    }
+  }
   a {
     color: #4c4c4c;
     font-size: 14px;
@@ -251,4 +287,65 @@ option {
   font-weight: 400;
   padding: 13px 0px;
   border-radius: 4px;
+}
+.navbar-toggler:focus {
+  text-decoration: none;
+  outline: 0;
+  box-shadow: none !important;
+}
+
+.vew-more {
+  @include btn(10px 20px, $yellow, 6px, 14px, 500, #ffff);
+  @include tsn;
+  .right-arr {
+    @include tsn;
+  }
+  &:hover {
+    @include hover-btn;
+    .right-arr {
+      transform: translateX(10px);
+    }
+  }
+}
+
+.owl-carousel {
+  .owl-nav.disabled + .owl-dots {
+    margin-top: 20px;
+  }
+  .owl-stage-outer {
+    padding: 16px 12px;
+  }
+  .owl-dots {
+    .active {
+      span {
+        background-color: $yellow !important;
+      }
+    }
+    span {
+      border: 1px solid $yellow;
+      height: 15px !important;
+      width: 15px !important;
+      background-color: transparent !important;
+      &:hover {
+        background-color: $yellow !important;
+      }
+    }
+  }
+}
+.modal-conten {
+  animation: rotate infinite linear;
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(20deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(100deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

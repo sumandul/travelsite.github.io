@@ -42,7 +42,7 @@ const Company = () => {
           <div className="com-btn text-center mt-5">
             <button className="c-btn">
               View Detail of Our Company
-              <ArrowRightAltIcon className="ar-icon" />
+              <ArrowRightAltIcon className="ar-icon right-arr" />
             </button>
           </div>
         </Container>
