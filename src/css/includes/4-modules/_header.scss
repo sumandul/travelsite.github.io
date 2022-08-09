@@ -83,6 +83,7 @@ header {
   }
   .bg-light {
     background-color: $text-color !important;
+    padding: 0 !important;
     @include mini {
       padding: 17px 0px !important;
     }
@@ -110,9 +111,51 @@ header {
         font-weight: 500;
         padding: 0px 25px;
 
+        @include desktop {
+          padding: 0px 11px;
+        }
+
         &:hover {
           color: $yellow !important;
+          // .mb {
+          //   li {
+          //     &:nth-child(1) {
+          //       animation: animate 300ms ease-in-out;
+          //       animation-delay: -150ms;
+          //     }
+          //     &:nth-child(2) {
+          //       animation: animate 300ms ease-in-out;
+          //       animation-delay: 0ms;
+          //     }
+          //     &:nth-child(3) {
+          //       animation: animate 300ms ease-in-out;
+          //       animation-delay: 150ms;
+          //     }
+          //     &:nth-child(4) {
+          //       animation: animate 300ms ease-in-out;
+          //       animation-delay: 300ms;
+          //     }
+          //     &:nth-child(5) {
+          //       animation: animate 300ms ease-in-out;
+          //       animation-delay: 450ms;
+          //     }
+          //   }
+          //   @keyframes animate {
+          //     0% {
+          //       opacity: 0;
+          //       transform: rotate(-90deg);
+          //     }
+          //     20% {
+          //       opacity: 0;
+          //       transform: rotate(20deg);
+          //     }
+          //     0% {
+          //       opacity: 1;
+          //       transform: rotate(0deg);
+          //     }
+          //   }
         }
+
         @include mini {
           padding: 0px;
         }
@@ -123,11 +166,13 @@ header {
       }
       .drop-menu {
         position: absolute;
-        background-color: $text-color;
+        background-color: $yellow;
         padding: 15px 20px;
         width: 100px;
         padding-top: 15px;
-        top: 35px;
+        border-radius: 6px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+        top: 60px;
         left: 20px;
         z-index: 333;
         li {
@@ -137,7 +182,7 @@ header {
           a {
             font-size: 17px;
             font-weight: 500;
-            color: #fff;
+            color: #ffff;
             cursor: pointer;
             &:hover {
               color: $yellow !important;
@@ -207,4 +252,44 @@ header {
 
 .rotateIcon {
   transform: rotate(180deg);
+}
+.sub-menu {
+  position: relative;
+  .sub-menu-inner {
+    position: absolute;
+    right: -100px;
+    top: 0;
+    background-color: $yellow;
+  }
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: $text-color;
+  top: 40px;
+  left: 0;
+  color: #ffff;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+  @include mini {
+    position: static;
+    box-shadow: none;
+  }
+}
+.show {
+  display: block;
+}
+.dropdown-submenu {
+  position: absolute;
+  top: 0px;
+  left: 100%;
+  background-color: $text-color;
+  @include mini {
+    position: static;
+    box-shadow: none;
+  }
+  min-width: 173px !important;
+  a {
+    padding: 0px 10px !important;
+  }
 }

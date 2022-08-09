@@ -81,7 +81,7 @@ header .mb-logo {
   width: 100px !important;
 }
 
-@media (min-width: 996px) {
+@media (min-width: 996px) and (max-width: 1300px) {
   header .mb-logo {
     display: none !important;
   }
@@ -205,6 +205,7 @@ header .mid-header .email .icon {
 
 header .bg-light {
   background-color: #023047 !important;
+  padding: 0 !important;
 }
 
 @media (max-width: 996px) {
@@ -244,6 +245,12 @@ header .bg-light .nav-item .nav-link {
   padding: 0px 25px;
 }
 
+@media (min-width: 996px) and (max-width: 1300px) {
+  header .bg-light .nav-item .nav-link {
+    padding: 0px 11px;
+  }
+}
+
 header .bg-light .nav-item .nav-link:hover {
   color: #fb8500 !important;
 }
@@ -262,11 +269,14 @@ header .bg-light .nav-item .nav-link:hover {
 
 header .bg-light .nav-item .drop-menu {
   position: absolute;
-  background-color: #023047;
+  background-color: #fb8500;
   padding: 15px 20px;
   width: 100px;
   padding-top: 15px;
-  top: 35px;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+  top: 60px;
   left: 20px;
   z-index: 333;
 }
@@ -279,7 +289,7 @@ header .bg-light .nav-item .drop-menu li {
 header .bg-light .nav-item .drop-menu li a {
   font-size: 17px;
   font-weight: 500;
-  color: #fff;
+  color: #ffff;
   cursor: pointer;
 }
 
@@ -360,6 +370,60 @@ header .bg-light .nav-item .drop-menu li a:hover {
 .rotateIcon {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+.sub-menu {
+  position: relative;
+}
+
+.sub-menu .sub-menu-inner {
+  position: absolute;
+  right: -100px;
+  top: 0;
+  background-color: #fb8500;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  background-color: #023047;
+  top: 40px;
+  left: 0;
+  color: #ffff;
+  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 996px) {
+  .dropdown {
+    position: static;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.dropdown-submenu {
+  position: absolute;
+  top: 0px;
+  left: 100%;
+  background-color: #023047;
+  min-width: 173px !important;
+}
+
+@media (max-width: 996px) {
+  .dropdown-submenu {
+    position: static;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+}
+
+.dropdown-submenu a {
+  padding: 0px 10px !important;
 }
 
 button {
@@ -2439,7 +2503,7 @@ select:focus {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 29px 7px;
+  padding: 16px 7px;
   margin-left: 21px;
 }
 
