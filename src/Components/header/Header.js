@@ -36,11 +36,9 @@ const Header = () => {
         <div className="innr-top">
           <Container>
             <div className="header-top">
-              <marquee>
-                <h1>
-                  Nepal Trek Booking Open For 2022 <span></span> 23
-                </h1>
-              </marquee>
+              <h1>
+                Nepal Trek Booking Open For 2022 <span></span> 23
+              </h1>
             </div>
           </Container>
         </div>
@@ -48,7 +46,7 @@ const Header = () => {
           <div className="mid-header">
             <Row>
               <Col md={6}>
-                <div className="logo">
+                <div className="logo ">
                   <Link to={'/'}>
                     {' '}
                     <img src="../Logo.png" alt="" className="img-fluid" />

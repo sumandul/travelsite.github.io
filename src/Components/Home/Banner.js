@@ -18,6 +18,17 @@ const options = [
   { value: 'Chitwan', label: 'Chitwan' },
   { value: 'Bardiya ', label: 'Bardiya ' },
 ]
+const colourStyles = {
+  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
+    // const color = chroma(data.color);
+    console.log({ data, isDisabled, isFocused, isSelected })
+    return {
+      ...styles,
+      backgroundColor: isFocused ? 'red' : null,
+      color: '#333333',
+    }
+  },
+}
 const Banner = () => {
   return (
     <>

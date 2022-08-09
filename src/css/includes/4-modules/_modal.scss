@@ -13,21 +13,39 @@
   border: 0 !important;
 }
 .modal-img-slide {
+}
+.img-popup {
+  .owl-stage-outer {
+    padding: 0px;
+  }
   .owl-nav {
-    .owl-prev,
-    .owl-next {
-      height: 30px;
-      width: 30px;
-      background-color: $yellow !important;
-      border-radius: 50%;
-      text-align: center;
-      span {
-        color: #ffff;
-        font-size: 20px;
-      }
+    position: absolute;
+    bottom: 0;
+    margin-top: 0;
+    left: 42%;
+  }
+
+  .owl-next,
+  .owl-prev {
+    width: 25px;
+    background-color: $yellow !important;
+
+    @include center;
+
+    span {
+      color: #ffff;
+      font-size: 20px;
     }
   }
-  .modal-img-slide {
-    padding: 0 !important;
+
+  .modal-body {
+    padding: 0;
+  }
+  .modal-header {
+    padding: 3px 10px !important;
+  }
+  .btn-close {
+    font-size: 12px;
+    color: $yellow !important;
   }
 }

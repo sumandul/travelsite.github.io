@@ -7,6 +7,7 @@ import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight'
 const MenuItem = ({ menu, depthLevel }) => {
   const ref = useRef()
   const [dropdown, setDropdown] = useState(false)
+  console.log(dropdown, 'helo')
   useEffect(() => {
     // alert(dropdown)
   }, [dropdown])
@@ -37,30 +38,29 @@ const MenuItem = ({ menu, depthLevel }) => {
       window.removeEventListener('resize', handleWindowResize)
     }
   }, [])
-  // const onMouseEnter = () => {
-  //   setDropdown(true)
-  // }
+  const onMouseEnter = () => {
+    setDropdown(true)
+  }
 
-  // const onMouseLeave = () => {
-  //   setDropdown(false)
-  // }
+  const onMouseLeave = () => {
+    setDropdown(false)
+  }
   return (
     <>
       {menu?.submenu ? (
         <li class="nav-item" ref={ref}>
           <Link
             className="nav-link active d-flex align-items-center mb-menu"
-            to={'/'}
+            to={'/trip'}
             onClick={
               depthLevel + 1 === depthLevel
                 ? () => setDropdown(false)
                 : () => setDropdown(true)
             }
-
-            // onMouseEnter={onMouseEnter}
-            // onMouseLeave={onMouseLeave}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
           >
-            {depthLevel}
+            {menu?.title}
             {depthLevel < 1 ? (
               <span>
                 <KeyboardArrowDownOutlinedIcon

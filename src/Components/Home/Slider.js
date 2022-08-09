@@ -93,13 +93,14 @@ const SliderComponent = () => {
         handleclose={handleClose}
         header="Gosikunda Trek "
         body={<ImageList />}
+        className="img-popup"
       />
       <PopUpModel
         show={showvideo}
         handleclose={handleCloseVideo}
         header="Gosikunda Trek Vedio "
         body={<Vedio />}
-        vediomodal="vedio-modal-css"
+        className="img-popup"
       />
       <section className="slide">
         <Container className="mt-5">

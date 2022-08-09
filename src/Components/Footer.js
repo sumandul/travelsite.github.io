@@ -81,7 +81,7 @@ const Footer = () => {
                       name=""
                       id=""
                       cols="10"
-                      rows="4"
+                      rows="3"
                       placeholder="Message"
                       className="foot-input"
                     ></textarea>

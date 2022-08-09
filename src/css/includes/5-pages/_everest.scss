@@ -219,6 +219,8 @@
           }
           &:first-child::before {
             content: 'DEPARTURE DATE';
+            @include potrait {
+            }
           }
           &:nth-child(2)::before {
             content: 'PRICE';
@@ -322,7 +324,6 @@
   }
   .everest-left {
     margin-left: 15px;
-    background-attachment: fixed;
 
     @include mini {
       margin-left: 0;

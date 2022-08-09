@@ -712,93 +712,93 @@ const EverestTrek = () => {
                 </div>
                 <div className="grp-btn">Group</div>
               </div>
-              {fix ? null : (
-                <div className="mid-container">
-                  <div className="mid-title d-flex align-items-center justify-content-between">
-                    <div>
-                      <h5>No. of Persons</h5>
-                    </div>
-                    <div>
-                      <h5>Price Per Person</h5>
-                    </div>
+
+              <div className="mid-container">
+                <div className="mid-title d-flex align-items-center justify-content-between">
+                  <div>
+                    <h5>No. of Persons</h5>
                   </div>
-                  <div className="price-person d-flex align-items-center justify-content-between">
-                    <div>
-                      <p>1 per</p>
-                    </div>
-                    <div>
-                      <p>- US$ 1450 </p>
-                    </div>
-                  </div>
-                  <div className="price-person d-flex align-items-center justify-content-between">
-                    <div>
-                      <p>1 per</p>
-                    </div>
-                    <div>
-                      <p>- US$ 1450 </p>
-                    </div>
-                  </div>
-                  <div className="price-person d-flex align-items-center justify-content-between">
-                    <div>
-                      <p>1 per</p>
-                    </div>
-                    <div>
-                      <p>- US$ 1450 </p>
-                    </div>
-                  </div>
-                  <div className="price-person d-flex align-items-center justify-content-between">
-                    <div>
-                      <p>2 per</p>
-                    </div>
-                    <div>
-                      <p>- US$ 1450 </p>
-                    </div>
-                  </div>
-                  <div className="price-person d-flex align-items-center justify-content-between">
-                    <div>
-                      <p>2-3per</p>
-                    </div>
-                    <div>
-                      <p> US$ 1450 </p>
-                    </div>
-                  </div>
-                  <div className="price-person d-flex align-items-center justify-content-between">
-                    <div>
-                      <p>2-3per</p>
-                    </div>
-                    <div>
-                      <p>- US$ 1450 </p>
-                    </div>
-                  </div>
-                  <div className="price-person d-flex align-items-center justify-content-between">
-                    <div>
-                      <p>2-3per</p>
-                    </div>
-                    <div>
-                      <p>- US$ 1450 </p>
-                    </div>
-                  </div>
-                  <div className="price-person d-flex align-items-center justify-content-between">
-                    <div>
-                      <p>2-3per</p>
-                    </div>
-                    <div>
-                      <p>- US$ 1450 </p>
-                    </div>
-                  </div>
-                  <div className="offer mt-4">
-                    <div className="mt-2">
-                      <span>Best Price Guarantee </span>
-                    </div>
-                    <div className="mt-2">
-                      <span>Hassle-Free Booking </span>
-                    </div>
-                    <div className="mt-2">
-                      <span>No Booking or Credit Card Fees</span>
-                    </div>
+                  <div>
+                    <h5>Price Per Person</h5>
                   </div>
                 </div>
-              )}
+                <div className="price-person d-flex align-items-center justify-content-between">
+                  <div>
+                    <p>1 per</p>
+                  </div>
+                  <div>
+                    <p>- US$ 1450 </p>
+                  </div>
+                </div>
+                <div className="price-person d-flex align-items-center justify-content-between">
+                  <div>
+                    <p>1 per</p>
+                  </div>
+                  <div>
+                    <p>- US$ 1450 </p>
+                  </div>
+                </div>
+                <div className="price-person d-flex align-items-center justify-content-between">
+                  <div>
+                    <p>1 per</p>
+                  </div>
+                  <div>
+                    <p>- US$ 1450 </p>
+                  </div>
+                </div>
+                <div className="price-person d-flex align-items-center justify-content-between">
+                  <div>
+                    <p>2 per</p>
+                  </div>
+                  <div>
+                    <p>- US$ 1450 </p>
+                  </div>
+                </div>
+                <div className="price-person d-flex align-items-center justify-content-between">
+                  <div>
+                    <p>2-3per</p>
+                  </div>
+                  <div>
+                    <p> US$ 1450 </p>
+                  </div>
+                </div>
+                <div className="price-person d-flex align-items-center justify-content-between">
+                  <div>
+                    <p>2-3per</p>
+                  </div>
+                  <div>
+                    <p>- US$ 1450 </p>
+                  </div>
+                </div>
+                <div className="price-person d-flex align-items-center justify-content-between">
+                  <div>
+                    <p>2-3per</p>
+                  </div>
+                  <div>
+                    <p>- US$ 1450 </p>
+                  </div>
+                </div>
+                <div className="price-person d-flex align-items-center justify-content-between">
+                  <div>
+                    <p>2-3per</p>
+                  </div>
+                  <div>
+                    <p>- US$ 1450 </p>
+                  </div>
+                </div>
+                <div className="offer mt-4">
+                  <div className="mt-2">
+                    <span>Best Price Guarantee </span>
+                  </div>
+                  <div className="mt-2">
+                    <span>Hassle-Free Booking </span>
+                  </div>
+                  <div className="mt-2">
+                    <span>No Booking or Credit Card Fees</span>
+                  </div>
+                </div>
+              </div>
+
               <div className="bottom-container">
                 <div>
                   <div className="excelent d-flex align-items-center  justify-content-center mb-2">

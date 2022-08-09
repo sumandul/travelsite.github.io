@@ -66,7 +66,12 @@
   }
 }
 @mixin desktop {
-  @media (min-width: 996px) and (max-width: 1300px) {
+  @media (min-width: 996px) and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 996px) {
     @content;
   }
 }

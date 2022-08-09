@@ -21,7 +21,7 @@
   color: #fff;
   ul {
     li {
-      margin-bottom: 14px;
+      margin-bottom: 11px;
       transition: all 0.5s linear;
       &:hover {
         transform: translateY(-10px);
@@ -37,7 +37,7 @@
     }
   }
   h1 {
-    font-size: 24px;
+    font-size: 21px;
     font-weight: 500;
     @include potrait {
       font-size: 20px !important;

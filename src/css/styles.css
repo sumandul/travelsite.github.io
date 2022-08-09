@@ -81,9 +81,9 @@ header .mb-logo {
   width: 100px !important;
 }
 
-@media (min-width: 996px) and (max-width: 1300px) {
+@media (min-width: 996px) {
   header .mb-logo {
-    display: none !important;
+    display: none;
   }
 }
 
@@ -242,12 +242,12 @@ header .bg-light .nav-item .nav-link {
   color: #ffff !important;
   font-size: 16px;
   font-weight: 500;
-  padding: 0px 25px;
+  padding: 0px 20px;
 }
 
-@media (min-width: 996px) and (max-width: 1300px) {
+@media (min-width: 996px) and (max-width: 1200px) {
   header .bg-light .nav-item .nav-link {
-    padding: 0px 11px;
+    padding: 0px 11px !important;
   }
 }
 
@@ -426,6 +426,18 @@ header .bg-light .nav-item .drop-menu li a:hover {
   padding: 0px 10px !important;
 }
 
+.rotatte-arr {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: all 0.6s linear;
+  transition: all 0.6s linear;
+}
+
+.rotate-up {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 button {
   outline: 0;
   border: none;
@@ -509,10 +521,19 @@ button {
   top: 6%;
   right: 3%;
   color: #ffff;
-  padding: 7px 9px;
+  padding: 5px 9px;
   border-radius: 4px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 @media (max-width: 576px) {
@@ -862,6 +883,12 @@ option {
   padding: 16px 12px;
 }
 
+@media (max-width: 996px) {
+  .owl-carousel .owl-stage-outer {
+    padding: 16px 0px !important;
+  }
+}
+
 .owl-carousel .owl-dots .active span {
   background-color: #fb8500 !important;
 }
@@ -1157,6 +1184,18 @@ select:focus {
   right: 10px;
 }
 
+#react-select-5-listbox {
+  top: 26px;
+}
+
+#react-select-5-listbox option {
+  color: red !important;
+}
+
+.css-2613qy-menu {
+  background-color: red;
+}
+
 .footer {
   padding: 28px 0px;
   background-color: #023047;
@@ -1190,7 +1229,7 @@ select:focus {
 }
 
 .footer ul li {
-  margin-bottom: 14px;
+  margin-bottom: 11px;
   -webkit-transition: all 0.5s linear;
   transition: all 0.5s linear;
 }
@@ -1211,7 +1250,7 @@ select:focus {
 }
 
 .footer h1 {
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 500;
 }
 
@@ -1396,23 +1435,49 @@ select:focus {
   border: 0 !important;
 }
 
-.modal-img-slide .owl-nav .owl-prev,
-.modal-img-slide .owl-nav .owl-next {
-  height: 30px;
-  width: 30px;
-  background-color: #fb8500 !important;
-  border-radius: 50%;
-  text-align: center;
+.img-popup .owl-stage-outer {
+  padding: 0px;
 }
 
-.modal-img-slide .owl-nav .owl-prev span,
-.modal-img-slide .owl-nav .owl-next span {
+.img-popup .owl-nav {
+  position: absolute;
+  bottom: 0;
+  margin-top: 0;
+  left: 42%;
+}
+
+.img-popup .owl-next,
+.img-popup .owl-prev {
+  width: 25px;
+  background-color: #fb8500 !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.img-popup .owl-next span,
+.img-popup .owl-prev span {
   color: #ffff;
   font-size: 20px;
 }
 
-.modal-img-slide .modal-img-slide {
-  padding: 0 !important;
+.img-popup .modal-body {
+  padding: 0;
+}
+
+.img-popup .modal-header {
+  padding: 3px 10px !important;
+}
+
+.img-popup .btn-close {
+  font-size: 12px;
+  color: #fb8500 !important;
 }
 
 .banner {
@@ -1481,6 +1546,10 @@ select:focus {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
 }
 
+.banner .trip #react-select-3-listbox {
+  top: 23px;
+}
+
 @media (max-width: 576px) {
   .banner .trip {
     width: 100% !important;
@@ -1495,15 +1564,15 @@ select:focus {
 
 @media (max-width: 996px) {
   .banner .trip {
-    bottom: 247px;
-    right: 104px;
+    bottom: -51px;
+    right: 137px;
     width: 68%;
   }
 }
 
 .banner .trip p {
   color: #707070;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 15px;
   margin-bottom: 10px;
 }
@@ -1549,8 +1618,11 @@ select:focus {
 }
 
 .slide .over-box {
-  background-color: rgba(38, 171, 226, 0.4);
+  background-color: rgba(38, 171, 226, 0.6);
   height: 60px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1565,6 +1637,8 @@ select:focus {
   position: absolute;
   bottom: 0;
   left: 0;
+  -webkit-transition: all 0.6s ease-in;
+  transition: all 0.6s ease-in;
 }
 
 @media (max-width: 576px) {
@@ -1608,15 +1682,27 @@ select:focus {
 }
 
 .top-place {
-  padding: 20px;
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
+  border-radius: 20px;
+  -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  border-radius: px;
   overflow: hidden;
+}
+
+.top-place:hover img {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.top-place:hover .over-box {
+  border-radius: 0;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .top-place .img-box2 {
   height: 50%;
+  background-color: green;
   position: relative;
 }
 
@@ -1625,8 +1711,6 @@ select:focus {
   width: 100%;
   height: 100%;
   position: absolute;
-  top: 0;
-  background-color: red;
   left: 0;
 }
 
@@ -1654,14 +1738,9 @@ select:focus {
   font-size: 25px;
 }
 
-@media (max-width: 996px) {
-  .top-place {
-    padding: 9px;
-  }
-}
-
 .top-place .content {
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 @media (max-width: 996px) {
@@ -1713,13 +1792,12 @@ select:focus {
 }
 
 .top-place img {
-  border-radius: 10px;
-  height: 400px;
+  border-radius: 20px;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
-  -webkit-transition: all 0.5s linear;
-  transition: all 0.5s linear;
+  -webkit-transition: all 0.6s ease-in;
+  transition: all 0.6s ease-in;
 }
 
 @media (max-width: 576px) {
@@ -1732,16 +1810,6 @@ select:focus {
   .top-place img {
     height: 267px;
   }
-}
-
-.top-place img:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-}
-
-.top-place img:hover .top-btn {
-  -webkit-transform: translateX(100px);
-          transform: translateX(100px);
 }
 
 .feature {
@@ -1921,7 +1989,7 @@ select:focus {
   background-size: cover;
   position: relative;
   background-attachment: fixed;
-  z-index: -1;
+  z-index: 9;
 }
 
 @media (max-width: 576px) {
@@ -1941,7 +2009,7 @@ select:focus {
   left: 0;
   background-color: black;
   opacity: 0.5;
-  z-index: -2;
+  z-index: -1;
 }
 
 .booking .content {
@@ -2086,7 +2154,7 @@ select:focus {
 }
 
 .booking .tour span {
-  opacity: 0.4;
+  opacity: 0.7;
   font-size: 16px;
   font-weight: 300;
   text-transform: capitalize;
@@ -2166,20 +2234,24 @@ select:focus {
   border-radius: 10px;
 }
 
-.top-destination .img-box:hover .title-place {
-  left: 0;
-}
-
 .top-destination .img-box:hover img {
+  overflow: hidden;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
+.top-destination .img-box .top-dist-content {
+  background-color: red;
+  width: 100%;
+}
+
 .top-destination .img-box .title-place {
   position: absolute;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  left: -100%;
+  padding: 10px 20px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(255, 255, 255, 0.5)));
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.5));
+  width: 100%;
+  left: 0;
   bottom: 0;
   color: #fff;
   -webkit-transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -2194,18 +2266,6 @@ select:focus {
 .top-destination .img-box .title-place span {
   font-size: 16px;
   font-weight: 300;
-}
-
-.top-destination .img-box::after {
-  content: '';
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, rgba(255, 255, 255, 0.2)), to(transparent));
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.2) 10%, transparent);
-  opacity: 1;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .top-destination .img-box img {
@@ -2234,9 +2294,12 @@ select:focus {
   font-weight: 300 !important;
 }
 
-.slide-clint .clint-review-carsouel .owl-stage-outer {
-  -webkit-box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+.slide-clint .clint-review-carsouel {
+  -webkit-box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  padding-top: 10px;
+  padding-bottom: 15px;
+  border-radius: 15px;
 }
 
 .slide-clint h1 {
@@ -3087,7 +3150,6 @@ select:focus {
 
 .everest-container .everest-left {
   margin-left: 15px;
-  background-attachment: fixed;
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
 }

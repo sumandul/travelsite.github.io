@@ -21,6 +21,7 @@ export default function PopUpModel(props) {
       backdrop="static"
       keyboard={false}
       centered
+      className={props.className}
     >
       <Modal.Header closeButton>
         <Modal.Title>{props.header}</Modal.Title>

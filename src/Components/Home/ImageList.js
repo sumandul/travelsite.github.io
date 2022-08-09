@@ -29,87 +29,36 @@ const option = {
 const ImageListm = () => {
   return (
     <>
-      <Row className="gy-2">
-        <OwlCarousel className="owl-theme  modal-img-slide" {...option}>
-          <div className="modal-img">
-            <img
-              src="https://www.switchbacktravel.com/sites/default/files/images/articles/Mt.%20Everest%20Nepal.jpg"
-              alt=""
-              className="img-fluid"
-            />
-          </div>
-          <div className="modal-img">
-            <img
-              src="https://www.switchbacktravel.com/sites/default/files/images/articles/Mt.%20Everest%20Nepal.jpg"
-              alt=""
-              className="img-fluid"
-            />
-          </div>
-          <div className="modal-img">
-            <img
-              src="https://www.switchbacktravel.com/sites/default/files/images/articles/Mt.%20Everest%20Nepal.jpg"
-              alt=""
-              className="img-fluid"
-            />
-          </div>
-          <div className="modal-img">
-            <img
-              src="https://www.switchbacktravel.com/sites/default/files/images/articles/Mt.%20Everest%20Nepal.jpg"
-              alt=""
-              className="img-fluid"
-            />
-          </div>
-        </OwlCarousel>
-        {/* <Col md={12}>
+      <OwlCarousel className="owl-theme  modal-img-slide" {...option}>
+        <div className="modal-img">
           <img
             src="https://www.switchbacktravel.com/sites/default/files/images/articles/Mt.%20Everest%20Nepal.jpg"
             alt=""
             className="img-fluid"
           />
-        </Col> */}
-        {/* <Col md={4}>
+        </div>
+        <div className="modal-img">
           <img
-            src="http://ghumante.com/wp-content/uploads/2020/09/feature-1080x633.jpg"
+            src="https://www.switchbacktravel.com/sites/default/files/images/articles/Mt.%20Everest%20Nepal.jpg"
             alt=""
             className="img-fluid"
           />
-        </Col>
-        <Col md={4}>
+        </div>
+        <div className="modal-img">
           <img
-            src="http://ghumante.com/wp-content/uploads/2020/09/feature-1080x633.jpg"
+            src="https://www.switchbacktravel.com/sites/default/files/images/articles/Mt.%20Everest%20Nepal.jpg"
             alt=""
             className="img-fluid"
           />
-        </Col>
-        <Col md={4}>
+        </div>
+        <div className="modal-img">
           <img
-            src="http://ghumante.com/wp-content/uploads/2020/09/feature-1080x633.jpg"
+            src="https://www.switchbacktravel.com/sites/default/files/images/articles/Mt.%20Everest%20Nepal.jpg"
             alt=""
             className="img-fluid"
           />
-        </Col>
-        <Col md={4}>
-          <img
-            src="http://ghumante.com/wp-content/uploads/2020/09/feature-1080x633.jpg"
-            alt=""
-            className="img-fluid"
-          />
-        </Col>
-        <Col md={4}>
-          <img
-            src="http://ghumante.com/wp-content/uploads/2020/09/feature-1080x633.jpg"
-            alt=""
-            className="img-fluid"
-          />
-        </Col>
-        <Col md={4}>
-          <img
-            src="http://ghumante.com/wp-content/uploads/2020/09/feature-1080x633.jpg"
-            alt=""
-            className="img-fluid"
-          />
-        </Col> */}
-      </Row>
+        </div>
+      </OwlCarousel>
     </>
   )
 }

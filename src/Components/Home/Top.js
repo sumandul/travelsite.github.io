@@ -19,9 +19,11 @@ const Top = () => {
                       alt=""
                       className="img-fluid"
                     />
-                    <div className="title-place">
-                      <h2> NEPAL</h2>
-                      <span>207 of HOliday Package</span>
+                    <div className="top-dist-content">
+                      <div className="title-place">
+                        <h2> NEPAL</h2>
+                        <span>207 of HOliday Package</span>
+                      </div>
                     </div>
                   </div>
                 </Link>

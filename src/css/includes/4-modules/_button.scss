@@ -60,10 +60,11 @@ button {
     padding: 7px 10px !important;
   }
   color: #ffff;
-  padding: 7px 9px;
+  padding: 5px 9px;
   border-radius: 4px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
+  @include center;
 }
 .private {
   background-color: #a38059 !important;
@@ -314,6 +315,9 @@ option {
   }
   .owl-stage-outer {
     padding: 16px 12px;
+    @include mini {
+      padding: 16px 0px !important;
+    }
   }
   .owl-dots {
     .active {
