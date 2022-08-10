@@ -11,9 +11,12 @@
   .everest-right {
     .e-title {
       @include potrait {
-        flex-direction: column;
+        flex-direction: column !important;
         align-items: flex-start !important;
       }
+    }
+    @include desktop {
+      flex-direction: column;
     }
     h1 {
       font-size: 28px;
@@ -48,6 +51,9 @@
     flex-basis: 70%;
     .everest-img {
       height: 400px;
+      @include mini {
+        height: 300px;
+      }
       img {
         width: 100%;
         object-fit: cover;
@@ -67,6 +73,9 @@
       table {
         width: 100%;
       }
+    }
+    .map-box {
+      @include center;
     }
 
     .activity-box {
@@ -123,9 +132,15 @@
       margin-bottom: 8px;
     }
     .acodian-icon {
-      margin-left: 342px;
+      margin-left: 217px;
       @include potrait {
         margin: 0px !important;
+      }
+      @include desktop {
+        margin-left: 88px;
+      }
+      @include mini {
+        margin-left: 137px;
       }
     }
     .accordion-item {
@@ -219,17 +234,27 @@
           }
           &:first-child::before {
             content: 'DEPARTURE DATE';
+            display: none;
             @include potrait {
+              display: block;
             }
           }
           &:nth-child(2)::before {
             content: 'PRICE';
+            display: none;
+            @include potrait {
+              display: block;
+            }
           }
           &:nth-child(3)::before {
             content: 'TRIP STATUS';
+            display: none;
+            @include potrait {
+              display: block;
+            }
           }
           &:last-child {
-            width: 27%;
+            width: 29%;
             @include mini {
               width: 33%;
             }
@@ -427,7 +452,8 @@
       h3 {
         color: $yellow;
         font-size: 28px;
-        font-weight: 700;
+        font-weight: 600;
+        text-align: center;
       }
     }
   }

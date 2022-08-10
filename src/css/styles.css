@@ -245,7 +245,7 @@ header .bg-light .nav-item .nav-link {
   padding: 0px 20px;
 }
 
-@media (min-width: 996px) and (max-width: 1200px) {
+@media (max-width: 1119px) {
   header .bg-light .nav-item .nav-link {
     padding: 0px 11px !important;
   }
@@ -449,6 +449,7 @@ button {
   background-color: #023047;
   border-radius: 6px;
   width: 100%;
+  padding: 18px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -460,6 +461,13 @@ button {
           justify-content: center;
 }
 
+@media (max-width: 996px) {
+  .search-trip {
+    padding: 9px 10px;
+    margin-top: 10px;
+  }
+}
+
 .search-trip:hover {
   background-color: #fb8500;
 }
@@ -469,12 +477,12 @@ button {
   font-weight: 600 !important;
   font-size: 15px !important;
   letter-spacing: 3px;
-  padding: 18px 10px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 996px) {
   .search-trip p {
-    padding: 18px 7px;
+    letter-spacing: 2px;
+    font-size: 13px;
   }
 }
 
@@ -944,6 +952,23 @@ option {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 576px) {
+  .hide-on-mb {
+    display: none;
+  }
+}
+
+.hide-on-desktop {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .hide-on-desktop {
+    margin-top: 6px;
+    display: block;
   }
 }
 
@@ -1435,6 +1460,10 @@ select:focus {
   border: 0 !important;
 }
 
+.img-popup .modal-content {
+  border: 0;
+}
+
 .img-popup .owl-stage-outer {
   padding: 0px;
 }
@@ -1489,15 +1518,9 @@ select:focus {
   position: relative;
 }
 
-@media (max-width: 576px) {
-  .banner {
-    height: 60vh !important;
-  }
-}
-
 @media (max-width: 996px) {
   .banner {
-    height: 100vh;
+    height: 35vh !important;
   }
 }
 
@@ -1565,8 +1588,14 @@ select:focus {
 @media (max-width: 996px) {
   .banner .trip {
     bottom: -51px;
-    right: 137px;
-    width: 68%;
+    right: 0px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1119px) {
+  .banner .trip {
+    width: 90%;
   }
 }
 
@@ -1595,7 +1624,14 @@ select:focus {
 
 @media (max-width: 576px) {
   .banner .trip .seach-icon {
-    margin-right: 0;
+    margin-right: 4px !important;
+  }
+}
+
+@media (max-width: 996px) {
+  .banner .trip .seach-icon {
+    margin-right: 2px;
+    font-size: 25px;
   }
 }
 
@@ -2013,6 +2049,7 @@ select:focus {
 }
 
 .booking .content {
+  overflow: hidden;
   z-index: 11;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2725,6 +2762,45 @@ select:focus {
           order: 1;
 }
 
+.package {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+@media (max-width: 1119px) {
+  .package {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.package .inner-package {
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
+}
+
+.package .inner-package .img {
+  width: 355px;
+}
+
+.package .inner-package .img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.package .view-detail {
+  margin-left: 10px;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+}
+
 .everest-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2753,13 +2829,22 @@ select:focus {
 
 @media (max-width: 576px) {
   .everest-container .everest-right .e-title {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+    -webkit-box-align: start !important;
+        -ms-flex-align: start !important;
+            align-items: flex-start !important;
+  }
+}
+
+@media (max-width: 1119px) {
+  .everest-container .everest-right {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: start !important;
-        -ms-flex-align: start !important;
-            align-items: flex-start !important;
   }
 }
 
@@ -2812,6 +2897,12 @@ select:focus {
   height: 400px;
 }
 
+@media (max-width: 996px) {
+  .everest-container .everest-right .everest-img {
+    height: 300px;
+  }
+}
+
 .everest-container .everest-right .everest-img img {
   width: 100%;
   -o-object-fit: cover;
@@ -2833,6 +2924,18 @@ select:focus {
 
 .everest-container .everest-right .activity table {
   width: 100%;
+}
+
+.everest-container .everest-right .map-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .everest-container .everest-right .activity-box {
@@ -2910,12 +3013,24 @@ select:focus {
 }
 
 .everest-container .everest-right .acodian-icon {
-  margin-left: 342px;
+  margin-left: 217px;
 }
 
 @media (max-width: 576px) {
   .everest-container .everest-right .acodian-icon {
     margin: 0px !important;
+  }
+}
+
+@media (max-width: 1119px) {
+  .everest-container .everest-right .acodian-icon {
+    margin-left: 88px;
+  }
+}
+
+@media (max-width: 996px) {
+  .everest-container .everest-right .acodian-icon {
+    margin-left: 137px;
   }
 }
 
@@ -3029,18 +3144,39 @@ select:focus {
 
 .everest-container .everest-right .join-trip .table td:first-child::before {
   content: 'DEPARTURE DATE';
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .everest-container .everest-right .join-trip .table td:first-child::before {
+    display: block;
+  }
 }
 
 .everest-container .everest-right .join-trip .table td:nth-child(2)::before {
   content: 'PRICE';
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .everest-container .everest-right .join-trip .table td:nth-child(2)::before {
+    display: block;
+  }
 }
 
 .everest-container .everest-right .join-trip .table td:nth-child(3)::before {
   content: 'TRIP STATUS';
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .everest-container .everest-right .join-trip .table td:nth-child(3)::before {
+    display: block;
+  }
 }
 
 .everest-container .everest-right .join-trip .table td:last-child {
-  width: 27%;
+  width: 29%;
 }
 
 @media (max-width: 996px) {
@@ -3296,7 +3432,8 @@ select:focus {
 .everest-container .everest-left .left-top h3 {
   color: #fb8500;
   font-size: 28px;
-  font-weight: 700;
+  font-weight: 600;
+  text-align: center;
 }
 
 .trek-booking-container .book-trek-title {
@@ -3393,7 +3530,7 @@ select:focus {
 }
 
 .trek-booking-container .book-terk .incre .value-input {
-  width: 75%;
+  width: 100%;
   border: 1px solid #e4e4e4 !important;
   text-align: center;
   padding: 4px 0px !important;
@@ -3424,7 +3561,7 @@ select:focus {
 
 .trek-booking-container .book-terk .incre .minus {
   position: absolute;
-  right: 30px;
+  right: 0px;
   top: 1px;
 }
 
@@ -3444,8 +3581,8 @@ select:focus {
 }
 
 .trek-booking-container .book-terk .trek-bookk-left {
-  -ms-flex-preferred-size: 70%;
-      flex-basis: 70%;
+  -ms-flex-preferred-size: 65%;
+      flex-basis: 65%;
 }
 
 .trek-booking-container .book-terk .trek-bookk-left .trek-right-top {
@@ -3573,7 +3710,6 @@ select:focus {
 .trek-booking-container .book-terk .trek-bookk-left .tour-add .tour-add-box {
   border: 1px solid #e4e4e4;
   background-color: #ffff;
-  padding: 10px 0px;
   border-radius: 4px;
 }
 
@@ -3739,8 +3875,8 @@ select:focus {
 }
 
 .trek-booking-container .book-terk .trek-book-right {
-  -ms-flex-preferred-size: 30%;
-      flex-basis: 30%;
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
   -ms-flex-item-align: start;
       align-self: flex-start;
   margin-left: 35px;

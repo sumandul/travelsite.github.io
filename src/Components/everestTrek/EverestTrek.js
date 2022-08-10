@@ -99,6 +99,7 @@ const EverestTrek = () => {
         show={show}
         handleclose={handleClose}
         header="Everest Base Camp Trek Map"
+        className="img-popup"
         body={
           <ReactImageMagnify
             {...{
@@ -106,11 +107,11 @@ const EverestTrek = () => {
                 alt: 'Wristwatch by Ted Baker London',
                 isFluidWidth: true,
                 src:
-                  'https://www.thirdrockadventures.com/assets-back/images/map/everest-base-camp-trek-map.jpg7ka.jpg',
+                  'https://www.nepaltrekkinginhimalaya.com/images/articles/beDEJ-6e361807-5ec2-429c-9411-bc71b985c0b1.gif',
               },
               largeImage: {
                 src:
-                  'https://www.thirdrockadventures.com/assets-back/images/map/everest-base-camp-trek-map.jpg7ka.jpg',
+                  'https://www.nepaltrekkinginhimalaya.com/images/articles/beDEJ-6e361807-5ec2-429c-9411-bc71b985c0b1.gif',
                 width: 1200,
                 height: 1200,
               },
@@ -129,7 +130,29 @@ const EverestTrek = () => {
               <div className="flex-xs-column e-title  d-flex  align-items-center justify-content-between ">
                 <div className="my-3">
                   <h1>Everest Base Camp Trek</h1>
-                  <div className="mt-2">
+                  <div className="hide-on-desktop">
+                    <Row>
+                      <Col xs={6}>
+                        <span className="">
+                          <TaskAltIcon className="me-1 task-icon" /> Best price
+                          guaranteed{' '}
+                        </span>
+                      </Col>
+                      <Col xs={6}>
+                        <span className="">
+                          <TaskAltIcon className="me-1 task-icon" />
+                          No booking fees
+                        </span>
+                      </Col>
+                      <Col xs={6}>
+                        <span className="">
+                          <TaskAltIcon className="me-1 task-icon" />
+                          E-ticket/Mobile voucher
+                        </span>
+                      </Col>
+                    </Row>
+                  </div>
+                  <div className="mt-2 hide-on-mb">
                     <span className="ps-0">
                       <TaskAltIcon className="me-1 task-icon" /> Best price
                       guaranteed{' '}
@@ -253,12 +276,11 @@ const EverestTrek = () => {
                   </table>
                 </Col>
                 <Col md={4}>
-                  <div onClick={handleShow}>
+                  <div className="map-box" onClick={handleShow}>
                     <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Everest_Base_Trek_Route_Map.svg/350px-Everest_Base_Trek_Route_Map.svg.png"
+                      src="https://www.nepaltrekkinginhimalaya.com/images/articles/beDEJ-6e361807-5ec2-429c-9411-bc71b985c0b1.gif"
                       alt=""
                       className="img-fluid"
-                      height="300px"
                     />
                   </div>
                 </Col>
@@ -594,7 +616,7 @@ const EverestTrek = () => {
                                 <p>Guaranteed</p>
                               </div>
                             </td>
-                            <td>
+                            <td className="">
                               <Link to={''}>
                                 <button className="enquery">Enquery Now</button>
                               </Link>

@@ -23,19 +23,24 @@ const Booking = () => {
   useEffect(() => {
     if (inView) {
       animation.start({
-        opacity: 1,
+        x: 0,
+        transition: {
+          type: 'spring',
+          duration: 1,
+          bounce: 0.3,
+        },
       })
     }
     if (!inView) {
       animation.start({
-        opacity: 0,
+        x: '-10px',
       })
     }
   }, [InView])
   return (
     <>
       <section className="booking">
-        <div className="content pt-5">
+        <div className="content pt-3">
           <div>
             <div className="d-flex align-items-center justify-content-center mt-4">
               <div className="circle">

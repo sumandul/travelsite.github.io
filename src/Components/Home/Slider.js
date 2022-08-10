@@ -6,7 +6,7 @@ import EastOutlinedIcon from '@mui/icons-material/EastOutlined'
 import FilterOutlinedIcon from '@mui/icons-material/FilterOutlined'
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined'
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
-import { Link } from '@mui/material'
+import { Link } from 'react-router-dom'
 import StarIcon from '@mui/icons-material/Star'
 import PopUpModel from '../reuableComponent/PopUpModel'
 import ReactImageMagnify from 'react-image-magnify'
@@ -128,7 +128,9 @@ const SliderComponent = () => {
                 </div>
               </div>
               <div className="content">
-                <h3 className="text-center ">Gosikunda Lake</h3>
+                <Link to={'/everest'}>
+                  <h3 className="text-center ">Gosikunda Lake</h3>
+                </Link>
                 <Row className="mt-4">
                   <Col xs={8} md={8} lg={6}>
                     <Link to={'/everest'}>
@@ -159,23 +161,29 @@ const SliderComponent = () => {
             </div>
             <div className="top-place">
               <div className="img-box">
-                <img
-                  src="https://www.gokyotreksnepal.com/wp-content/uploads/2019/06/gosaikunda-lake.jpg"
-                  className="img-fluid"
-                  alt=""
-                />
+                <Link to={'/everest'}>
+                  <img
+                    src="https://www.gokyotreksnepal.com/wp-content/uploads/2019/06/gosaikunda-lake.jpg"
+                    className="img-fluid"
+                    alt=""
+                  />
+                </Link>
                 <div className="top-btn">
                   <StarIcon className="me-1" /> BEST PRICE
                 </div>
                 <div className="over-box">
-                  <span className="me-5">
-                    <AccessTimeOutlinedIcon className="time-icon" /> 17days
-                  </span>{' '}
-                  <span>$2300</span>
+                  <div className="over-box-content">
+                    <span className="me-5">
+                      <AccessTimeOutlinedIcon className="time-icon" /> 17days
+                    </span>{' '}
+                    <span>$2300</span>
+                  </div>
                 </div>
               </div>
               <div className="content">
-                <h3 className="text-center ">Gosikunda Lake</h3>
+                <Link to={'/everest'}>
+                  <h3 className="text-center ">Gosikunda Lake</h3>
+                </Link>
                 <Row className="mt-4">
                   <Col xs={8} md={8} lg={6}>
                     <Link to={'/everest'}>
@@ -206,23 +214,29 @@ const SliderComponent = () => {
             </div>
             <div className="top-place">
               <div className="img-box">
-                <img
-                  src="https://www.gokyotreksnepal.com/wp-content/uploads/2019/06/gosaikunda-lake.jpg"
-                  className="img-fluid"
-                  alt=""
-                />
+                <Link to={'/everest'}>
+                  <img
+                    src="https://www.gokyotreksnepal.com/wp-content/uploads/2019/06/gosaikunda-lake.jpg"
+                    className="img-fluid"
+                    alt=""
+                  />
+                </Link>
                 <div className="top-btn">
                   <StarIcon className="me-1" /> BEST PRICE
                 </div>
                 <div className="over-box">
-                  <span className="me-5">
-                    <AccessTimeOutlinedIcon className="time-icon" /> 17days
-                  </span>{' '}
-                  <span>$2300</span>
+                  <div className="over-box-content">
+                    <span className="me-5">
+                      <AccessTimeOutlinedIcon className="time-icon" /> 17days
+                    </span>{' '}
+                    <span>$2300</span>
+                  </div>
                 </div>
               </div>
               <div className="content">
-                <h3 className="text-center ">Gosikunda Lake</h3>
+                <Link to={'/everest'}>
+                  <h3 className="text-center ">Gosikunda Lake</h3>
+                </Link>
                 <Row className="mt-4">
                   <Col xs={8} md={8} lg={6}>
                     <Link to={'/everest'}>
@@ -253,23 +267,29 @@ const SliderComponent = () => {
             </div>
             <div className="top-place">
               <div className="img-box">
-                <img
-                  src="https://www.gokyotreksnepal.com/wp-content/uploads/2019/06/gosaikunda-lake.jpg"
-                  className="img-fluid"
-                  alt=""
-                />
+                <Link to={'/everest'}>
+                  <img
+                    src="https://www.gokyotreksnepal.com/wp-content/uploads/2019/06/gosaikunda-lake.jpg"
+                    className="img-fluid"
+                    alt=""
+                  />
+                </Link>
                 <div className="top-btn">
                   <StarIcon className="me-1" /> BEST PRICE
                 </div>
                 <div className="over-box">
-                  <span className="me-5">
-                    <AccessTimeOutlinedIcon className="time-icon" /> 17days
-                  </span>{' '}
-                  <span>$2300</span>
+                  <div className="over-box-content">
+                    <span className="me-5">
+                      <AccessTimeOutlinedIcon className="time-icon" /> 17days
+                    </span>{' '}
+                    <span>$2300</span>
+                  </div>
                 </div>
               </div>
               <div className="content">
-                <h3 className="text-center ">Gosikunda Lake</h3>
+                <Link to={'/everest'}>
+                  <h3 className="text-center ">Gosikunda Lake</h3>
+                </Link>
                 <Row className="mt-4">
                   <Col xs={8} md={8} lg={6}>
                     <Link to={'/everest'}>

@@ -1,7 +1,31 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { motion, variants } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { useAnimation } from 'framer-motion'
 const Top = () => {
+  const animation = useAnimation()
+
+  const { ref, inView } = useInView()
+
+  useEffect(() => {
+    if (inView) {
+      animation.start({
+        x: 0,
+        transition: {
+          type: 'spring',
+          duration: 1,
+          bounce: 0.3,
+        },
+      })
+    }
+    if (!inView) {
+      animation.start({
+        x: '-200px',
+      })
+    }
+  }, [inView])
   return (
     <>
       <section className="top-destination pt-5">
@@ -20,10 +44,14 @@ const Top = () => {
                       className="img-fluid"
                     />
                     <div className="top-dist-content">
-                      <div className="title-place">
+                      <motion.div
+                        animate={animation}
+                        className="title-place"
+                        ref={ref}
+                      >
                         <h2> NEPAL</h2>
                         <span>207 of HOliday Package</span>
-                      </div>
+                      </motion.div>
                     </div>
                   </div>
                 </Link>
@@ -38,10 +66,14 @@ const Top = () => {
                       alt=""
                       className="img-fluid"
                     />
-                    <div className="title-place">
+                    <motion.div
+                      className="title-place"
+                      animate={animation}
+                      ref={ref}
+                    >
                       <h2> Butan</h2>
                       <span>207 of HOliday Package</span>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </Link>
@@ -55,10 +87,14 @@ const Top = () => {
                       alt=""
                       className="img-fluid"
                     />
-                    <div className="title-place">
+                    <motion.div
+                      className="title-place"
+                      animate={animation}
+                      ref={ref}
+                    >
                       <h2>Tibeat</h2>
                       <span>207 of HOliday Package</span>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               </Link>

@@ -49,7 +49,6 @@ const Service = () => {
         x: '-100vw',
       })
     }
-    console.log(inView, 'view')
   }, [inView])
   return (
     <>

@@ -1,11 +1,9 @@
 .banner {
   background-image: url('https://trekkingtrailnepal.com/wp-content/uploads/2020/07/best-place-to-travel-in-Nepal.jpg');
   height: 80vh;
-  @include potrait {
-    height: 60vh !important;
-  }
+
   @include mini {
-    height: 100vh;
+    height: 35vh !important;
   }
 
   background-repeat: no-repeat;
@@ -55,8 +53,11 @@
     }
     @include mini {
       bottom: -51px;
-      right: 137px;
-      width: 68%;
+      right: 0px;
+      width: 100%;
+    }
+    @include desktop {
+      width: 90%;
     }
     bottom: -56px;
 
@@ -81,7 +82,11 @@
         color: #fff;
       }
       @include potrait {
-        margin-right: 0;
+        margin-right: 4px !important;
+      }
+      @include mini {
+        margin-right: 2px;
+        font-size: 25px;
       }
     }
   }
@@ -393,6 +398,7 @@
     z-index: -1;
   }
   .content {
+    overflow: hidden;
     z-index: 11;
     @include center;
     @include potrait {

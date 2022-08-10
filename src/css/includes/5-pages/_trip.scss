@@ -230,3 +230,27 @@
 .order-md {
   order: 1;
 }
+.package {
+  display: flex;
+  border-bottom: 1px solid $b-color;
+  @include desktop {
+    flex-direction: column;
+  }
+  .inner-package {
+    flex-basis: 20%;
+
+    .img {
+      width: 355px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .view-detail {
+    margin-left: 10px;
+    align-self: flex-start;
+    flex-basis: 80%;
+  }
+}

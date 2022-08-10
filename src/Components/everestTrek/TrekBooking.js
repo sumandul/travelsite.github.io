@@ -58,7 +58,7 @@ const TrekBooking = () => {
                   minutes
                 </p>
               </div>
-              <div className="traveler">
+              <div className="traveler mt-3">
                 <div className="inner-travel">
                   <div className="d-flex align-items-center ">
                     <div className="circle-box">1</div>{' '}
@@ -97,12 +97,12 @@ const TrekBooking = () => {
                   </div>
                 </div>
               </div>
-              <div className="tour-add mt-5">
+              <div className="tour-add mt-3">
                 <div className="d-flex align-items-center ">
                   <div className="circle-box">2</div>{' '}
                   <h6 className="ms-2">Tour Add-ons</h6>
                 </div>
-                <div className="tour-add-box mt-4">
+                <div className="tour-add-box mt-3">
                   <div className="tour-add-row d-flex align-items-center justify-content-between">
                     <div className="facilites">
                       <h2>Porter</h2>
@@ -183,7 +183,7 @@ const TrekBooking = () => {
                   </div>
                 </div>
               </div>
-              <div className="person-detail mt-5">
+              <div className="person-detail mt-3">
                 <div className="d-flex align-items-center ">
                   <div className="circle-box">3</div>{' '}
                   <h6 className="ms-2">Your Details</h6>
@@ -268,7 +268,7 @@ const TrekBooking = () => {
                   </Row>
                 </div>
               </div>
-              <div className="payment-box mt-5">
+              <div className="payment-box mt-3">
                 <div className="d-flex align-items-center ">
                   <div className="circle-box">3</div>{' '}
                   <h6 className="ms-2">Payment</h6>

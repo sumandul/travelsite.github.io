@@ -18,17 +18,7 @@ const options = [
   { value: 'Chitwan', label: 'Chitwan' },
   { value: 'Bardiya ', label: 'Bardiya ' },
 ]
-const colourStyles = {
-  option: (styles, { data, isDisabled, isFocused, isSelected }) => {
-    // const color = chroma(data.color);
-    console.log({ data, isDisabled, isFocused, isSelected })
-    return {
-      ...styles,
-      backgroundColor: isFocused ? 'red' : null,
-      color: '#333333',
-    }
-  },
-}
+
 const Banner = () => {
   return (
     <>
@@ -45,8 +35,8 @@ const Banner = () => {
           </div>
           <div>
             <motion.div className="trip">
-              <Row className="gy-5">
-                <Col xs={12} lg={4}>
+              <Row className="gy-2">
+                <Col xs={12} md={4} lg={4}>
                   <div className="d-flex">
                     <NearMeOutlinedIcon className="left-icon" />{' '}
                     <p>Where are you going?</p>
@@ -55,14 +45,14 @@ const Banner = () => {
                     <SelecteComponent options={options} />
                   </div>
                 </Col>
-                <Col xs={12} lg={3}>
+                <Col xs={12} md={3} lg={3}>
                   <div className="d-flex">
                     <LocalActivityOutlinedIcon className="left-icon" />
                     <p>Activity Types</p>
                   </div>
                   <SelecteComponent options={options} />
                 </Col>
-                <Col xs={12} lg={3}>
+                <Col xs={12} md={3} lg={3}>
                   <div className="d-flex ">
                     <CalendarMonthOutlinedIcon className="left-icon" />
                     <p>Trip Start</p>
@@ -72,7 +62,7 @@ const Banner = () => {
                   />
                 </Col>
 
-                <Col xs={5} lg={2} className="text-end">
+                <Col xs={5} md={2} lg={2} className="text-end">
                   <div className="d-flex align-items-center justify-content-center">
                     <button className="search-trip">
                       <div className="d-flex align-items-center jutify-content-center">
