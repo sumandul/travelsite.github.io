@@ -5,7 +5,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import HikingIcon from '@mui/icons-material/Hiking'
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
 import ReactStar from 'react-rating-stars-component'
-import { useAnimation, motion } from 'framer-motion'
+import { useAnimation, motion, AnimatePresence } from 'framer-motion'
 import { InView, useInView } from 'react-intersection-observer'
 
 const Booking = () => {

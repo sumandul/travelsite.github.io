@@ -43,7 +43,7 @@
     border-radius: 6px;
     width: 84%;
     @include potrait {
-      width: 100% !important;
+      width: 100%;
       bottom: -256px !important;
       opacity: 1;
       left: 0;
@@ -54,7 +54,7 @@
     @include mini {
       bottom: -51px;
       right: 0px;
-      width: 100%;
+      width: 100% !important;
     }
     @include desktop {
       width: 90%;

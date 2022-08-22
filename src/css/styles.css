@@ -1575,7 +1575,7 @@ select:focus {
 
 @media (max-width: 576px) {
   .banner .trip {
-    width: 100% !important;
+    width: 100%;
     bottom: -256px !important;
     opacity: 1;
     left: 0;
@@ -1589,7 +1589,7 @@ select:focus {
   .banner .trip {
     bottom: -51px;
     right: 0px;
-    width: 100%;
+    width: 100% !important;
   }
 }
 
@@ -2434,7 +2434,7 @@ select:focus {
   display: flex;
 }
 
-@media (max-width: 996px) {
+@media (max-width: 1119px) {
   .expedition {
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: normal !important;
@@ -2450,7 +2450,6 @@ select:focus {
 .expedition .trip-box h6 {
   font-size: 17px;
   font-weight: 500;
-  background: red;
 }
 
 .expedition .mobile-flter {
@@ -2672,7 +2671,7 @@ select:focus {
   }
 }
 
-@media (max-width: 996px) {
+@media (max-width: 1119px) {
   .filter-box .filter-container {
     -webkit-box-pack: justify !important;
         -ms-flex-pack: justify !important;
@@ -2769,7 +2768,7 @@ select:focus {
   border-bottom: 1px solid #e4e4e4;
 }
 
-@media (max-width: 1119px) {
+@media (max-width: 996px) {
   .package {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2779,12 +2778,8 @@ select:focus {
 }
 
 .package .inner-package {
-  -ms-flex-preferred-size: 20%;
-      flex-basis: 20%;
-}
-
-.package .inner-package .img {
-  width: 355px;
+  -ms-flex-preferred-size: 56%;
+      flex-basis: 56%;
 }
 
 .package .inner-package .img img {
@@ -2799,6 +2794,16 @@ select:focus {
       align-self: flex-start;
   -ms-flex-preferred-size: 80%;
       flex-basis: 80%;
+}
+
+@media (max-width: 996px) {
+  .package .view-detail {
+    margin-left: 0;
+    margin-top: 20px;
+    -ms-flex-item-align: stretch;
+        -ms-grid-row-align: stretch;
+        align-self: stretch;
+  }
 }
 
 .everest-container {
@@ -2825,6 +2830,10 @@ select:focus {
 .everest-container .everest-right {
   -ms-flex-preferred-size: 70%;
       flex-basis: 70%;
+}
+
+.everest-container .everest-right .e-title .mid-span {
+  padding: 0px 1px !important;
 }
 
 @media (max-width: 576px) {

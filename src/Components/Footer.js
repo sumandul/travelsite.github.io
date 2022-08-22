@@ -9,9 +9,16 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import Accordion from 'react-bootstrap/Accordion'
 import { Link } from 'react-router-dom'
+import { InView, useInView } from 'react-intersection-observer'
+import { motion } from 'framer-motion'
+import { useScroll } from '../Components/UseScroll'
+import { testimonialsAnimations } from '../animation/Animation'
 const Footer = () => {
   const [down, setDown] = useState(false)
+  const [element, controls] = useScroll()
   const [arrow, setArrow] = useState('')
+  const { ref, inView } = useInView()
+  console.log(ref, 'footefr')
   return (
     <>
       <footer>
@@ -27,35 +34,71 @@ const Footer = () => {
                   <li>Address: Chetrapati, Chowk, </li>
                   <li>thamel, Kathmandu, Nepal.</li>
                 </ul>
-                <div className="icon-container ">
-                  <div className="social-nedia-icon ms-0">
+                <div className="icon-container" ref={element}>
+                  <motion.div
+                    variants={testimonialsAnimations}
+                    animate={controls}
+                    transition={{
+                      delay: 0.1,
+                      type: 'tween',
+                      duration: 0.8,
+                    }}
+                    className="social-nedia-icon ms-0"
+                  >
                     <Link to={'/everest'}>
                       <div className="icon-box">
                         <WhatsAppIcon />
                       </div>
                     </Link>
-                  </div>
-                  <div className="social-nedia-icon">
+                  </motion.div>
+                  <motion.div
+                    variants={testimonialsAnimations}
+                    animate={controls}
+                    transition={{
+                      delay: 0.03,
+                      type: 'tween',
+                      duration: 0.8,
+                    }}
+                    className="social-nedia-icon"
+                  >
                     <Link to={''}>
                       <div className="icon-box">
                         <YouTubeIcon />
                       </div>
                     </Link>
-                  </div>
-                  <div className="social-nedia-icon">
+                  </motion.div>
+                  <motion.div
+                    variants={testimonialsAnimations}
+                    animate={controls}
+                    transition={{
+                      delay: 0.03,
+                      type: 'tween',
+                      duration: 0.8,
+                    }}
+                    className="social-nedia-icon"
+                  >
                     <Link to={''}>
                       <div className="icon-box">
                         <TwitterIcon />
                       </div>
                     </Link>
-                  </div>
-                  <div className="social-nedia-icon">
+                  </motion.div>
+                  <motion.div
+                    variants={testimonialsAnimations}
+                    animate={controls}
+                    transition={{
+                      delay: 0.03,
+                      type: 'tween',
+                      duration: 0.8,
+                    }}
+                    className="social-nedia-icon"
+                  >
                     <Link to={''}>
                       <div className="icon-box">
                         <InstagramIcon />
                       </div>
                     </Link>
-                  </div>
+                  </motion.div>
                 </div>
               </Col>
               <Col md={6} lg={3}>

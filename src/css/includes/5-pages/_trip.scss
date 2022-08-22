@@ -1,6 +1,6 @@
 .expedition {
   display: flex;
-  @include mini {
+  @include desktop {
     flex-direction: column !important;
   }
   .trip-box {
@@ -8,7 +8,6 @@
     h6 {
       font-size: 17px;
       font-weight: 500;
-      background: red;
     }
   }
   .mobile-flter {
@@ -169,7 +168,7 @@
     @include potrait {
       flex-direction: column !important;
     }
-    @include mini {
+    @include desktop {
       justify-content: space-between !important;
       flex-direction: row;
     }
@@ -233,15 +232,13 @@
 .package {
   display: flex;
   border-bottom: 1px solid $b-color;
-  @include desktop {
+  @include mini {
     flex-direction: column;
   }
   .inner-package {
-    flex-basis: 20%;
+    flex-basis: 56%;
 
     .img {
-      width: 355px;
-
       img {
         width: 100%;
         object-fit: cover;
@@ -252,5 +249,10 @@
     margin-left: 10px;
     align-self: flex-start;
     flex-basis: 80%;
+    @include mini {
+      margin-left: 0;
+      margin-top: 20px;
+      align-self: stretch;
+    }
   }
 }

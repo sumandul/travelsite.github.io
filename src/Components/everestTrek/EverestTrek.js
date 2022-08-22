@@ -144,7 +144,7 @@ const EverestTrek = () => {
                           No booking fees
                         </span>
                       </Col>
-                      <Col xs={6}>
+                      <Col xs={8}>
                         <span className="">
                           <TaskAltIcon className="me-1 task-icon" />
                           E-ticket/Mobile voucher
@@ -154,11 +154,11 @@ const EverestTrek = () => {
                   </div>
                   <div className="mt-2 hide-on-mb">
                     <span className="ps-0">
-                      <TaskAltIcon className="me-1 task-icon" /> Best price
+                      <TaskAltIcon className=" task-icon" /> Best price
                       guaranteed{' '}
                     </span>
-                    <span className="px-3">
-                      <TaskAltIcon className="me-1 task-icon" />
+                    <span className="px-3 mid-span">
+                      <TaskAltIcon className="me-1 task-icon  " />
                       No booking fees
                     </span>
                     <span className="mt-3">

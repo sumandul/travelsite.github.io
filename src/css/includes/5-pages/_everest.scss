@@ -10,6 +10,9 @@
   }
   .everest-right {
     .e-title {
+      .mid-span {
+        padding: 0px 1px !important;
+      }
       @include potrait {
         flex-direction: column !important;
         align-items: flex-start !important;
