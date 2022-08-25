@@ -191,7 +191,6 @@
             border-bottom: 1px solid $b-color;
             padding: 10px 16px;
             @include potrait {
-              flex-direction: column;
               align-items: flex-start !important;
             }
             &:last-child {
@@ -234,9 +233,10 @@
             border: 1px solid $b-color;
             border-radius: 4px;
             padding: 10px 8px;
+            color: #4b4b4b;
             .select-title {
-              color: #4b4b4b;
               font-size: 16px;
+              color: #4b4b4b;
               font-weight: 400;
             }
           }

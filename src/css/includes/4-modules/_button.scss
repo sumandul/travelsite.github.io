@@ -359,6 +359,14 @@ option {
     transform: rotate(360deg);
   }
 }
+.add-btn {
+  background-color: $yellow;
+  padding: 3px 30px;
+
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 6px;
+}
 .hide-on-mb {
   @include potrait {
     display: none;

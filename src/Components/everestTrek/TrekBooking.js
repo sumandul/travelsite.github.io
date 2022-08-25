@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import ReactStar from 'react-rating-stars-component'
 import Select from '../reuableComponent/Select'
@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom'
 import Suscribe from '../Home/Suscribe'
 import BreadCrump from '../utilities/BreadCrump'
 const TrekBooking = () => {
+  const [num, setNum] = useState(1)
   const option = {
     edit: false,
     color: '#DEDDDC',
@@ -83,13 +84,23 @@ const TrekBooking = () => {
                       <Col md={2}>
                         <div className="mb-incre">
                           <div className="incre d-flex">
-                            <span className="plus">+</span>
+                            <span
+                              className="plus"
+                              onClick={() => setNum(num + 1)}
+                            >
+                              +
+                            </span>
                             <input
                               type="text"
-                              value={'1'}
+                              value={num}
                               className="value-input"
                             />
-                            <span className="minus">-</span>
+                            <span
+                              className="minus"
+                              onClick={() => setNum(num - 1)}
+                            >
+                              -
+                            </span>
                           </div>
                         </div>
                       </Col>
@@ -112,15 +123,9 @@ const TrekBooking = () => {
                     </div>
                     <div className="tour-inc-box">
                       <div className="">
-                        <div className="incre d-flex">
-                          <span className="plus">+</span>
-                          <input
-                            type="text"
-                            value={'1'}
-                            className="value-input"
-                          />
-                          <span className="minus">-</span>
-                        </div>
+                        <Link to={''}>
+                          <button className="add-btn">Add</button>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -132,15 +137,9 @@ const TrekBooking = () => {
                       <h2>US$50</h2>
                     </div>
                     <div className="tour-inc-box">
-                      <div className="incre d-flex">
-                        <span className="plus">+</span>
-                        <input
-                          type="text"
-                          value={'1'}
-                          className="value-input"
-                        />
-                        <span className="minus">-</span>
-                      </div>
+                      <Link to={''}>
+                        <button className="add-btn">Add</button>
+                      </Link>
                     </div>
                   </div>
                   <div className="tour-add-row d-flex align-items-center justify-content-between">
@@ -151,15 +150,9 @@ const TrekBooking = () => {
                       <h2>US$50</h2>
                     </div>
                     <div className="tour-inc-box">
-                      <div className="incre d-flex">
-                        <span className="plus">+</span>
-                        <input
-                          type="text"
-                          value={'1'}
-                          className="value-input"
-                        />
-                        <span className="minus">-</span>
-                      </div>
+                      <Link to={''}>
+                        <button className="add-btn">Add</button>
+                      </Link>
                     </div>
                   </div>
                   <div className="tour-add-row d-flex align-items-center justify-content-between">
@@ -170,15 +163,9 @@ const TrekBooking = () => {
                       <h2>US$50</h2>
                     </div>
                     <div className="tour-inc-box">
-                      <div className="incre d-flex">
-                        <span className="plus">+</span>
-                        <input
-                          type="text"
-                          value={'1'}
-                          className="value-input"
-                        />
-                        <span className="minus">-</span>
-                      </div>
+                      <Link to={''}>
+                        <button className="add-btn">Add</button>
+                      </Link>
                     </div>
                   </div>
                 </div>

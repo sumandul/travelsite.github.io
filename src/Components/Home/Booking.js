@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import SkateboardingIcon from '@mui/icons-material/Skateboarding'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
@@ -7,7 +7,8 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney'
 import ReactStar from 'react-rating-stars-component'
 import { useAnimation, motion, AnimatePresence } from 'framer-motion'
 import { InView, useInView } from 'react-intersection-observer'
-
+import { useScroll } from '../UseScroll'
+import { testimonialsAnimations } from '../../animation/Animation'
 const Booking = () => {
   const options = {
     edit: false,
@@ -17,30 +18,21 @@ const Booking = () => {
     isHalf: true,
     size: window.innerWidth < 600 ? 30 : 46,
   }
-  const { ref, inView } = useInView()
-  console.log(inView, 'yui')
-  const animation = useAnimation()
-  useEffect(() => {
-    if (inView) {
-      animation.start({
-        x: 0,
-        transition: {
-          type: 'spring',
-          duration: 1,
-          bounce: 0.3,
-        },
-      })
-    }
-    if (!inView) {
-      animation.start({
-        x: '-10px',
-      })
-    }
-  }, [InView])
+  const [element, controls] = useScroll()
+
   return (
     <>
-      <section className="booking">
-        <div className="content pt-3">
+      <section className="booking" ref={element}>
+        <motion.div
+          className="content pt-3"
+          variants={testimonialsAnimations}
+          animate={controls}
+          transition={{
+            delay: 0.1,
+            type: 'tween',
+            duration: 0.8,
+          }}
+        >
           <div>
             <div className="d-flex align-items-center justify-content-center mt-4">
               <div className="circle">
@@ -92,7 +84,7 @@ const Booking = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   )
