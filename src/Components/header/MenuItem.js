@@ -7,14 +7,11 @@ import { AnimatePresence, motion } from 'framer-motion'
 const MenuItem = ({ menu, depthLevel }) => {
   const ref = useRef()
   const [dropdown, setDropdown] = useState(false)
-  console.log(dropdown, 'helo')
-  useEffect(() => {
-    // alert(dropdown)
-  }, [dropdown])
-  console.log(depthLevel, 'menu')
-  console.log(depthLevel + 1, 'minus')
+
+  useEffect(() => {}, [dropdown])
+
   const [windowSize, setWindowSize] = useState()
-  console.log(windowSize)
+
   useEffect(() => {
     const handler = (event) => {
       if (dropdown && ref.current && !ref.current.contains(event.target)) {
@@ -104,7 +101,7 @@ const MenuItem = ({ menu, depthLevel }) => {
         </AnimatePresence>
       ) : (
         <li class="nav-item">
-          <Link class="nav-link  d-flex" to={'/'}>
+          <Link class="nav-link  d-flex" to={`/${menu.path}`}>
             {menu?.title}
           </Link>
         </li>

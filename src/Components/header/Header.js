@@ -6,17 +6,15 @@ import { Container, Col, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
-
 import MenuItem from './MenuItem'
 import { menuItems } from '../header/MenuList'
+
 const Header = () => {
   const depthLevel = 0
-  console.log(menuItems)
   const [fix, setFix] = useState(false)
   const [closemenu, setOpenMenu] = useState(false)
   const [menu, setMenu] = useState('')
   const [sideMenu, setSideMenu] = useState(false)
-  console.log(closemenu)
   const setFixed = () => {
     if (window.scrollY >= 150) {
       setFix(true)
@@ -48,7 +46,6 @@ const Header = () => {
               <Col md={6}>
                 <div className="logo ">
                   <Link to={'/'}>
-                    {' '}
                     <img src="../Logo.png" alt="" className="img-fluid" />
                   </Link>
                 </div>

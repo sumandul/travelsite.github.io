@@ -1,24 +1,37 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {
+  Breadcrumbs as MUIBreadcrumbs,
+  Link,
+  Typography,
+} from '@material-ui/core'
 import { Container } from 'react-bootstrap'
-import NavigateNextIcon from '@mui/icons-material/NavigateNext'
+import { useNavigate, useLocation } from 'react-router-dom'
 const BreadCrump = () => {
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
+
+  const pathnames = pathname.split('/').filter(Boolean)
   return (
     <>
       <Container>
-        <div className="breadcrump-box">
-          <div className="bread-crump-item">
-            <Link to={'/'}>Home </Link>{' '}
-            <NavigateNextIcon className="next-item" />
-          </div>
-          <div className="bread-crump-item">
-            <Link to={'/'}>Nepal </Link>{' '}
-            <NavigateNextIcon className="next-item" />
-          </div>
-          <div className="bread-crump-item">
-            <Link to={'/'}>Expedition </Link>{' '}
-          </div>
-        </div>
+        <MUIBreadcrumbs aria-label="breadcrumb">
+          {pathnames.length ? (
+            <Link onClick={() => navigate('/')}>Home</Link>
+          ) : (
+            <Typography> Home </Typography>
+          )}
+          {pathnames.map((name, index) => {
+            const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`
+            const isLast = index === pathnames.length - 1
+            return isLast ? (
+              <Typography key={name}>{name}</Typography>
+            ) : (
+              <Link key={name} onClick={() => navigate(routeTo)}>
+                {name}
+              </Link>
+            )
+          })}
+        </MUIBreadcrumbs>
       </Container>
     </>
   )

@@ -31,6 +31,8 @@ import PopUpModel from '../reuableComponent/PopUpModel'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
 import ModelComponent from '../utilities/ModelComponent'
 import ReactImageMagnify from 'react-image-magnify'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
 const arrayOfData = [
   {
@@ -52,6 +54,17 @@ const arrayOfData = [
 ]
 
 const EverestTrek = () => {
+  const { id } = useParams()
+  const [tour, setTour] = useState()
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await axios.get(`/api/tour/${id}`)
+      return setTour(response.data)
+    }
+    fetchData()
+  }, [])
+  console.log(tour?.galleries, 'id')
+
   const [fix, setFix] = useState(false)
   const setFixed = () => {
     if (window.scrollY >= 500) {
@@ -129,7 +142,7 @@ const EverestTrek = () => {
             <div>
               <div className="flex-xs-column e-title  d-flex  align-items-center justify-content-between ">
                 <div className="my-3">
-                  <h1>Everest Base Camp Trek</h1>
+                  <h1>{tour?.title}</h1>
                   <div className="hide-on-desktop">
                     <Row>
                       <Col xs={6}>
@@ -178,33 +191,15 @@ const EverestTrek = () => {
               </div>
             </div>
             <Carousel controls={false}>
-              <Carousel.Item>
-                <div className="everest-img">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/0/03/Everest_from_Khala_Phthar.JPG"
-                    alt=""
-                    className="img-fluid"
-                  />
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-                <div className="everest-img">
-                  <img
-                    src="http://www.basecamptreknepal.com/wp-content/uploads/2016/06/Everest-base-camp-trek-best-time-of-year.jpg"
-                    alt=""
-                    className="img-fluid"
-                  />
-                </div>
-              </Carousel.Item>
-              <Carousel.Item>
-                <div className="everest-img">
-                  <img
-                    src="https://nepaltrekkingroutes.com/wp-content/uploads/2020/08/Everest-base-camp-1.jpg"
-                    alt=""
-                    className="img-fluid"
-                  />
-                </div>
-              </Carousel.Item>
+              {tour?.galleries.map((image, index) => {
+                return (
+                  <Carousel.Item key={`image_${index}`}>
+                    <div className="everest-img">
+                      <img src={image} alt="" className="img-fluid" />
+                    </div>
+                  </Carousel.Item>
+                )
+              })}
             </Carousel>
 
             <div className="activity mt-5">
@@ -330,190 +325,59 @@ const EverestTrek = () => {
                 </Tab>
                 <Tab eventKey="Itinerary" title="Itinerary ">
                   <Accordion>
-                    <Accordion.Item eventKey="1">
-                      <Accordion.Header
-                        onClick={() => {
-                          setOpenCloseDiv('first')
-                          setOpenClose(!openclose)
-                        }}
-                      >
-                        Day 01: Arrive at Tribhuwan International Airport
-                        Kathmandu
-                        {opencloseDiv === 'first' && openclose === true ? (
-                          <RemoveCircleOutlineIcon className="acodian-icon" />
-                        ) : (
-                          <AddCircleOutlineIcon className="acodian-icon" />
-                        )}
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        <p className="py-2">
-                          After your arrival at Tribhuvan International Airport,
-                          a representative from Nepal Hiking Team will greet you
-                          with a warm welcome. They will escort you to your
-                          respective hotel and help you check-in and ensure you
-                          are comfortable.
-                        </p>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="2">
-                      <Accordion.Header
-                        onClick={() => {
-                          setOpenCloseDiv('second')
-                          setOpenClose(!openclose)
-                        }}
-                      >
-                        Day 01: Arrive at Tribhuwan International Airport
-                        Kathmandu
-                        {opencloseDiv === 'second' && openclose === true ? (
-                          <RemoveCircleOutlineIcon className="acodian-icon" />
-                        ) : (
-                          <AddCircleOutlineIcon className="acodian-icon" />
-                        )}
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        <p className="py-2">
-                          After your arrival at Tribhuvan International Airport,
-                          a representative from Nepal Hiking Team will greet you
-                          with a warm welcome. They will escort you to your
-                          respective hotel and help you check-in and ensure you
-                          are comfortable.
-                        </p>
-                      </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="3">
-                      <Accordion.Header
-                        onClick={() => {
-                          setOpenCloseDiv('third')
-                          setOpenClose(!openclose)
-                        }}
-                      >
-                        Day 01: Arrive at Tribhuwan International Airport
-                        Kathmandu
-                        {opencloseDiv === 'third' && openclose === true ? (
-                          <RemoveCircleOutlineIcon className="acodian-icon" />
-                        ) : (
-                          <AddCircleOutlineIcon className="acodian-icon" />
-                        )}
-                      </Accordion.Header>
-                      <Accordion.Body>
-                        <p className="py-2">
-                          After your arrival at Tribhuvan International Airport,
-                          a representative from Nepal Hiking Team will greet you
-                          with a warm welcome. They will escort you to your
-                          respective hotel and help you check-in and ensure you
-                          are comfortable.
-                        </p>
-                      </Accordion.Body>
-                    </Accordion.Item>
+                    {tour?.itinerary?.map((item, index) => {
+                      return (
+                        <Accordion.Item eventKey={index} key={index}>
+                          <Accordion.Header
+                            onClick={() => {
+                              setOpenCloseDiv('first_' + index)
+                              setOpenClose(!openclose)
+                            }}
+                          >
+                            {item.title}
+                            {opencloseDiv === 'first_' + index &&
+                            openclose === true ? (
+                              <RemoveCircleOutlineIcon className="acodian-icon" />
+                            ) : (
+                              <AddCircleOutlineIcon className="acodian-icon" />
+                            )}
+                          </Accordion.Header>
+                          <Accordion.Body>
+                            <p className="py-2">
+                              {item.description.replace(/(<([^>]+)>)/gi, '')}
+                            </p>
+                          </Accordion.Body>
+                        </Accordion.Item>
+                      )
+                    })}
                   </Accordion>
                 </Tab>
-                <Tab eventKey="Cost Includes" title="Cost Includes">
+                <Tab eventKey="Cost Includes" title=" Includes & Excludes">
                   <div className="cost">
-                    <h3>COST INCLUDES</h3>
+                    <h3> INCLUDES</h3>
 
                     <ul>
-                      <li>
-                        <CheckCircleIcon className="check" />
-                        <span>
-                          All ground transport in a private vehicle, including
-                          airport transfers
-                        </span>
-                      </li>
-                      <li>
-                        <CheckCircleIcon className="check" />
-                        <span>
-                          All ground transport in a private vehicle, including
-                          airport transfers
-                        </span>
-                      </li>
-                      <li>
-                        <CheckCircleIcon className="check" />
-                        <span>
-                          All ground transport in a private vehicle, including
-                          airport transfers
-                        </span>
-                      </li>
-                      <li>
-                        <CheckCircleIcon className="check" />
-                        <span>
-                          All ground transport in a private vehicle, including
-                          airport transfers
-                        </span>
-                      </li>
-                      <li>
-                        <CheckCircleIcon className="check" />
-                        <span>
-                          All ground transport in a private vehicle, including
-                          airport transfers
-                        </span>
-                      </li>
-                      <li>
-                        <CheckCircleIcon className="check" />
-                        <span>
-                          All ground transport in a private vehicle, including
-                          airport transfers
-                        </span>
-                      </li>
-                      <li>
-                        <CheckCircleIcon className="check" />
-                        <span>
-                          All ground transport in a private vehicle, including
-                          airport transfers
-                        </span>
-                      </li>
+                      {tour?.includes.map((include, index) => {
+                        console.log(include, 'in')
+                        return (
+                          <li key={`include_${index}`}>
+                            <CheckCircleIcon className="check" />
+                            <span>{include.content}</span>
+                          </li>
+                        )
+                      })}
                     </ul>
                     <div className="cost mt-4">
-                      <h3>COST NOT INCLUDES</h3>
+                      <h3>EXCLUDES</h3>
                       <ul>
-                        <li>
-                          <CancelIcon className="cross" />
-                          <span>
-                            All ground transport in a private vehicle, including
-                            airport transfers
-                          </span>
-                        </li>
-                        <li>
-                          <CancelIcon className="cross" />
-                          <span>
-                            All ground transport in a private vehicle, including
-                            airport transfers
-                          </span>
-                        </li>
-                        <li>
-                          <CancelIcon className="cross" />
-                          <span>
-                            All ground transport in a private vehicle, including
-                            airport transfers
-                          </span>
-                        </li>
-                        <li>
-                          <CancelIcon className="cross" />
-                          <span>
-                            All ground transport in a private vehicle, including
-                            airport transfers
-                          </span>
-                        </li>
-                        <li>
-                          <CancelIcon className="cross" />
-                          <span>
-                            All ground transport in a private vehicle, including
-                            airport transfers
-                          </span>
-                        </li>
-                        <li>
-                          <CancelIcon className="cross" />
-                          <span>
-                            All ground transport in a private vehicle, including
-                            airport transfers
-                          </span>
-                        </li>
-                        <li>
-                          <CancelIcon className="cross" />
-                          <span>
-                            All ground transport in a private vehicle, including
-                            airport transfers
-                          </span>
-                        </li>
+                        {tour?.excludes.map((exclude, index) => {
+                          return (
+                            <li key={`exclude_${index}`}>
+                              <CancelIcon className="cross" />
+                              <span>{exclude.content}</span>
+                            </li>
+                          )
+                        })}
                       </ul>
                     </div>
                   </div>
@@ -522,48 +386,14 @@ const EverestTrek = () => {
                   <div className="gallery">
                     <h3>Gallery</h3>
                     <Row className="gy-3 gx-2">
-                      <Col md={4}>
-                        <img
-                          src="https://res.cloudinary.com/thrillophilia/image/upload/c_fill,f_auto,fl_progressive.strip_profile,g_auto,q_auto/v1/filestore/ypr3zj7yqvwabm574vmxku0chiwm_everest-base-camp-trek-independently-main-image-900.png"
-                          alt=""
-                          className="img-fluid"
-                        />
-                      </Col>
-                      <Col md={4}>
-                        <img
-                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbRNnvF_Gn6qRwJig9f1YfiCQcokbg4c4dWZo0HwjQLrKke_-zRXKWth1j0z5904f2_E&usqp=CAU"
-                          alt=""
-                          className="img-fluid"
-                        />
-                      </Col>
-                      <Col md={4}>
-                        <img
-                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbRNnvF_Gn6qRwJig9f1YfiCQcokbg4c4dWZo0HwjQLrKke_-zRXKWth1j0z5904f2_E&usqp=CAU"
-                          alt=""
-                          className="img-fluid"
-                        />
-                      </Col>
-                      <Col md={4}>
-                        <img
-                          src="https://res.cloudinary.com/thrillophilia/image/upload/c_fill,f_auto,fl_progressive.strip_profile,g_auto,q_auto/v1/filestore/ypr3zj7yqvwabm574vmxku0chiwm_everest-base-camp-trek-independently-main-image-900.png"
-                          alt=""
-                          className="img-fluid"
-                        />
-                      </Col>
-                      <Col md={4}>
-                        <img
-                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbRNnvF_Gn6qRwJig9f1YfiCQcokbg4c4dWZo0HwjQLrKke_-zRXKWth1j0z5904f2_E&usqp=CAU"
-                          alt=""
-                          className="img-fluid"
-                        />
-                      </Col>
-                      <Col md={4}>
-                        <img
-                          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAbRNnvF_Gn6qRwJig9f1YfiCQcokbg4c4dWZo0HwjQLrKke_-zRXKWth1j0z5904f2_E&usqp=CAU"
-                          alt=""
-                          className="img-fluid"
-                        />
-                      </Col>
+                      {tour?.galleries?.map((image, index) => {
+                        console.log(image)
+                        return (
+                          <Col md={4} key={`img_${index}`}>
+                            <img src={image} alt="" className="img-fluid" />
+                          </Col>
+                        )
+                      })}
                     </Row>
                   </div>
                 </Tab>

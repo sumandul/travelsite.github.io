@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Row, Col } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import DoneIcon from '@mui/icons-material/Done'
 import ReactStar from 'react-rating-stars-component'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
@@ -9,6 +9,10 @@ import StarIcon from '@mui/icons-material/Star'
 import ReactPaginate from 'react-paginate'
 import Select from '../reuableComponent/Select'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchTourList } from '../../redux/Reducer'
+
+import axios from 'axios'
 const arrayOfData = [
   {
     id: '1 - Jerry',
@@ -28,7 +32,26 @@ const arrayOfData = [
   },
 ]
 let pageCount = 3
-const TripCtalog = () => {
+const TripCtalog = (props) => {
+  const data = useSelector((data) => data.listTour.Tourlist.data)
+
+  const dispatch = useDispatch()
+  const location = useLocation()
+  console.log(location)
+
+  const [tours, setTour] = useState()
+  var destinationtours = props.tour
+  console.log(destinationtours?.length, 'tttt')
+  useEffect(() => {
+    if (destinationtours?.length === 0) {
+      dispatch(fetchTourList())
+      setTour(data?.data)
+    } else {
+      setTour(destinationtours)
+    }
+  }, [dispatch, destinationtours])
+
+  console.log(tours, 'tour')
   const [select, SetSelected] = useState()
   const handleSelectChange = (selectedValue) => {
     SetSelected(selectedValue)
@@ -57,7 +80,7 @@ const TripCtalog = () => {
   return (
     <>
       <div className="d-flex align-items-center justify-content-between title-trip py-3">
-        <h1>Nepal Tours and Trips 2022/2023</h1>{' '}
+        <h1>{props.place} Tours and Trips 2022/2023</h1>{' '}
         <div className="select-box">
           <Select
             data={arrayOfData}
@@ -79,467 +102,107 @@ const TripCtalog = () => {
         </p>
         <h6 className="mt-4">+300 trips in Nepal with 3,629 Reviews</h6>
       </div>
-
-      <div className="package mt-1">
-        <div className="inner-package">
-          <div className="img position-relative">
-            <img
-              src="https://www.adventurealternative.com/media/1309/nepal_everest-final-section-of-summit-ridge-cornice.jpg?height=788&width=1082&quality=&mode=Crop&center=0.27666666666666667,0.54&bgcolor="
-              alt=""
-              className="img-fluid"
-            />
-            <button className="feature-btn">
-              <StarIcon className="me-2" />
-              BEST PRICE
-            </button>
+      {tours?.map((data, index) => {
+        console.log(data, 'dfytgdugyduqhwih')
+        return (
+          <div
+            className={index === 0 ? 'package mt-1' : 'package mt-5'}
+            key={data.id}
+          >
+            <div className="img position-relative">
+              <Link to={`/everest/${data.id}`}>
+                <img
+                  src={window.baseURL + data?.image}
+                  alt=""
+                  className="img-fluid"
+                />
+              </Link>
+              <button className="feature-btn">
+                <StarIcon className="me-2" />
+                BEST PRICE
+              </button>
+            </div>
+            <div className="view-detail">
+              <Row>
+                <Col md={8} lg={8}>
+                  <div className="img-content">
+                    <h5>{data.title}</h5>
+                    <div className="d-flex align-items-center">
+                      <ReactStar {...options} /> <span> of 337 reviews</span>
+                    </div>
+                    <Row>
+                      <Col xs={6} md={5}>
+                        <div className="d-flex align-items-end ">
+                          <DoneIcon className="tick" />{' '}
+                          <p>Free cancellation </p>
+                        </div>
+                        <div className="tour-type">
+                          <ul>
+                            <li>Tour Type</li>
+                            <li>Activities </li>
+                            <li>Accommodation </li>
+                            <li>Transport </li>
+                            <li>Start </li>
+                            <li>Ends </li>
+                          </ul>
+                        </div>
+                      </Col>
+                      <Col xs={6} md={7}>
+                        <div className="text-start">
+                          <div className="d-flex align-items-end">
+                            <DoneIcon className="tick" />
+                            <p>Trip customizable</p>
+                          </div>
+                          <div className="tour-event">
+                            <ul>
+                              <li>{data.tourtype_id}</li>
+                              <li> {data.activity_id}</li>
+                              <li> Guest House & Hotel</li>
+                              <li> {data.transport}</li>
+                              <li>Kathmandu, Nepal</li>
+                              <li>Kathmandu, Nepal</li>
+                            </ul>
+                          </div>
+                        </div>
+                      </Col>
+                      <Col></Col>
+                    </Row>
+                  </div>
+                </Col>
+                <Col md={4} lg={4} className="text-end">
+                  <div className="expedition-box ">
+                    <button className="view-btn">
+                      <Link to={`/everest/${data.id}`}>View Details</Link>
+                    </button>
+                    <div className="mt-2 next-p">
+                      <p> Next Departures </p>
+                      <div className="mt-2">
+                        <span>
+                          <AccessTimeIcon className="me-2" />
+                          jun7
+                        </span>
+                        <div className="mt-2">
+                          {' '}
+                          <span>
+                            <AccessTimeIcon className="me-2" />
+                            jun7
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="price">
+                      <div>
+                        <p className="me-3 mb-2">12 Days </p>
+                        <span>USD ${data.current_price}</span>
+                      </div>
+                    </div>
+                  </div>
+                </Col>
+              </Row>
+            </div>
           </div>
-        </div>
-        <div className="view-detail">
-          <Row>
-            <Col md={8} lg={8}>
-              <div className="img-content">
-                <h5>Everest Base Camp Trek</h5>
-                <div className="d-flex align-items-center">
-                  <ReactStar {...options} /> <span> of 337 reviews</span>
-                </div>
-                <Row>
-                  <Col xs={6} md={5}>
-                    <div className="d-flex align-items-end ">
-                      <DoneIcon className="tick" /> <p>Free cancellation </p>
-                    </div>
-                    <div className="tour-type">
-                      <ul>
-                        <li>Tour Type</li>
-                        <li>Activities </li>
-                        <li>Accommodation </li>
-                        <li>Transport </li>
-                        <li>Start </li>
-                        <li>Ends </li>
-                      </ul>
-                    </div>
-                  </Col>
-                  <Col xs={6} md={7}>
-                    <div className="text-start">
-                      <div className="d-flex align-items-end">
-                        <DoneIcon className="tick" />
-                        <p>Trip customizable</p>
-                      </div>
-                      <div className="tour-event">
-                        <ul>
-                          <li>Private and Group Tour</li>
-                          <li> Trekking</li>
-                          <li> Guest House & Hotel</li>
-                          <li> Flight & Private Vehicle</li>
-                          <li>Kathmandu, Nepal</li>
-                          <li>Kathmandu, Nepal</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col></Col>
-                </Row>
-              </div>
-            </Col>
-            <Col md={4} lg={4} className="text-end">
-              <div className="expedition-box ">
-                <button className="view-btn">
-                  <Link to={'/everest'}>View Details</Link>
-                </button>
-                <div className="mt-2 next-p">
-                  <p> Next Departures </p>
-                  <div className="mt-2">
-                    <span>
-                      <AccessTimeIcon className="me-2" />
-                      jun7
-                    </span>
-                    <div className="mt-2">
-                      {' '}
-                      <span>
-                        <AccessTimeIcon className="me-2" />
-                        jun7
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="price">
-                  <div>
-                    <p className="me-3 mb-2">12 Days </p>
-                    <span>USD $1000</span>
-                  </div>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      </div>
-      <div className="package mt-5">
-        <div className="inner-package">
-          <div className="img position-relative">
-            <img
-              src="https://www.adventurealternative.com/media/1309/nepal_everest-final-section-of-summit-ridge-cornice.jpg?height=788&width=1082&quality=&mode=Crop&center=0.27666666666666667,0.54&bgcolor="
-              alt=""
-              className="img-fluid"
-            />
-            <button className="feature-btn">
-              <StarIcon className="me-2" />
-              BEST PRICE
-            </button>
-          </div>
-        </div>
-        <div className="view-detail">
-          <Row>
-            <Col md={8} lg={8}>
-              <div className="img-content">
-                <h5>Everest Base Camp Trek</h5>
-                <div className="d-flex align-items-center">
-                  <ReactStar {...options} /> <span> of 337 reviews</span>
-                </div>
-                <Row>
-                  <Col xs={6} md={5}>
-                    <div className="d-flex align-items-end ">
-                      <DoneIcon className="tick" /> <p>Free cancellation </p>
-                    </div>
-                    <div className="tour-type">
-                      <ul>
-                        <li>Tour Type</li>
-                        <li>Activities </li>
-                        <li>Accommodation </li>
-                        <li>Transport </li>
-                        <li>Start </li>
-                        <li>Ends </li>
-                      </ul>
-                    </div>
-                  </Col>
-                  <Col xs={6} md={7}>
-                    <div className="text-start">
-                      <div className="d-flex align-items-end">
-                        <DoneIcon className="tick" />
-                        <p>Trip customizable</p>
-                      </div>
-                      <div className="tour-event">
-                        <ul>
-                          <li>Private and Group Tour</li>
-                          <li> Trekking</li>
-                          <li> Guest House & Hotel</li>
-                          <li> Flight & Private Vehicle</li>
-                          <li>Kathmandu, Nepal</li>
-                          <li>Kathmandu, Nepal</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col></Col>
-                </Row>
-              </div>
-            </Col>
-            <Col md={4} lg={4} className="text-end">
-              <div className="expedition-box ">
-                <button className="view-btn">
-                  <Link to={'/everest'}>View Details</Link>
-                </button>
-                <div className="mt-2 next-p">
-                  <p> Next Departures </p>
-                  <div className="mt-2">
-                    <span>
-                      <AccessTimeIcon className="me-2" />
-                      jun7
-                    </span>
-                    <div className="mt-2">
-                      {' '}
-                      <span>
-                        <AccessTimeIcon className="me-2" />
-                        jun7
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="price">
-                  <div>
-                    <p className="me-3 mb-2">12 Days </p>
-                    <span>USD $1000</span>
-                  </div>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      </div>
-      <div className="package mt-5">
-        <div className="inner-package">
-          <div className="img position-relative">
-            <img
-              src="https://www.adventurealternative.com/media/1309/nepal_everest-final-section-of-summit-ridge-cornice.jpg?height=788&width=1082&quality=&mode=Crop&center=0.27666666666666667,0.54&bgcolor="
-              alt=""
-              className="img-fluid"
-            />
-            <button className="feature-btn">
-              <StarIcon className="me-2" />
-              BEST PRICE
-            </button>
-          </div>
-        </div>
-        <div className="view-detail">
-          <Row>
-            <Col md={8} lg={8}>
-              <div className="img-content">
-                <h5>Everest Base Camp Trek</h5>
-                <div className="d-flex align-items-center">
-                  <ReactStar {...options} /> <span> of 337 reviews</span>
-                </div>
-                <Row>
-                  <Col xs={6} md={5}>
-                    <div className="d-flex align-items-end ">
-                      <DoneIcon className="tick" /> <p>Free cancellation </p>
-                    </div>
-                    <div className="tour-type">
-                      <ul>
-                        <li>Tour Type</li>
-                        <li>Activities </li>
-                        <li>Accommodation </li>
-                        <li>Transport </li>
-                        <li>Start </li>
-                        <li>Ends </li>
-                      </ul>
-                    </div>
-                  </Col>
-                  <Col xs={6} md={7}>
-                    <div className="text-start">
-                      <div className="d-flex align-items-end">
-                        <DoneIcon className="tick" />
-                        <p>Trip customizable</p>
-                      </div>
-                      <div className="tour-event">
-                        <ul>
-                          <li>Private and Group Tour</li>
-                          <li> Trekking</li>
-                          <li> Guest House & Hotel</li>
-                          <li> Flight & Private Vehicle</li>
-                          <li>Kathmandu, Nepal</li>
-                          <li>Kathmandu, Nepal</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col></Col>
-                </Row>
-              </div>
-            </Col>
-            <Col md={4} lg={4} className="text-end">
-              <div className="expedition-box ">
-                <button className="view-btn">
-                  <Link to={'/everest'}>View Details</Link>
-                </button>
-                <div className="mt-2 next-p">
-                  <p> Next Departures </p>
-                  <div className="mt-2">
-                    <span>
-                      <AccessTimeIcon className="me-2" />
-                      jun7
-                    </span>
-                    <div className="mt-2">
-                      {' '}
-                      <span>
-                        <AccessTimeIcon className="me-2" />
-                        jun7
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="price">
-                  <div>
-                    <p className="me-3 mb-2">12 Days </p>
-                    <span>USD $1000</span>
-                  </div>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      </div>
-      <div className="package mt-5">
-        <div className="inner-package">
-          <div className="img position-relative">
-            <img
-              src="https://www.adventurealternative.com/media/1309/nepal_everest-final-section-of-summit-ridge-cornice.jpg?height=788&width=1082&quality=&mode=Crop&center=0.27666666666666667,0.54&bgcolor="
-              alt=""
-              className="img-fluid"
-            />
-            <button className="feature-btn">
-              <StarIcon className="me-2" />
-              BEST PRICE
-            </button>
-          </div>
-        </div>
-        <div className="view-detail">
-          <Row>
-            <Col md={8} lg={8}>
-              <div className="img-content">
-                <h5>Everest Base Camp Trek</h5>
-                <div className="d-flex align-items-center">
-                  <ReactStar {...options} /> <span> of 337 reviews</span>
-                </div>
-                <Row>
-                  <Col xs={6} md={5}>
-                    <div className="d-flex align-items-end ">
-                      <DoneIcon className="tick" /> <p>Free cancellation </p>
-                    </div>
-                    <div className="tour-type">
-                      <ul>
-                        <li>Tour Type</li>
-                        <li>Activities </li>
-                        <li>Accommodation </li>
-                        <li>Transport </li>
-                        <li>Start </li>
-                        <li>Ends </li>
-                      </ul>
-                    </div>
-                  </Col>
-                  <Col xs={6} md={7}>
-                    <div className="text-start">
-                      <div className="d-flex align-items-end">
-                        <DoneIcon className="tick" />
-                        <p>Trip customizable</p>
-                      </div>
-                      <div className="tour-event">
-                        <ul>
-                          <li>Private and Group Tour</li>
-                          <li> Trekking</li>
-                          <li> Guest House & Hotel</li>
-                          <li> Flight & Private Vehicle</li>
-                          <li>Kathmandu, Nepal</li>
-                          <li>Kathmandu, Nepal</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col></Col>
-                </Row>
-              </div>
-            </Col>
-            <Col md={4} lg={4} className="text-end">
-              <div className="expedition-box ">
-                <button className="view-btn">
-                  <Link to={'/everest'}>View Details</Link>
-                </button>
-                <div className="mt-2 next-p">
-                  <p> Next Departures </p>
-                  <div className="mt-2">
-                    <span>
-                      <AccessTimeIcon className="me-2" />
-                      jun7
-                    </span>
-                    <div className="mt-2">
-                      {' '}
-                      <span>
-                        <AccessTimeIcon className="me-2" />
-                        jun7
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="price">
-                  <div>
-                    <p className="me-3 mb-2">12 Days </p>
-                    <span>USD $1000</span>
-                  </div>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      </div>
-      <div className="package mt-5">
-        <div className="inner-package">
-          <div className="img position-relative">
-            <img
-              src="https://www.adventurealternative.com/media/1309/nepal_everest-final-section-of-summit-ridge-cornice.jpg?height=788&width=1082&quality=&mode=Crop&center=0.27666666666666667,0.54&bgcolor="
-              alt=""
-              className="img-fluid"
-            />
-            <button className="feature-btn">
-              <StarIcon className="me-2" />
-              BEST PRICE
-            </button>
-          </div>
-        </div>
-        <div className="view-detail">
-          <Row>
-            <Col md={8} lg={8}>
-              <div className="img-content">
-                <h5>Everest Base Camp Trek</h5>
-                <div className="d-flex align-items-center">
-                  <ReactStar {...options} /> <span> of 337 reviews</span>
-                </div>
-                <Row>
-                  <Col xs={6} md={5}>
-                    <div className="d-flex align-items-end ">
-                      <DoneIcon className="tick" /> <p>Free cancellation </p>
-                    </div>
-                    <div className="tour-type">
-                      <ul>
-                        <li>Tour Type</li>
-                        <li>Activities </li>
-                        <li>Accommodation </li>
-                        <li>Transport </li>
-                        <li>Start </li>
-                        <li>Ends </li>
-                      </ul>
-                    </div>
-                  </Col>
-                  <Col xs={6} md={7}>
-                    <div className="text-start">
-                      <div className="d-flex align-items-end">
-                        <DoneIcon className="tick" />
-                        <p>Trip customizable</p>
-                      </div>
-                      <div className="tour-event">
-                        <ul>
-                          <li>Private and Group Tour</li>
-                          <li> Trekking</li>
-                          <li> Guest House & Hotel</li>
-                          <li> Flight & Private Vehicle</li>
-                          <li>Kathmandu, Nepal</li>
-                          <li>Kathmandu, Nepal</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col></Col>
-                </Row>
-              </div>
-            </Col>
-            <Col md={4} lg={4} className="text-end">
-              <div className="expedition-box ">
-                <button className="view-btn">
-                  <Link to={'/everest'}>View Details</Link>
-                </button>
-                <div className="mt-2 next-p">
-                  <p> Next Departures </p>
-                  <div className="mt-2">
-                    <span>
-                      <AccessTimeIcon className="me-2" />
-                      jun7
-                    </span>
-                    <div className="mt-2">
-                      {' '}
-                      <span>
-                        <AccessTimeIcon className="me-2" />
-                        jun7
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="price">
-                  <div>
-                    <p className="me-3 mb-2">12 Days </p>
-                    <span>USD $1000</span>
-                  </div>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      </div>
+        )
+      })}
     </>
   )
 }

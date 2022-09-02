@@ -18,7 +18,7 @@ const Footer = () => {
   const [element, controls] = useScroll()
   const [arrow, setArrow] = useState('')
   const { ref, inView } = useInView()
-  console.log(ref, 'footefr')
+
   return (
     <>
       <footer>

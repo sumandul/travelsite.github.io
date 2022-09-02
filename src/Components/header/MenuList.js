@@ -1,45 +1,11 @@
 export const menuItems = [
   {
     title: ' HOME',
+    path: '',
   },
   {
-    title: 'ALL PACKAGE',
-    submenu: [
-      {
-        title: 'CAMPING',
-      },
-      {
-        title: 'CAMPING',
-      },
-
-      {
-        title: 'CAMPING',
-      },
-
-      {
-        title: 'CAMPING',
-      },
-
-      {
-        title: 'TREKKING',
-        submenu: [
-          {
-            title: 'MOUNTAIN',
-          },
-          {
-            title: 'MOUNTAIN RIDE',
-            submenu: [
-              {
-                title: 'MOUNTAIN',
-              },
-              {
-                title: 'PHP',
-              },
-            ],
-          },
-        ],
-      },
-    ],
+    title: 'ALL TOUR',
+    path: 'tours',
   },
   {
     title: '  DAY TOUR',

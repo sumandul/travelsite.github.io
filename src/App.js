@@ -9,6 +9,11 @@ import HomePage from './pages/HomePage'
 import TripListPage from './pages/TripListPage'
 import EverestTrek from './Components/everestTrek/EverestTrek'
 import TrekBooking from './Components/everestTrek/TrekBooking'
+
+import axios from 'axios'
+window.baseURL = 'http://127.0.0.1:8000/'
+axios.defaults.baseURL = 'http://127.0.0.1:8000/'
+
 function App() {
   return (
     <>
@@ -16,8 +21,9 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/trip" element={<TripListPage />} />
-          <Route path="/everest" element={<EverestTrek />} />
+          <Route path="/tours" element={<TripListPage />} />
+          <Route path="/destination/:slug" element={<TripListPage />} />
+          <Route path="/everest/:id" element={<EverestTrek />} />
           <Route path="/everest/booking" element={<TrekBooking />} />
         </Routes>
         <Footer />
