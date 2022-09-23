@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import BreadCrump from '../utilities/BreadCrump'
 import ReactStar from 'react-rating-stars-component'
+import { ImageGroup, Image } from 'react-fullscreen-image'
 import { Link } from 'react-router-dom'
 import {
   Container,
@@ -29,9 +30,12 @@ import Select from '../reuableComponent/Select'
 import DatePickerComponent from '../utilities/DatePicker'
 import PopUpModel from '../reuableComponent/PopUpModel'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth'
+import Lightbox from 'react-image-lightbox'
+import 'react-image-lightbox/style.css'
 import ModelComponent from '../utilities/ModelComponent'
 import ReactImageMagnify from 'react-image-magnify'
 import { useParams } from 'react-router-dom'
+import EnqueryForm from './EnqueryForm'
 import axios from 'axios'
 
 const arrayOfData = [
@@ -54,6 +58,8 @@ const arrayOfData = [
 ]
 
 const EverestTrek = () => {
+  const [currentImage, setCurrentImage] = useState(null)
+  const [isViewerOpen, setIsViewerOpen] = useState(false)
   const { id } = useParams()
   const [tour, setTour] = useState()
   useEffect(() => {
@@ -63,17 +69,29 @@ const EverestTrek = () => {
     }
     fetchData()
   }, [])
-  console.log(tour?.galleries, 'id')
+  console.log(tour, 'id')
 
   const [fix, setFix] = useState(false)
+  const [fixMid, setFixs] = useState(false)
+
+  const setfixMid = () => {
+    console.log(window.scrollY, 'yyyy')
+    if (window.scrollY <= 300) {
+      setFixs(true)
+    } else {
+      setFixs(false)
+    }
+  }
   const setFixed = () => {
-    if (window.scrollY >= 500) {
+    console.log(window.scrollY, 'yyyy')
+    if (window.scrollY >= 300) {
       setFix(true)
     } else {
       setFix(false)
     }
   }
   window.addEventListener('scroll', setFixed)
+  window.addEventListener('scroll', setfixMid)
   console.log(fix)
   const [openclose, setOpenClose] = useState(false)
   const [opencloseDiv, setOpenCloseDiv] = useState('')
@@ -101,14 +119,31 @@ const EverestTrek = () => {
   function openModal() {
     setIsOpen(!isOpen)
   }
+  console.log(tour?.galleries)
   const [show, setShow] = useState(false)
+  const [showingle, setSingle] = useState(false)
 
-  const handleClose = () => setShow(false)
+  const handleInqueryForm = () => setShow(true)
+  const handleCloseSingleImage = () => setSingle(false)
   const handleShow = () => setShow(true)
 
+  const openImageViewer = useCallback((index) => {
+    setCurrentImage(index)(true)
+  }, [])
+  const closeImageViewer = () => {
+    setCurrentImage(0)(false)
+  }
   return (
     <>
       <PopUpModel
+        show={show}
+        // handleclose={handleClose}
+        header="Enquery with us? "
+        body={<EnqueryForm />}
+        className="enquery-modal"
+      />
+
+      {/* <PopUpModel
         show={show}
         handleclose={handleClose}
         header="Everest Base Camp Trek Map"
@@ -131,7 +166,7 @@ const EverestTrek = () => {
             }}
           />
         }
-      />
+      /> */}
 
       <div className="breadcrump">
         <BreadCrump />
@@ -212,7 +247,7 @@ const EverestTrek = () => {
                           <div className="text-center">
                             <h4>ACTIVITY</h4>
                             <DirectionsBikeIcon className="activity-icon" />
-                            <h6>TREKKING</h6>
+                            <h6>{tour?.activity_id}</h6>
                           </div>
                         </div>
                       </td>
@@ -222,7 +257,7 @@ const EverestTrek = () => {
                           <div className="text-center">
                             <h4>TRIP GRADE</h4>
                             <StarRateIcon className="activity-icon" />
-                            <h6>Morderate</h6>
+                            <h6>{tour?.trip_grade}</h6>
                           </div>
                         </div>
                       </td>
@@ -232,7 +267,7 @@ const EverestTrek = () => {
                           <div className="text-center">
                             <h4>MAX ALTITUDE</h4>
                             <HikingIcon className="activity-icon" />
-                            <h6>5545 Meter</h6>
+                            <h6>{tour?.max_altitude}</h6>
                           </div>
                         </div>
                       </td>
@@ -243,7 +278,7 @@ const EverestTrek = () => {
                           <div className="text-center">
                             <h4>GROUP SIZE</h4>
                             <LocalHotelIcon className="activity-icon" />
-                            <h6>Min. 1 Pax. </h6>
+                            <h6>Min. {tour?.group_size} Pax. </h6>
                           </div>
                         </div>
                       </td>
@@ -253,7 +288,7 @@ const EverestTrek = () => {
                           <div className="text-center">
                             <h4>ACCOMMODATION</h4>
                             <EscalatorWarningIcon className="activity-icon" />
-                            <h6>TREKKING</h6>
+                            <h6>{tour?.accommodation}</h6>
                           </div>
                         </div>
                       </td>
@@ -263,7 +298,7 @@ const EverestTrek = () => {
                           <div className="text-center">
                             <h4>BEST TIME</h4>
                             <AccessTimeIcon className="activity-icon" />
-                            <h6>TREKKING</h6>
+                            <h6>{tour?.best_time}</h6>
                           </div>
                         </div>
                       </td>
@@ -272,11 +307,11 @@ const EverestTrek = () => {
                 </Col>
                 <Col md={4}>
                   <div className="map-box" onClick={handleShow}>
-                    <img
-                      src="https://www.nepaltrekkinginhimalaya.com/images/articles/beDEJ-6e361807-5ec2-429c-9411-bc71b985c0b1.gif"
-                      alt=""
+                    <iframe
+                      src={tour?.map}
+                      title="W3Schools Free Online Web Tutorials"
                       className="img-fluid"
-                    />
+                    ></iframe>
                   </div>
                 </Col>
               </Row>
@@ -289,39 +324,7 @@ const EverestTrek = () => {
                 onSelect={(k) => setKey(k)}
               >
                 <Tab eventKey="trip Overview " title="Trip Overview ">
-                  <p>
-                    A trip to Everest Base Camp is on the bucket list for many
-                    adventurous nature lovers. Far from an ordinary trip, this
-                    majestic trek will introduce travelers to new challenges
-                    with every turn. Resting just below the Khumbu Glacier,
-                    Everest Base Camp is well-known worldwide and is an
-                    essential landmark in any geography lesson. The Everest Base
-                    Camp Trek is an adventure that allows travelers to glimpse
-                    life in the Himalayas and experience the tallest peak in the
-                    world. People have been fascinated by Mount Everest for
-                    centuries, with Sir Edmund Hilary and Tenzing Norgay Sherpa
-                    successfully being the first to summit the mountain in 1953
-                    successfully. Since then, hundreds of travelers have flocked
-                    to Nepal every year to see the mountains that have captured
-                    the hearts and minds of so many people throughout history.
-                    <p className="mt-3">
-                      The 16-day Everest Base Camp Trek is not simply a regular
-                      tour but an experience of a lifetime. You will spend your
-                      days walking along rugged Himalayan trails with views of
-                      snow-capped mountains, icy glaciers, and Sherpa heritage.
-                      You will also be introduced to some of the world’s highest
-                      mountains, including Mount Everest, Lhotse, Nuptse, Ama
-                      Dablam, and Cho Oyu, to name just a few. Furthermore, you
-                      will be able to experience the Sherpa lifestyle and grow
-                      to appreciate their exceptional hospitality. Every step of
-                      your Trek to Everest Base Camp will be incredible,
-                      beginning with the scenic flight from Kathmandu to Lukla.
-                      The 30-minute flight will treat you to views of lush green
-                      Himalayan forests and snow-capped peaks. With a runway of
-                      only 527 meters long, the Tenzing-Hillary Airport has one
-                      of
-                    </p>
-                  </p>
+                  <p>{tour?.over_view}</p>
                 </Tab>
                 <Tab eventKey="Itinerary" title="Itinerary ">
                   <Accordion>
@@ -390,10 +393,27 @@ const EverestTrek = () => {
                         console.log(image)
                         return (
                           <Col md={4} key={`img_${index}`}>
-                            <img src={image} alt="" className="img-fluid" />
+                            <div className="ind-img-box">
+                              <img
+                                id="img_open"
+                                src={image}
+                                alt=""
+                                className="img-fluid"
+                                onClick={() => {
+                                  setIsViewerOpen(!isViewerOpen)
+                                  setCurrentImage(index)
+                                }}
+                              />
+                            </div>
                           </Col>
                         )
                       })}
+                      {isViewerOpen && (
+                        <Lightbox
+                          mainSrc={tour?.galleries[currentImage]}
+                          onCloseRequest={() => setIsViewerOpen(false)}
+                        />
+                      )}
                     </Row>
                   </div>
                 </Tab>
@@ -554,7 +574,7 @@ const EverestTrek = () => {
             </div>
           </div>
           <div className="everest-left">
-            <div className="left-container">
+            <div className={fix ? 'fix-right' : 'left-container'}>
               <div className="left-top">
                 <div className="mt-3">
                   <h6>
@@ -565,92 +585,93 @@ const EverestTrek = () => {
                 <div className="grp-btn">Group</div>
               </div>
 
-              <div className="mid-container">
-                <div className="mid-title d-flex align-items-center justify-content-between">
-                  <div>
-                    <h5>No. of Persons</h5>
+              {fixMid && (
+                <div className="mid-container">
+                  <div className="mid-title d-flex align-items-center justify-content-between">
+                    <div>
+                      <h5>No. of Persons</h5>
+                    </div>
+                    <div>
+                      <h5>Price Per Person</h5>
+                    </div>
                   </div>
-                  <div>
-                    <h5>Price Per Person</h5>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>1 per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>1 per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>1 per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>2 per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>2-3per</p>
+                    </div>
+                    <div>
+                      <p> US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>2-3per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>2-3per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="price-person d-flex align-items-center justify-content-between">
+                    <div>
+                      <p>2-3per</p>
+                    </div>
+                    <div>
+                      <p>- US$ 1450 </p>
+                    </div>
+                  </div>
+                  <div className="offer mt-4">
+                    <div className="mt-2">
+                      <span>Best Price Guarantee </span>
+                    </div>
+                    <div className="mt-2">
+                      <span>Hassle-Free Booking </span>
+                    </div>
+                    <div className="mt-2">
+                      <span>No Booking or Credit Card Fees</span>
+                    </div>
                   </div>
                 </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>1 per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>1 per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>1 per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>2 per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>2-3per</p>
-                  </div>
-                  <div>
-                    <p> US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>2-3per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>2-3per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="price-person d-flex align-items-center justify-content-between">
-                  <div>
-                    <p>2-3per</p>
-                  </div>
-                  <div>
-                    <p>- US$ 1450 </p>
-                  </div>
-                </div>
-                <div className="offer mt-4">
-                  <div className="mt-2">
-                    <span>Best Price Guarantee </span>
-                  </div>
-                  <div className="mt-2">
-                    <span>Hassle-Free Booking </span>
-                  </div>
-                  <div className="mt-2">
-                    <span>No Booking or Credit Card Fees</span>
-                  </div>
-                </div>
-              </div>
-
+              )}
               <div className="bottom-container">
                 <div>
                   <div className="excelent d-flex align-items-center  justify-content-center mb-2">
@@ -664,13 +685,13 @@ const EverestTrek = () => {
 
                   <div>
                     {' '}
-                    <Link to={'/everest/booking'}>
+                    <Link to={'/tour/booking'}>
                       {' '}
                       <button className="book-trip">Book your trip</button>
                     </Link>
                   </div>
                   <div>
-                    <Link to={''}>
+                    <Link to={''} onClick={handleInqueryForm}>
                       <button className="ask-btn">Ask Inquire</button>
                     </Link>
                   </div>

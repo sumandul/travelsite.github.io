@@ -3,15 +3,24 @@ import DatePicker from 'react-datepicker'
 
 import 'react-datepicker/dist/react-datepicker.css'
 
-const DatePickerComponent = ({ style, placeholderText, Icon }) => {
-  const [startDate, setStartDate] = useState()
+const DatePickerComponent = ({
+  style,
+  placeholderText,
+  Icon,
+  selected,
+  name,
+  onChange,
+}) => {
+  console.log(selected)
   return (
     <>
       <div className="d-flex align-items-center position-relative">
         <DatePicker
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
+          name={name}
+          selected={selected}
+          onChange={onChange}
           className={style}
+          dateFormat="yyyy-dd-MM"
           placeholderText={placeholderText}
         />
         <div>{Icon}</div>

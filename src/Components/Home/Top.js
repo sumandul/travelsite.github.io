@@ -69,6 +69,7 @@ const Top = () => {
                           src={window.baseURL + item?.image}
                           alt=""
                           className="img-fluid"
+                          loading="lazy"
                         />
                         <div className="top-dist-content">
                           <div className="title-place">

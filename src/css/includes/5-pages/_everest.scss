@@ -352,6 +352,7 @@
   }
   .everest-left {
     margin-left: 15px;
+    position: relative;
 
     @include mini {
       margin-left: 0;
@@ -360,6 +361,13 @@
     flex-basis: 30%;
     .left-container {
     }
+    .fix-right {
+      position: fixed;
+      top: 65px;
+      width: 300px;
+      // z-index: 8888;
+    }
+
     .mid-container {
       @include tsn;
       padding: 10px 20px;
@@ -465,4 +473,11 @@
   position: fixed;
   top: 50px;
   right: 150px;
+}
+.ind-img-box {
+  height: 300px;
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
 }

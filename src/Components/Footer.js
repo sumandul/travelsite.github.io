@@ -13,12 +13,28 @@ import { InView, useInView } from 'react-intersection-observer'
 import { motion } from 'framer-motion'
 import { useScroll } from '../Components/UseScroll'
 import { testimonialsAnimations } from '../animation/Animation'
+import { useDispatch, useSelector } from 'react-redux'
+import { postquery } from '../redux/Reducer'
 const Footer = () => {
+  const dispatch = useDispatch()
   const [down, setDown] = useState(false)
   const [element, controls] = useScroll()
   const [arrow, setArrow] = useState('')
   const { ref, inView } = useInView()
-
+  const [enquery, SetEnquery] = useState({
+    fullname: '',
+    email: '',
+    number: '',
+    message: '',
+  })
+  const handleChange = (e) => {
+    const value = e.target.value
+    SetEnquery({ ...enquery, [e.target.name]: value })
+  }
+  const handleQuery = (e) => {
+    e.preventDefault()
+    dispatch(postquery(enquery))
+  }
   return (
     <>
       <footer>
@@ -104,33 +120,44 @@ const Footer = () => {
               <Col md={6} lg={3}>
                 <div className="inquery-form">
                   <h1>Inquiry Form </h1>
-                  <form action="" className="mt-4 ">
+                  <form action="" className="mt-4" onSubmit={handleQuery}>
                     <input
                       type="text"
                       placeholder="Your name"
                       className="foot-input"
+                      name="fullname"
+                      onChange={handleChange}
+                      value={enquery.fullname}
                     />
                     <input
                       type="text"
                       placeholder="Phone no."
+                      name="number"
+                      onChange={handleChange}
+                      value={enquery.number}
                       className="foot-input"
                     />
                     <input
                       type="text"
                       placeholder="Email"
                       className="foot-input"
+                      name="email"
+                      onChange={handleChange}
+                      value={enquery.email}
                     />
                     <textarea
-                      name=""
+                      name="message"
                       id=""
                       cols="10"
-                      rows="3"
+                      value={enquery.message}
+                      rows="4"
                       placeholder="Message"
                       className="foot-input"
+                      onChange={handleChange}
                     ></textarea>
-                    <button className="btn-send mt-1">
+                    <button className="btn-send">
                       Send
-                      <EastOutlinedIcon className="ms-2 right-arr" />
+                      <EastOutlinedIcon className="ms-2" />
                     </button>
                   </form>
                 </div>
@@ -158,24 +185,35 @@ const Footer = () => {
                             type="text"
                             placeholder="Your name"
                             className="foot-input"
+                            name="name"
+                            onChange={handleChange}
+                            value={enquery.fullname}
                           />
                           <input
                             type="text"
                             placeholder="Phone no."
+                            name="number"
+                            onChange={handleChange}
+                            value={enquery.number}
                             className="foot-input"
                           />
                           <input
                             type="text"
                             placeholder="Email"
                             className="foot-input"
+                            name="email"
+                            onChange={handleChange}
+                            value={enquery.email}
                           />
                           <textarea
-                            name=""
+                            name="message"
                             id=""
                             cols="10"
+                            value={enquery.message}
                             rows="4"
                             placeholder="Message"
                             className="foot-input"
+                            onChange={handleChange}
                           ></textarea>
                           <button className="btn-send">
                             Send
@@ -310,6 +348,7 @@ const Footer = () => {
                           src="https://www.travel2riga.com/images/uploaded/MasterCard_Logo.png"
                           alt=""
                           className="img-fluid"
+                          loading="lazy"
                         />
                       </Link>
                     </Col>
@@ -319,6 +358,7 @@ const Footer = () => {
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Visa.svg/1200px-Visa.svg.png"
                           alt=""
                           className="img-fluid"
+                          loading="lazy"
                         />
                       </Link>
                     </Col>
@@ -328,6 +368,7 @@ const Footer = () => {
                           src="hhttps://d28wu8o6itv89t.cloudfront.net/images/amexlogopng-1578907833580.png"
                           alt=""
                           className="img-fluid"
+                          loading="lazy"
                         />
                       </Link>
                     </Col>
@@ -337,6 +378,7 @@ const Footer = () => {
                           src="hhttps://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png"
                           alt=""
                           className="img-fluid"
+                          loading="lazy"
                         />
                       </Link>
                     </Col>
@@ -349,6 +391,7 @@ const Footer = () => {
                       src="https://scontent.fktm3-1.fna.fbcdn.net/v/t39.30808-6/291238519_3263705963914928_1592418732423195036_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=HPfApGBkErIAX-L0BIv&_nc_ht=scontent.fktm3-1.fna&oh=00_AT-V7qjV21A5npfTXqT2tT6LbRGq-5tdRI8i8HIZ2imVbQ&oe=62DD08E8"
                       alt=""
                       style={{ width: '50px' }}
+                      loading="lazy"
                     />
                   </div>
                 </Col>

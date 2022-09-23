@@ -11,51 +11,15 @@ import EastOutlinedIcon from '@mui/icons-material/EastOutlined'
 import { motion } from 'framer-motion'
 import { useScroll } from '../UseScroll'
 import { featureAnimation } from '../../animation/Animation'
-const featureData = [
-  {
-    id: 1,
-    img:
-      'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/96/67/56.jpg',
-    title: 'Phokara Valley Tour',
-  },
-  {
-    id: 1,
-    img:
-      'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/96/67/56.jpg',
-    title: 'Phokara Valley Tour',
-  },
-  {
-    id: 1,
-    img:
-      'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/96/67/56.jpg',
-    title: 'Phokara Valley Tour',
-  },
-  {
-    id: 1,
-    img:
-      'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/96/67/56.jpg',
-    title: 'Phokara Valley Tour',
-  },
-  {
-    id: 1,
-    img:
-      'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/96/67/56.jpg',
-    title: 'Phokara Valley Tour',
-  },
-  {
-    id: 1,
-    img:
-      'https://media.tacdn.com/media/attractions-splice-spp-674x446/06/96/67/56.jpg',
-    title: 'Phokara Valley Tour',
-  },
-]
-const Feature = () => {
+
+const Feature = ({ featureTour }) => {
+  console.log(featureTour, 'fdsf')
   const [element, controls] = useScroll()
   const options = {
     edit: false,
     color: '#DEDDDC',
     activeColor: '#FB8500',
-    value: 4.5,
+    value: 2,
     isHalf: true,
     size: window.innerWidth < 600 ? 20 : 26,
   }
@@ -73,16 +37,21 @@ const Feature = () => {
         <Container className="">
           <div>
             <Row className="">
-              {featureData.map((data, index) => {
+              {featureTour?.map((data, index) => {
                 return (
                   <Col md={6} lg={4}>
                     <motion.div
                       className="feature-box"
                       variants={featureAnimation}
                     >
-                      <Link to={'/everest'}>
+                      <Link to={`/tour/${data?.id}`}>
                         <div className="feature-img">
-                          <img src={data.img} alt="" className="img-fluid" />
+                          <img
+                            src={window.baseURL + data?.image}
+                            alt=""
+                            className="img-fluid"
+                            loading="lazy"
+                          />
                           <button className="feature-btn">FEATURE</button>
                           <div className="feature-content">
                             <div className="star d-flex align-item-center justify-content-between">

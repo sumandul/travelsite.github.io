@@ -130,6 +130,7 @@ export const menuItems = [
   },
   {
     title: '  ABOUT US',
+    path: 'about',
   },
   {
     title: '  BLOG ',
@@ -139,5 +140,6 @@ export const menuItems = [
   },
   {
     title: ' CONTACT US',
+    path: 'contact',
   },
 ]

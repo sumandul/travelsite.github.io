@@ -13,6 +13,7 @@ import Suscribe from '../Home/Suscribe'
 import BreadCrump from '../utilities/BreadCrump'
 const TrekBooking = () => {
   const [num, setNum] = useState(1)
+  const [bookForm, setBookForm] = useState()
   const option = {
     edit: false,
     color: '#DEDDDC',
@@ -39,7 +40,11 @@ const TrekBooking = () => {
       name: 'Italian',
     },
   ]
-
+  const handleInput = (e) => {
+    const value = e.target.value
+    setBookForm({ ...bookForm, [e.target.name]: value })
+  }
+  console.log(bookForm)
   return (
     <>
       <div className="breadcrump">
@@ -190,15 +195,20 @@ const TrekBooking = () => {
                     <Col md={5}>
                       <InputField
                         type={'text'}
+                        name="name"
                         Placeholder="First Name"
                         inputCss="style-input"
+                        onChange={handleInput}
+                        label="First Name"
                       />
                     </Col>
                     <Col md={5}>
                       <InputField
                         type={'text'}
+                        name="lastname"
                         Placeholder="Last Name"
                         inputCss="style-input"
+                        onChange={handleInput}
                       />
                     </Col>
                   </Row>
@@ -207,7 +217,9 @@ const TrekBooking = () => {
                       <InputField
                         type={'text'}
                         Placeholder="Email Address"
+                        name="email"
                         inputCss="style-input"
+                        onChange={handleInput}
                       />
                     </Col>
                     <Col md={6}>
@@ -215,6 +227,8 @@ const TrekBooking = () => {
                         type={'text'}
                         Placeholder="Conform Email"
                         inputCss="style-input"
+                        name="confirmemail"
+                        onChange={handleInput}
                       />
                     </Col>
                   </Row>
@@ -240,6 +254,8 @@ const TrekBooking = () => {
                         type={'text'}
                         Placeholder="Country code"
                         inputCss="style-input"
+                        name="countrycode"
+                        onChange={handleInput}
                       />
                     </Col>
                     <Col md={6}>
@@ -247,6 +263,8 @@ const TrekBooking = () => {
                         type={'text'}
                         Placeholder="Mobile number"
                         inputCss="style-input"
+                        name="number"
+                        onChange={handleInput}
                       />
                     </Col>
                     <Col md={12}>

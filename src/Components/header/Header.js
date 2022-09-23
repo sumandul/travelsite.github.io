@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import WhatsappOutlinedIcon from '@mui/icons-material/WhatsappOutlined'
 import AlternateEmailOutlinedIcon from '@mui/icons-material/AlternateEmailOutlined'
@@ -8,8 +8,15 @@ import MenuIcon from '@mui/icons-material/Menu'
 import CloseIcon from '@mui/icons-material/Close'
 import MenuItem from './MenuItem'
 import { menuItems } from '../header/MenuList'
+import { useSelector, useDispatch } from 'react-redux'
+import { fetchBanner } from '../../redux/Reducer'
+import { fetchMenu } from '../../redux/Reducer'
 
 const Header = () => {
+  const dispatch = useDispatch()
+  const data = useSelector((item) => item.bannerSetting.setting)
+  const menuTitle = useSelector((item) => item.nav.menu.data)
+  console.log(menuTitle, 'd')
   const depthLevel = 0
   const [fix, setFix] = useState(false)
   const [closemenu, setOpenMenu] = useState(false)
@@ -22,7 +29,10 @@ const Header = () => {
       setFix(false)
     }
   }
-
+  useEffect(() => {
+    dispatch(fetchBanner())
+    dispatch(fetchMenu())
+  }, [])
   window.addEventListener('scroll', setFixed)
   const togggleMenu = () => {
     setSideMenu(!sideMenu)
@@ -45,8 +55,12 @@ const Header = () => {
             <Row>
               <Col md={6}>
                 <div className="logo ">
-                  <Link to={'/'}>
-                    <img src="../Logo.png" alt="" className="img-fluid" />
+                  <Link to={'/home'}>
+                    <img
+                      src={window.baseURL + data.data?.logo}
+                      alt=""
+                      className="img-fluid"
+                    />
                   </Link>
                 </div>
               </Col>
@@ -58,7 +72,7 @@ const Header = () => {
                   <div className="contENT ms-1">
                     <span>Quick Questions? Email Us</span>
                     <Link to={'/'}>
-                      <h5>(dulalsuman853@gmail.com)</h5>
+                      <h5>({data?.data?.email})</h5>
                     </Link>
                   </div>
                 </div>
@@ -70,7 +84,7 @@ const Header = () => {
                   </div>
                   <div className="contENT ms-1">
                     <span>Direct Talk to an Expert</span>
-                    <h5>(+977-9803577164)</h5>
+                    <h5>({data?.data?.contact})</h5>
                   </div>
                 </div>
               </Col>
@@ -102,7 +116,16 @@ const Header = () => {
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  {menuItems.map((menu, index) => {
+                  <li className=" nav-item ">
+                    <Link
+                      to={'/home'}
+                      className=" nav-link active d-flex align-items-center mb-menu"
+                    >
+                      Home
+                    </Link>
+                  </li>
+                  {menuTitle?.map((menu, index) => {
+                    console.log(menu.name, ',emu')
                     return (
                       <MenuItem
                         menu={menu}
@@ -111,6 +134,14 @@ const Header = () => {
                       />
                     )
                   })}
+                  <li className=" nav-item ">
+                    <Link
+                      to={'/blog'}
+                      className=" nav-link active d-flex align-items-center mb-menu"
+                    >
+                      Blog
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>

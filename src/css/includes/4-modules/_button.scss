@@ -379,3 +379,14 @@ option {
     display: block;
   }
 }
+.banner-overlay {
+  background-color: red;
+}
+.contact-send {
+  background-color: $text-color;
+  color: $white;
+  padding: 15px 23px;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 500;
+}

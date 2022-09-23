@@ -33,7 +33,7 @@ input {
     font-weight: 400;
   }
 }
-input[type='text'] {
+input {
   color: $text-color;
   font-size: 15px;
   font-weight: 400;
@@ -139,4 +139,34 @@ select {
 }
 .css-2613qy-menu {
   background-color: red;
+}
+.input-box {
+  position: relative;
+
+  label {
+    position: absolute;
+    background-color: $white;
+    top: 10px;
+    left: 10px;
+  }
+  .toggle-label {
+    background-color: #fff;
+    padding: 0px 8px;
+    top: -10px !important;
+    transition: all 0.2s linear;
+    input {
+      background-color: #ffff !important;
+    }
+  }
+  input {
+    label {
+      // background-color: red !important;
+    }
+  }
+}
+textarea::-webkit-input-placeholder {
+  color: #4b4b4b;
+  &:focus {
+    outline: 1px solid $yellow;
+  }
 }

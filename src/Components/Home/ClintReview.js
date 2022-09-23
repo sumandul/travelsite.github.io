@@ -10,15 +10,16 @@ import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined'
 import VideocamOutlinedIcon from '@mui/icons-material/VideocamOutlined'
 import StarBorderPurple500OutlinedIcon from '@mui/icons-material/StarBorderPurple500Outlined'
 import ReactStar from 'react-rating-stars-component'
-const ClintReview = () => {
+const ClintReview = ({ clintReview }) => {
   const options = {
     edit: false,
     color: '#DEDDDC',
     activeColor: '#FFBA00',
-    value: 4.5,
+    value: 3,
     isHalf: true,
     size: window.innerWidth < 600 ? 20 : 20,
   }
+  console.log(clintReview, 'cc')
   const option = {
     margin: 10,
     responsiveClass: true,
@@ -52,198 +53,42 @@ const ClintReview = () => {
             <span>Our happy</span> Clients
           </h1>
           <OwlCarousel className="owl-theme clint-review-carsouel" {...option}>
-            <div className="clint-box">
-              <div className="clint- d-flex">
-                <div className="clint-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div className="clint-detail ms-2 mt-3">
-                  <h3>Krishna Thapa</h3>
-                  <span>Nepal</span>
-                  <ReactStar {...options} />
-                </div>
-              </div>
-              <p>
-                Faucibus tristique felis potenti ultrices ornare rhoncus semper
-                hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in
-                dui....
-              </p>
-            </div>
-            <div className="clint-box">
-              <div className="clint- d-flex">
-                <div className="clint-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div className="clint-detail ms-2 mt-3">
-                  <h3>Krishna Thapa</h3>
-                  <span>Nepal</span>
-                  <ReactStar {...options} />
-                </div>
-              </div>
-              <p>
-                Faucibus tristique felis potenti ultrices ornare rhoncus semper
-                hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in
-                dui....
-              </p>
-            </div>
-            <div className="clint-box">
-              <div className="clint- d-flex">
-                <div className="clint-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div className="clint-detail ms-2 mt-3">
-                  <h3>Krishna Thapa</h3>
-                  <span>Nepal</span>
-                  <ReactStar {...options} />
-                </div>
-              </div>
-              <p>
-                Faucibus tristique felis potenti ultrices ornare rhoncus semper
-                hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in
-                dui....
-              </p>
-            </div>
-            <div className="clint-box">
-              <div className="clint- d-flex">
-                <div className="clint-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div className="clint-detail ms-2 mt-3">
-                  <h3>Krishna Thapa</h3>
-                  <span>Nepal</span>
-                  <ReactStar {...options} />
-                </div>
-              </div>
-              <p>
-                Faucibus tristique felis potenti ultrices ornare rhoncus semper
-                hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in
-                dui....
-              </p>
-            </div>
-            <div className="clint-box">
-              <div className="clint- d-flex">
-                <div className="clint-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div className="clint-detail ms-2 mt-3">
-                  <h3>Krishna Thapa</h3>
-                  <span>Nepal</span>
-                  <ReactStar {...options} />
-                </div>
-              </div>
-              <p>
-                Faucibus tristique felis potenti ultrices ornare rhoncus semper
-                hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in
-                dui....
-              </p>
-            </div>
+            {clintReview &&
+              clintReview?.map((clint, index) => {
+                console.log(clint, 'fhdjh')
+                return (
+                  <div className="clint-box" key={index}>
+                    <div className="clint- d-flex">
+                      <div className="clint-img">
+                        <img
+                          src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80"
+                          className="img-fluid"
+                          alt=""
+                          loading="lazy"
+                        />
+                      </div>
+                      <div className="clint-detail ms-2 mt-3">
+                        <h3>{clint.name}</h3>
+                        <span>{clint.country_name}</span>
+                        {clint.star_rating > 0 && (
+                          <ReactStar
+                            options={{
+                              edit: false,
+                              color: '#DEDDDC',
+                              activeColor: '#FFBA00',
+                              value: 3,
+                              isHalf: true,
+                              size: window.innerWidth < 600 ? 20 : 20,
+                            }}
+                          />
+                        )}
+                      </div>
+                    </div>
+                    <p>{clint?.description}</p>
+                  </div>
+                )
+              })}
           </OwlCarousel>
-          {/* <Slider {...settings}>
-            <div className="clint-box">
-              <div className="clint- d-flex">
-                <div className="clint-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div className="clint-detail ms-2 mt-3">
-                  <h3>Krishna Thapa</h3>
-                  <span>Nepal</span>
-                  <ReactStar {...options} />
-                </div>
-              </div>
-              <p>
-                Faucibus tristique felis potenti ultrices ornare rhoncus semper
-                hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in
-                dui....
-              </p>
-            </div>
-            <div className="clint-box">
-              <div className="clint- d-flex">
-                <div className="clint-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div className="clint-detail ms-2 mt-3">
-                  <h3>Krishna Thapa</h3>
-                  <span>Nepal</span>
-                  <ReactStar {...options} />
-                </div>
-              </div>
-              <p>
-                Faucibus tristique felis potenti ultrices ornare rhoncus semper
-                hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in
-                dui....
-              </p>
-            </div>
-            <div className="clint-box">
-              <div className="clint- d-flex">
-                <div className="clint-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div className="clint-detail ms-2 mt-3">
-                  <h3>Krishna Thapa</h3>
-                  <span>Nepal</span>
-                  <ReactStar {...options} />
-                </div>
-              </div>
-              <p>
-                Faucibus tristique felis potenti ultrices ornare rhoncus semper
-                hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in
-                dui....
-              </p>
-            </div>
-            <div className="clint-box">
-              <div className="clint- d-flex">
-                <div className="clint-img">
-                  <img
-                    src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80"
-                    className="img-fluid"
-                    alt=""
-                  />
-                </div>
-                <div className="clint-detail ms-2 mt-3">
-                  <h3>Krishna Thapa</h3>
-                  <span>Nepal</span>
-                  <ReactStar {...options} />
-                </div>
-              </div>
-              <p>
-                Faucibus tristique felis potenti ultrices ornare rhoncus semper
-                hac facilisi Rutrum tellus lorem sem velit nisi non pharetra in
-                dui....
-              </p>
-            </div>
-          </Slider> */}
         </Container>
       </section>
     </>

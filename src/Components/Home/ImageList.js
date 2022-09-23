@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import OwlCarousel from 'react-owl-carousel'
+import Lightbox from 'react-image-lightbox'
 const option = {
   margin: 4,
   responsiveClass: true,
@@ -26,38 +27,37 @@ const option = {
     },
   },
 }
-const ImageListm = () => {
+
+const ImageListm = ({ popularTour }) => {
+  const [currentImage, setCurrentImage] = useState(null)
+  const [isViewerOpen, setIsViewerOpen] = useState(false)
+  console.log(currentImage, 'fdf')
   return (
     <>
       <OwlCarousel className="owl-theme  modal-img-slide" {...option}>
-        <div className="modal-img">
-          <img
-            src="https://www.switchbacktravel.com/sites/default/files/images/articles/Mt.%20Everest%20Nepal.jpg"
-            alt=""
-            className="img-fluid"
+        {popularTour?.map((source, index) => {
+          console.log(source)
+          return (
+            <div className="modal-img" key={`modal_${index}`}>
+              <img
+                src={source.img}
+                alt=""
+                className="img-fluid"
+                onClick={
+                  () => alert('hello')
+                  // setIsViewerOpen(!isViewerOpen)
+                  // setCurrentImage(index)
+                }
+              />
+            </div>
+          )
+        })}
+        {isViewerOpen && (
+          <Lightbox
+            mainSrc={modalImage[currentImage]}
+            onCloseRequest={() => setIsViewerOpen(false)}
           />
-        </div>
-        <div className="modal-img">
-          <img
-            src="https://www.switchbacktravel.com/sites/default/files/images/articles/Mt.%20Everest%20Nepal.jpg"
-            alt=""
-            className="img-fluid"
-          />
-        </div>
-        <div className="modal-img">
-          <img
-            src="https://www.switchbacktravel.com/sites/default/files/images/articles/Mt.%20Everest%20Nepal.jpg"
-            alt=""
-            className="img-fluid"
-          />
-        </div>
-        <div className="modal-img">
-          <img
-            src="https://www.switchbacktravel.com/sites/default/files/images/articles/Mt.%20Everest%20Nepal.jpg"
-            alt=""
-            className="img-fluid"
-          />
-        </div>
+        )}
       </OwlCarousel>
     </>
   )

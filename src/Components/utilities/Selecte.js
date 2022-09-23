@@ -23,15 +23,19 @@ const style = {
   }),
 }
 
-const SelecteComponent = ({ options }) => {
+const SelecteComponent = ({ options, onchange }) => {
   const [selectedOption, setSelectedOption] = useState(null)
-
+  console.log(selectedOption, 'option')
+  const renderList = () => {
+    return options?.map((data) => ({ label: data.title, value: data.id }))
+  }
+  console.log(renderList, 'list')
   return (
     <>
       <Select
-        defaultValue={selectedOption}
-        onChange={setSelectedOption}
-        options={options}
+        // defaultValue={selectedOption}
+        onChange={onchange}
+        options={renderList()}
         styles={style}
       />
     </>

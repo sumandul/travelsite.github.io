@@ -1,14 +1,15 @@
 import React from 'react'
 
-const TextArea = () => {
+const TextArea = ({ placeholder, onChange, name }) => {
   return (
     <>
       <textarea
         className="textareax-box"
-        name="w3review"
+        name={name}
         rows="4"
         cols="50"
-        placeholder="Pickup Details"
+        onChange={onChange}
+        placeholder={placeholder}
       ></textarea>
     </>
   )

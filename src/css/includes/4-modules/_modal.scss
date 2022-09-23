@@ -14,6 +14,13 @@
 }
 .modal-img-slide {
 }
+.enquery-modal {
+  z-index: 8888;
+  .enquery-form {
+    // padding: 10px;
+  }
+}
+
 .img-popup {
   .modal-content {
     border: 0;

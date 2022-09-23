@@ -6,18 +6,22 @@ import Filter from './Filter'
 import TripCtalog from './TripCtalog'
 import Suscribe from '../Home/Suscribe'
 import { useParams } from 'react-router-dom'
+import { fetchTourList } from '../../redux/Reducer'
+import { useDispatch } from 'react-redux'
 
 import axios from 'axios'
 // import select from '../reuableComponent/Select'
 const Trip = () => {
+  const dispatch = useDispatch()
   const { slug } = useParams()
   const [tours, setTour] = useState()
   useEffect(() => {
+    dispatch(fetchTourList())
     const response = axios.get('api/destination/' + slug).then(({ data }) => {
       setTour(data)
     })
   }, [])
-  console.log(tours, 'hhh')
+  console.log(tours, 'SLUG')
   return (
     <>
       <div className="breadcrump">

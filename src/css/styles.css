@@ -243,6 +243,7 @@ header .bg-light .nav-item .nav-link {
   font-size: 16px;
   font-weight: 500;
   padding: 0px 20px;
+  text-transform: uppercase;
 }
 
 @media (max-width: 1119px) {
@@ -386,6 +387,7 @@ header .bg-light .nav-item .drop-menu li a:hover {
 .dropdown {
   display: none;
   position: absolute;
+  min-width: 180px;
   background-color: #023047;
   top: 40px;
   left: 0;
@@ -410,6 +412,7 @@ header .bg-light .nav-item .drop-menu li a:hover {
   position: absolute;
   top: 0px;
   left: 100%;
+  width: 148px;
   background-color: #023047;
   min-width: 173px !important;
 }
@@ -436,6 +439,110 @@ header .bg-light .nav-item .drop-menu li a:hover {
 .rotate-up {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+.triplist {
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+}
+
+.triplist h6 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.triplist .filter-icon {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+}
+
+.triplist ul li {
+  margin-bottom: 3px;
+}
+
+.triplist .tour-event ul li {
+  font-size: 15px;
+  font-weight: 500;
+  color: #313131;
+}
+
+.triplist .tour-type ul li {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.triplist .title-trip {
+  border-bottom: 1px solid #e4e4e4;
+}
+
+@media (max-width: 576px) {
+  .triplist .title-trip {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+.triplist p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 25px;
+  color: #4c4c4c;
+}
+
+.triplist h1 {
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+@media (max-width: 576px) {
+  .triplist h1 {
+    font-size: 20px;
+    margin-bottom: 10px !important;
+  }
+}
+
+.triplist h5 {
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 7px;
+}
+
+.triplist .img-content {
+  margin-top: 10px;
+}
+
+@media (max-width: 996px) {
+  .triplist .img-content {
+    margin-top: 0;
+  }
+}
+
+.triplist .img-content .tick {
+  font-size: 17px;
+  color: #fb8500;
+}
+
+.triplist .img-content span {
+  color: #afafaf;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.triplist .img-content p {
+  color: #313131;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.ril__toolbar {
+  background-color: transparent;
 }
 
 button {
@@ -980,6 +1087,19 @@ option {
   }
 }
 
+.banner-overlay {
+  background-color: red;
+}
+
+.contact-send {
+  background-color: #023047;
+  color: #ffffff;
+  padding: 15px 23px;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
 input {
   border: 0;
 }
@@ -1058,7 +1178,7 @@ input:focus {
   font-weight: 400;
 }
 
-input[type='text'] {
+input {
   color: #023047;
   font-size: 15px;
   font-weight: 400;
@@ -1230,6 +1350,37 @@ select:focus {
 
 .css-2613qy-menu {
   background-color: red;
+}
+
+.input-box {
+  position: relative;
+}
+
+.input-box label {
+  position: absolute;
+  background-color: #ffffff;
+  top: 10px;
+  left: 10px;
+}
+
+.input-box .toggle-label {
+  background-color: #fff;
+  padding: 0px 8px;
+  top: -10px !important;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.input-box .toggle-label input {
+  background-color: #ffff !important;
+}
+
+textarea::-webkit-input-placeholder {
+  color: #4b4b4b;
+}
+
+textarea::-webkit-input-placeholder:focus {
+  outline: 1px solid #fb8500;
 }
 
 .footer {
@@ -1457,7 +1608,13 @@ select:focus {
 }
 
 .breadcrump {
+  padding: 6px 0px;
   border-bottom: 0.5px solid #e4e4e4;
+}
+
+.breadcrump a {
+  color: #fb8500;
+  text-transform: capitalize;
 }
 
 .modal-title {
@@ -1469,6 +1626,10 @@ select:focus {
 .vedio-modal-css {
   padding: 0 !important;
   border: 0 !important;
+}
+
+.enquery-modal {
+  z-index: 8888;
 }
 
 .img-popup .modal-content {
@@ -1521,12 +1682,22 @@ select:focus {
 }
 
 .banner {
-  background-image: url("https://trekkingtrailnepal.com/wp-content/uploads/2020/07/best-place-to-travel-in-Nepal.jpg");
-  height: 80vh;
+  width: 100%;
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
   position: relative;
+}
+
+.banner .banner-img {
+  height: 400px;
+}
+
+.banner .banner-img img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 100%;
 }
 
 @media (max-width: 996px) {
@@ -1662,6 +1833,8 @@ select:focus {
 .slide .img-box {
   position: relative;
   overflow: hidden;
+  height: 350px;
+  border-radius: 10px;
 }
 
 .slide .over-box {
@@ -1734,6 +1907,10 @@ select:focus {
           box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
   border-radius: px;
   overflow: hidden;
+}
+
+.top-place img {
+  height: 100% !important;
 }
 
 .top-place:hover img {
@@ -1840,6 +2017,7 @@ select:focus {
 
 .top-place img {
   border-radius: 20px;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -2439,6 +2617,12 @@ select:focus {
   color: #023047;
 }
 
+.owl-carousel .owl-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .expedition {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2500,6 +2684,40 @@ select:focus {
 .expedition .triplist {
   -ms-flex-preferred-size: 80%;
       flex-basis: 80%;
+}
+
+.expedition .triplist .price {
+  margin-top: 10px;
+  border: 1px dashed #fb8500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 8px 7px;
+  margin-left: 21px;
+}
+
+@media (max-width: 576px) {
+  .expedition .triplist .price {
+    margin-left: 0;
+  }
+}
+
+.expedition .triplist .price span {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.expedition .triplist .price p {
+  color: #4c4c4c;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .expedition .triplist h6 {
@@ -2599,40 +2817,6 @@ select:focus {
 
 .expedition .expedition-box .next-p p {
   font-size: 15px;
-  font-weight: 600;
-}
-
-.expedition .expedition-box .price {
-  margin-top: 10px;
-  border: 1px dashed #fb8500;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 8px 7px;
-  margin-left: 21px;
-}
-
-@media (max-width: 576px) {
-  .expedition .expedition-box .price {
-    margin-left: 0;
-  }
-}
-
-.expedition .expedition-box .price span {
-  font-size: 20px;
-  margin-top: 10px;
-  font-weight: 600;
-}
-
-.expedition .expedition-box .price p {
-  color: #4c4c4c;
-  font-size: 20px;
   font-weight: 600;
 }
 
@@ -3308,6 +3492,7 @@ select:focus {
 
 .everest-container .everest-left {
   margin-left: 15px;
+  position: relative;
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
 }
@@ -3316,6 +3501,12 @@ select:focus {
   .everest-container .everest-left {
     margin-left: 0;
   }
+}
+
+.everest-container .everest-left .fix-right {
+  position: fixed;
+  top: 65px;
+  width: 300px;
 }
 
 .everest-container .everest-left .mid-container {
@@ -3462,6 +3653,16 @@ select:focus {
   position: fixed;
   top: 50px;
   right: 150px;
+}
+
+.ind-img-box {
+  height: 300px;
+}
+
+.ind-img-box img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .trek-booking-container .book-trek-title {
@@ -3985,5 +4186,327 @@ select:focus {
   height: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+.contact-banner {
+  position: relative;
+}
+
+.contact-banner .banner-overlay {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-banner .banner-overlay h1 {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 44px;
+}
+
+.contact-1 .contact-1-inner h1 {
+  margin-top: 60px;
+  font-size: 34px;
+  font-weight: 600;
+  color: #023047;
+  position: relative;
+}
+
+.contact-1 .contact-1-inner h1::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  background-color: #fb8500;
+  width: 20%;
+  height: 2px;
+}
+
+.contact-1 .contact-1-inner h1::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 20%;
+  background-color: #fb8500;
+  width: 20%;
+  height: 2px;
+}
+
+.contact-1 .contact-1-inner h5 {
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #023047;
+}
+
+.contact-1 .contact-1-inner h6 {
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #023047;
+}
+
+.contact-1 .contact-1-inner p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333e48;
+}
+
+.contact-1 .contact-1-inner ul li {
+  margin-top: 8px;
+}
+
+.contact-1 .contact-1-inner ul li span {
+  font-size: 15px;
+  font-weight: 600;
+  color: #023047;
+  margin-right: 6px;
+}
+
+.contact-1 label {
+  color: #023047;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.contact-1 label span {
+  color: #fb8500;
+}
+
+.contact-1 .contact-input {
+  padding-left: 10px;
+  width: 100%;
+  border: 1px solid #e4e4e4;
+}
+
+.about-section span {
+  color: #fb8500;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.about-section span::before {
+  content: '';
+  background-color: #fb8500;
+  width: 50%;
+  height: 2px;
+  position: absolute;
+  bottom: 8px;
+  left: -80px;
+}
+
+.about-banner {
+  position: relative;
+}
+
+.about-banner .about-content {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.about-banner .about-content h1 {
+  color: #ffff;
+  font-family: bold;
+  font-size: 26px;
+}
+
+.about-banner .bottom-img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.about-2 h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #023047;
+}
+
+.about-2 p {
+  color: #023047;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.service-list .service-content h5 {
+  color: #023047;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 7px;
+}
+
+.service-list .service-content p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333e48;
+  line-height: 22px;
+}
+
+.service-list .icon-box {
+  background-color: #fb8500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 19px;
+  color: #ffffff;
+}
+
+.service-list .icon-box .icon {
+  font-size: 40px;
+}
+
+.vedio-content {
+  height: 500px;
+}
+
+.about-3 .about-content-3 h1 {
+  font-size: 35px;
+  font-weight: 600;
+  color: #023047;
+}
+
+.about-3 .about-content-3 p {
+  padding: 0px 164px;
+  color: #333e48;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.about-4 .about-4-img {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.about-4 .about-4-content {
+  position: absolute;
+  padding: 40px 0px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+.about-4 .about-4-content .about-4-content-2 {
+  padding: 10px 80px;
+}
+
+.about-4 .about-4-content .about-4-content-1 {
+  padding: 10px 297px;
+}
+
+.about-4 .about-4-content h4 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 7px;
+}
+
+.about-4 .about-4-content p {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.about-4 .about-4-content .about-4-box {
+  background-color: #fb8500;
+  padding: 20px 23px;
+}
+
+.about-4 .about-4-content .about-4-box .icon-about-4 {
+  font-size: 60px;
+}
+
+.about-4 .about-4-content .about-4-box .about-icon-content {
+  border-left: 1px solid #ffffff;
+  padding-left: 10px;
+}
+
+.about-4 .about-4-content h2 {
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.search .price {
+  margin-top: 10px;
+  border: 1px dashed #fb8500;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 8px 7px;
+  margin-left: 21px;
+}
+
+@media (max-width: 576px) {
+  .search .price {
+    margin-left: 0;
+  }
+}
+
+.search .price span {
+  font-size: 20px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.search .price p {
+  color: #4c4c4c;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.search .img {
+  -ms-flex-preferred-size: 35%;
+      flex-basis: 35%;
+}
+
+.tour-empty {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=styles.css.map */

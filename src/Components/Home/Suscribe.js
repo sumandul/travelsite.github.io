@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-
+import { useDispatch } from 'react-redux'
+import { postEmail } from '../../redux/Reducer'
 const Suscribe = () => {
+  const dispatch = useDispatch()
+  const [email, setEmail] = useState('')
+  const hanldeEmail = (e) => {
+    e.preventDefault()
+    console.log(email, 'email')
+    dispatch(postEmail(email))
+  }
+
   return (
     <>
       <div className="suscribe">
@@ -15,16 +24,20 @@ const Suscribe = () => {
               </p>
             </Col>
             <Col md={12} lg={4}>
-              <form action="">
+              <form action="" onSubmit={hanldeEmail}>
                 <div className="d-flex align-items-center justify-content-center">
                   <input
                     type="text"
-                    name=""
+                    name="email"
                     id=""
+                    value={email}
                     className="suc-input"
                     placeholder="Enter your E-mail"
+                    onChange={(e) => setEmail(e.target.value)}
                   />
-                  <button className="btn-sus">SUBSCRIBE</button>
+                  <button type="submit" className="btn-sus">
+                    SUBSCRIBE
+                  </button>
                 </div>
               </form>
             </Col>

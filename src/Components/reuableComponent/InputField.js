@@ -1,10 +1,18 @@
 import React from 'react'
-import { Placeholder } from 'react-bootstrap'
 
-const InputField = ({ type, Placeholder, inputCss }) => {
+const InputField = ({ type, Placeholder, name, inputCss, label, onChange }) => {
   return (
     <>
-      <input type={type} placeholder={Placeholder} className={inputCss} />
+      <div className="input-box">
+        <input
+          type={type}
+          name={name}
+          placeholder={Placeholder}
+          className={inputCss}
+          onChange={onChange}
+        />
+        <label htmlFor="">{label}</label>
+      </div>
     </>
   )
 }

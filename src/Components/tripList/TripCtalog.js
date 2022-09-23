@@ -8,9 +8,10 @@ import StarBorderPurple500OutlinedIcon from '@mui/icons-material/StarBorderPurpl
 import StarIcon from '@mui/icons-material/Star'
 import ReactPaginate from 'react-paginate'
 import Select from '../reuableComponent/Select'
+import { fetchTourList } from '../../redux/Reducer'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchTourList } from '../../redux/Reducer'
+import { useParams } from 'react-router-dom'
 
 import axios from 'axios'
 const arrayOfData = [
@@ -33,6 +34,8 @@ const arrayOfData = [
 ]
 let pageCount = 3
 const TripCtalog = (props) => {
+  const { slug } = useParams()
+
   const data = useSelector((data) => data.listTour.Tourlist.data)
 
   const dispatch = useDispatch()
@@ -42,6 +45,7 @@ const TripCtalog = (props) => {
   const [tours, setTour] = useState()
   var destinationtours = props.tour
   console.log(destinationtours?.length, 'tttt')
+  // console.log(data?.data?.length, 'tttt')
   useEffect(() => {
     if (destinationtours?.length === 0) {
       dispatch(fetchTourList())
@@ -110,7 +114,7 @@ const TripCtalog = (props) => {
             key={data.id}
           >
             <div className="img position-relative">
-              <Link to={`/everest/${data.id}`}>
+              <Link to={`/tour/${data.id}`}>
                 <img
                   src={window.baseURL + data?.image}
                   alt=""
@@ -138,7 +142,6 @@ const TripCtalog = (props) => {
                         </div>
                         <div className="tour-type">
                           <ul>
-                            <li>Tour Type</li>
                             <li>Activities </li>
                             <li>Accommodation </li>
                             <li>Transport </li>
@@ -155,7 +158,6 @@ const TripCtalog = (props) => {
                           </div>
                           <div className="tour-event">
                             <ul>
-                              <li>{data.tourtype_id}</li>
                               <li> {data.activity_id}</li>
                               <li> Guest House & Hotel</li>
                               <li> {data.transport}</li>
@@ -172,7 +174,7 @@ const TripCtalog = (props) => {
                 <Col md={4} lg={4} className="text-end">
                   <div className="expedition-box ">
                     <button className="view-btn">
-                      <Link to={`/everest/${data.id}`}>View Details</Link>
+                      <Link to={`/${data.id}`}>View Details</Link>
                     </button>
                     <div className="mt-2 next-p">
                       <p> Next Departures </p>
@@ -203,6 +205,18 @@ const TripCtalog = (props) => {
           </div>
         )
       })}
+      <div className="mt-5">
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel="next "
+          className="pagination"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          previousLabel="previous"
+          renderOnZeroPageCount={null}
+        />
+      </div>
     </>
   )
 }
