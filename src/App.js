@@ -35,6 +35,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/search" element={<SearchResult />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<Contact />} />
 
           <Route path="/page/:slug" element={<DetailSlug />} />
         </Routes>

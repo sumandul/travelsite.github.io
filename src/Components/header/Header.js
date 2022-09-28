@@ -142,6 +142,14 @@ const Header = () => {
                       Blog
                     </Link>
                   </li>
+                  <li className=" nav-item ">
+                    <Link
+                      to={'/contact'}
+                      className=" nav-link active d-flex align-items-center mb-menu"
+                    >
+                      Contact
+                    </Link>
+                  </li>
                 </ul>
               </div>
             </div>

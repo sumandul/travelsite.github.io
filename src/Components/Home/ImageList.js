@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Row, Col } from 'react-bootstrap'
 import OwlCarousel from 'react-owl-carousel'
 import Lightbox from 'react-image-lightbox'
@@ -54,7 +54,7 @@ const ImageListm = ({ popularTour }) => {
         })}
         {isViewerOpen && (
           <Lightbox
-            mainSrc={modalImage[currentImage]}
+            // mainSrc={modalImage[currentImage]}
             onCloseRequest={() => setIsViewerOpen(false)}
           />
         )}

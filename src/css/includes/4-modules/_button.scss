@@ -390,3 +390,21 @@ option {
   font-size: 16px;
   font-weight: 500;
 }
+.btn-continue {
+  margin-top: 30px;
+  border: 1px solid $yellow;
+  border-radius: 16px;
+  padding: 6px 21px;
+  &:hover {
+    background-color: $yellow;
+    a {
+      color: $white;
+    }
+  }
+  background-color: transparent;
+  a {
+    color: $yellow;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}
